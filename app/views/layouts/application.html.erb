@@ -5,11 +5,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= favicon_link_tag asset_path("favicon.ico") %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= render "common/header" %>
     <%= yield %>
+    <%= render "common/footer" %>
+
+    <%= javascript_pack_tag "theme", "data-turbolinks-track": "reload" %>
   </body>
 </html>
