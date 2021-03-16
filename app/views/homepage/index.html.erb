@@ -1,0 +1,103 @@
+<div class="hero-wrap js-fullheight d-sm-none d-lg-block">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
+      <div class="col-md-7">
+        <h1><%= t "index.title" %></h1>
+        <span class="subheading"><%= t "index.slogan" %></span>
+        <p class="caps"><i class="fas fa-check-square mr-2"></i><%= t "index.benefit_1" %></p>
+        <p class="caps"><i class="fas fa-check-square mr-2"></i><%= t "index.benefit_2" %></p>
+        <p class="caps"><i class="fas fa-check-square mr-2"></i><%= t "index.benefit_3" %></p>
+      </div>
+      <div class="col-md-4 create-cv ml-auto">
+        <div class="subheading"><%= t "index.create_cv_now" %></div>
+        <%= link_to "#", class: "icon-video d-flex align-items-center justify-content-center" do %><!-- change -->
+          <span class="fa fa-play"></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="ftco-section img ftco-select-destination" style="background-color: dark;">
+  <div class="container">
+    <div class="row justify-content-center pb-4">
+      <div class="col-md-12 heading-section text-center">
+        <span class="subheading"><%= t "menu_list.company" %></span>
+        <h2 class="mb-4"><%= t "index.special_company" %></h2>
+      </div>
+    </div>
+  </div>
+  <div id="outstanding-company" class="carousel slide container" data-ride="carousel">
+    <ol class="carousel-indicators container d-none">
+      <li data-target="#outstanding-company" data-slide-to="0" class="active"></li>
+      <li data-target="#outstanding-company" data-slide-to="1"></li>
+      <li data-target="#outstanding-company" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner pl-5 pr-5" role="listbox">
+			<% for i in 1..3 %>
+				<div class="carousel-item <%= "active" if i == 1 %>">
+					<div class="row">
+					<% for j in 1..3 %>
+						<div class="col-md-4">
+							<div class="project-destination">
+								<%= link_to "#" do %><!-- change -->
+									<%= image_tag "wallpaper.jpg", class: "img"%>
+									<div class="text">
+										<h3><%= Faker::Company.name %></h3><!-- change -->
+										<span><%= t "btn.more" %></span>
+									</div>
+								<% end %>
+							</div>
+						</div>
+					<% end %>
+					</div>
+				</div>
+		<% end %>
+    <a class="carousel-control-prev" href="#outstanding-company" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only"><%= t "index.prev" %></span>
+    </a>
+    <a class="carousel-control-next" href="#outstanding-company" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only"><%= t "index.next" %></span>
+    </a>
+  </div>
+</section>
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center pb-4">
+      <div class="col-md-12 heading-section text-center">
+        <span class="subheading"><%= t "menu_list.recruitment" %></span>
+        <h2 class="mb-4"><%= t "index.recruit_info" %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <% for i in 0..8 %>
+				<div class="col-md-4">
+					<div class="project-wrap">
+						<%= link_to "path", class: "img" do %>
+							<%= image_tag "wallpaper.jpg", class: "img" %>
+							<span class="position"><%= t "recruitment_post.position.#{[:director, :manager, :leader, :staff, :fresher, :intern].sample}" %></span><!-- change -->
+						<% end %>
+						<div class="text p-4">
+							<span class="type"><%= t "recruitment_post.type.#{[:part_time, :full_time, :remote].sample}" %></span> <!-- change -->
+							<h3><a href="#"><%= Faker::Company.name + " " + Faker::Company.suffix %></a></h3><!-- change -->
+							<div><i class="fa fa-map-marker"></i><%= ["Da Nang", "Ha Noi", "HCM"].sample %></div><!-- change -->
+							<div class="hover_text">
+								<div class=""><i class="fas fa-user-md"></i><%= Faker::Company.industry %></div><!-- change -->
+								<div class=""><i class="fas fa-money-bill-alt"></i><%= t("wage", wage: exchange_money(3000000)) %> - <%= t("wage", wage: exchange_money(5000000)) %></div><!-- change -->
+								<div class=""><i class="fas fa-medal"></i><%= t("recruitment_post.year", count: rand(10)) %></div><!-- change -->
+								<div class=""><i class="fas fa-users"></i><%= t("recruitment_post.staff", count: rand(20)) %></div><!-- change -->
+							</div>
+							<div class="time-apply">
+								<div><i class="fas fa-clock"></i><%= l(DateTime.current.to_date) %></div><!-- change -->
+								<%= link_to t("btn.apply"), "#", class: "btn btn-primary" %><!-- change -->
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+    </div>
+    <div class="w-100 text-center"><%= link_to t("btn.more"), "#", class: "btn btn-primary" %></div><!-- change -->
+  </div>
+</section>

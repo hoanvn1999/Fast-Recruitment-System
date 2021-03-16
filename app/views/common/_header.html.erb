@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <i class="fas fa-handshake"></i> Fast<span>Recruitment</span>
+    <% end %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav"
+			aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> <%= t "menu_list.menu" %>
+    </button>
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><%= link_to t("menu_list.home"), root_path, class:"nav-link" %></li>
+        <li class="nav-item"><%= link_to t("menu_list.company"), root_path, class:"nav-link" %></li>
+        <li class="nav-item"><%= link_to t("menu_list.recruitment"), root_path, class:"nav-link" %></li>
+        <li class="nav-item"><%= link_to t("menu_list.create_cv"), root_path, class:"nav-link" %></li>
+        <li class="nav-item dropdown">
+          <%= link_to "#", class: "nav-link dropdown-toggle", "data-toggle": "dropdown" do %>
+            <%= t "menu_list.languages.language" %>
+            <b class="caret"></b>
+          <% end %>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <%= link_to locale: :en do %>
+                <%= image_tag("languages/EN.png", alt: t("menu_list.languages.english"), class: "img-lang") %>
+                <%= t "menu_list.languages.english" %>
+              <% end %>
+            </li>
+            <hr>
+            <li class="nav-item">
+              <%= link_to locale: :vi do %>
+                <%= image_tag("languages/VN.png", alt: t("menu_list.languages.vietnamese"), class: "img-lang") %>
+                <%= t "menu_list.languages.vietnamese" %>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item"><%= link_to t("menu_list.login"), root_path, class:"nav-link" %></li>
+        <li class="nav-item cta ml-4"><%= link_to t("menu_list.register"), root_path, class:"nav-link" %></li>
+      </li>
+    </div>
+  </div>
+</nav>
+<!-- END nav -->

@@ -1,3 +1,68 @@
-en:
+vi:
+  date:
+    formats:
+      default: "%m/%d/%Y"
+      short: "%m/%d"
+  time:
+    formats:
+      default: "%m/%d/%Y %H:%M"
+      short: "%H:%M"
+      notime: "%m/%d/%Y"
+  wage: "%{wage} VND"
+  btn:
+    more: "Xem thêm"
+    apply: "Ứng tuyển"
   index:
-    title: "Tuyển dụng nhanh"
+    title: "Fast Recruitment"
+    slogan: "Thuận tiện - Nhanh chóng - Hiệu quả"
+    benefit_1: "Quản lý thông tin ứng viên"
+    benefit_2: "Hỗ trợ tuyển dụng"
+    benefit_3: "Tạo CV"
+    create_cv_now: "Tạo CV ngay"
+    special_company: "Nhà tuyển dụng nổi bật"
+    prev: "Trước"
+    next: "Sau"
+    recruit_info: "Thông tin tuyển dụng"
+  menu_list:
+    menu: "Menu"
+    home: "Trang chủ"
+    company: "Doanh nghiệp"
+    recruitment: "Tin tuyển dụng"
+    create_cv: "Tạo CV"
+    languages:
+      language: "Ngôn ngữ"
+      english: "English"
+      vietnamese: "Tiếng Việt"
+    manage_posts: "Bài đăng"
+    manage_recruiters: "Nhà tuyển dụng"
+    manage_candidates: "Ứng viên"
+    login: "Đăng nhập"
+    logout: "Đăng xuất"
+    register: "Đăng ký"
+    edit_profile: Sửa thông tin
+  term:
+    terms_of_use: "Điều khoản sử dụng"
+    privacy_and_policy: "Chính sách và bảo mật"
+    user_manual: "Hướng dẫn sử dụng"
+  contact:
+    contact: "Liên hệ"
+    address: "254 Nguyễn Văn Linh, Thanh Khê, Đà Nẵng"
+  about:
+    about_us: "Về chúng tôi"
+    description: "Fast Recruitment System là dự án được thực hiện nhằm mục đích thay đổi việc tuyển dụng trở nên thuận tiện, nhanh chóng và hiệu quả hơn."
+  recruitment_post:
+    position:
+      director: "Giám đốc"
+      manager: "Trưởng phòng"
+      leader: "Trưởng nhóm"
+      staff: "Nhân viên"
+      fresher: "Fresher"
+      intern: "Thực tập"
+    type:
+      full_time: "Full time"
+      part_time: "Part time"
+      remote: "Remote"
+    year:
+      zero: "Không yêu cầu kinh nghiệm"
+      other: "%{count} năm kinh nghiệm"
+    staff: "%{count} nhân viên"

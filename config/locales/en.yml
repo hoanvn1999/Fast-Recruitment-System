@@ -1,3 +1,71 @@
 en:
+  date:
+    formats:
+      default: "%m/%d/%Y"
+      short: "%m/%d"
+  time:
+    formats:
+      default: "%m/%d/%Y %H:%M"
+      short: "%H:%M"
+      notime: "%d/%m/%Y"
+  wage: "$%{wage}"
+  btn:
+    more: "Watch more"
+    apply: "Apply"
   index:
-    title: "Fast Hiring"
+    title: "Fast Recruitment"
+    slogan: "Quickly - Effortlessly - Conveniently"
+    benefit_1: "Manage candidate information"
+    benefit_2: "Recruitment supported"
+    benefit_3: "Create CV"
+    create_cv_now: "Create CV now"
+    special_company: "Special Recruiters"
+    prev: "Previous"
+    next: "Next"
+    recruit_info: "Recruitment Information"
+  menu_list:
+    menu: "Menu"
+    home: "Home"
+    company: "Company"
+    recruitment: "Recruitment"
+    create_cv: "Create CV"
+    languages:
+      language: "Language"
+      english: "English"
+      vietnamese: "Tiếng Việt"
+    manage_posts: "Manage Posts"
+    manage_recruiters: "Manage Recruiters"
+    manage_candidates: "Manage Candidates"
+    login: "Login"
+    logout: "Logout"
+    register: "Register"
+    edit_profile: "Edit profile"
+  term:
+    terms_of_use: "Terms of use"
+    privacy_and_policy: "Privacy and Policy"
+    user_manual: "User manual"
+  contact:
+    contact: "Contact"
+    address: "254 Nguyen Van Linh St, Thanh Khe, Da Nang"
+  about:
+    about_us: "About Us"
+    description: "Fast Recruitment System is a project that aims to make recruitment more convenient, quick and efficient."
+  recruitment_post:
+    position:
+      director: "Director"
+      manager: "Manager"
+      leader: "Leader"
+      staff: "Staff"
+      fresher: "Fresher"
+      intern: "Intern"
+    type:
+      full_time: "Full time"
+      part_time: "Part time"
+      remote: "Remote"
+    year:
+      zero: "No experience required"
+      one: "1 year experience"
+      other: "%{count} years experience"
+    staff:
+      one: "1 staff"
+      other: "%{count} staffs"
