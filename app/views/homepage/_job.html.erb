@@ -1,0 +1,23 @@
+<div class="col-md-4">
+  <div class="project-wrap">
+    <%= link_to "path", class: "img" do %>
+      <%= image_tag url_for(job.post_image), class: "img" %>
+      <span class="position"><%= t "recruitment_post.position.#{job.position}" %></span>
+    <% end %>
+    <div class="text p-4">
+      <span class="type"><%= t "recruitment_post.type.#{job.type_of_work}" %></span>
+      <h3><a href="#"><%= job.user.institution.institution_name %></a></h3>
+      <div><i class="fa fa-map-marker"></i><%= job.user.institution.address %></div>
+      <div class="hover_text">
+        <div class=""><i class="fas fa-user-md"></i><%= job.field.field_name %></div>
+        <div class=""><i class="fas fa-money-bill-alt"></i><%= t("wage", wage: exchange_money(job.min_salary)) %> - <%= t("wage", wage: exchange_money(job.max_salary)) %></div>
+        <div class=""><i class="fas fa-medal"></i><%= t("recruitment_post.year", count: job.candidate_experience) %></div>
+        <div class=""><i class="fas fa-users"></i><%= t("recruitment_post.staff", count: job.number_of_staffs) %></div>
+      </div>
+      <div class="time-apply">
+        <div><i class="fas fa-clock"></i><%= l(job.due_date,format: :notime) %></div>
+        <%= link_to t("btn.apply"), "#", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
