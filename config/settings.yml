@@ -1,0 +1,14 @@
+user:
+  email:
+    max_length: 255
+  password:
+    min_length: 6
+  phone:
+    min_length: 10
+    max_length: 25
+job:
+  max_staffs: 500
+  min_salary: 1500000
+per_page:
+  index: 9
+  default: 15

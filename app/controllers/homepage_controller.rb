@@ -1,3 +1,6 @@
 class HomepageController < ApplicationController
-  def index; end
+  def index
+    @institutions = Institution.first_9
+    @jobs = Job.first_12
+  end
 end
