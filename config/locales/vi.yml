@@ -12,6 +12,10 @@ vi:
   btn:
     more: "Xem thêm"
     apply: "Ứng tuyển"
+  account:
+    account.nil: "Tài khoản không tồn tại"
+    check_email: "Vui lòng kiểm tra email và xác nhận."
+    profile_updated: "Thông tin cá nhân của bạn đã được thay đổi thành công"
   index:
     title: "Fast Recruitment"
     slogan: "Thuận tiện - Nhanh chóng - Hiệu quả"
