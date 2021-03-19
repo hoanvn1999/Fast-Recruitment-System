@@ -53,7 +53,7 @@ class User < ApplicationRecord
   end
 
   def forget
-    update :remember_digest, nil
+    update remember_digest: nil
   end
 
   def active

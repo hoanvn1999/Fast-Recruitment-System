@@ -12,6 +12,10 @@ en:
   btn:
     more: "Watch more"
     apply: "Apply"
+  account:
+    account.nil: "Account is not exist"
+    check_email: "Please check your email to active your account."
+    profile_updated: "Your personal information has been successfully changed"
   index:
     title: "Fast Recruitment"
     slogan: "Quickly - Effortlessly - Conveniently"
