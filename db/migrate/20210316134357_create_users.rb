@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :activation_digest
       t.boolean :activated
       t.datetime :actived_at
+      t.string :remember_digest
 
       t.timestamps
       t.belongs_to :institution, foreign_key: true
