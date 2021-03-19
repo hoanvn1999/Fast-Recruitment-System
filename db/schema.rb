@@ -155,13 +155,13 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.datetime "date_of_birth"
     t.text "address"
     t.integer "role"
+    t.integer "institution_id", default: 1
     t.string "activation_digest"
     t.boolean "activated"
     t.datetime "actived_at"
     t.string "remember_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "institution_id"
     t.index ["actived_at"], name: "index_users_on_actived_at"
     t.index ["institution_id"], name: "index_users_on_institution_id"
   end
@@ -178,5 +178,4 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
   add_foreign_key "languages", "curriculum_vitaes"
   add_foreign_key "recruitments", "curriculum_vitaes"
   add_foreign_key "skills", "curriculum_vitaes"
-  add_foreign_key "users", "institutions"
 end

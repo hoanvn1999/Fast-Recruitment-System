@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
     @user = User.find_by email: params[:session][:email].downcase
     return if @user
 
-    flash[:warning] = t "account.account_nil"
-    redirect_to signup_path
+    flash.now[:warning] = t "account.account_nil"
+    render :new
   end
 end

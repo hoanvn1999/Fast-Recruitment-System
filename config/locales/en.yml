@@ -14,8 +14,12 @@ en:
     apply: "Apply"
   account:
     account.nil: "Account is not exist"
+    create_fail: "Login failed. An error occurred, please check the information again"
     check_email: "Please check your email to active your account."
     profile_updated: "Your personal information has been successfully changed"
+    update_fail: "Update failed, please check the information again"
+    passwd_updated: "Your password has been successfully changed"
+    change_pwd_fail: "Change password failed, please check the information again"
   index:
     title: "Fast Recruitment"
     slogan: "Quickly - Effortlessly - Conveniently"
@@ -50,7 +54,22 @@ en:
     remember_me: "Remember me"
     forgot_passwd: "Forgot password"
     or_with: "Or Sign In With"
-    invalid_user: "Account is not exist"
+    invalid_user: "Wrong email or password"
+  register:
+    passwd_conf: "Confirm password"
+    full_name: "Fullname"
+    phone: "Phone number"
+    birthday: "Birthday"
+    address: "Address"
+    btn_next: "Next step"
+    btn_prev: "Previous step"
+    roles:
+      candidate: "Candidate"
+      recruiter: "Recruiter"
+      admin: "Admin"
+  update:
+    update_passwd: "Change password"
+    old_passwd: "Old password"
   term:
     terms_of_use: "Terms of use"
     privacy_and_policy: "Privacy and Policy"

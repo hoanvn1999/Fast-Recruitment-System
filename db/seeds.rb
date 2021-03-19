@@ -7,6 +7,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+institution = Institution.new(institution_name: "Tự do",
+                              address: "Toàn cầu",
+                              description: Faker::Company.catch_phrase)
+institution.logo.attach(io: File.open("app/assets/images/logos/freelance.jpg"),
+                            filename: "freelance.jpg", content_type: "image/jpg")
+institution.save
+
 10.times do |n|
   institution = Institution.new(institution_name: Faker::Company.name,
                                 address: ["Da Nang", "Ha Noi", "HCM"].sample,
