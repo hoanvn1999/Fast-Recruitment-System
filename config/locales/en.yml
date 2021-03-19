@@ -12,6 +12,10 @@ en:
   btn:
     more: "Watch more"
     apply: "Apply"
+  account:
+    account.nil: "Account is not exist"
+    check_email: "Please check your email to active your account."
+    profile_updated: "Your personal information has been successfully changed"
   index:
     title: "Fast Recruitment"
     slogan: "Quickly - Effortlessly - Conveniently"
@@ -40,6 +44,13 @@ en:
     logout: "Logout"
     register: "Register"
     edit_profile: "Edit profile"
+  login:
+    username: "Email"
+    passwd: "Password"
+    remember_me: "Remember me"
+    forgot_passwd: "Forgot password"
+    or_with: "Or Sign In With"
+    invalid_user: "Account is not exist"
   term:
     terms_of_use: "Terms of use"
     privacy_and_policy: "Privacy and Policy"
