@@ -10,9 +10,17 @@
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active"><%= link_to t("menu_list.home"), root_path, class:"nav-link" %></li>
-        <li class="nav-item"><%= link_to t("menu_list.company"), root_path, class:"nav-link" %></li>
-        <li class="nav-item"><%= link_to t("menu_list.recruitment"), root_path, class:"nav-link" %></li>
-        <li class="nav-item"><%= link_to t("menu_list.create_cv"), root_path, class:"nav-link" %></li>
+        <% if logged_in? && current_user.admin? %>
+          <li class="nav-item"><%= link_to t("menu_list.company"), root_path, class:"nav-link" %></li><!--Quản lý người dùng-->
+          <li class="nav-item"><%= link_to t("menu_list.company"), root_path, class:"nav-link" %></li><!--Quản lý bài đăng-->
+        <% elsif logged_in? && current_user.recruiter? %>
+          <li class="nav-item"><%= link_to t("menu_list.recruitment"), root_path, class:"nav-link" %></li><!--Quản lý bài đăng-->
+          <!--Hiển thị danh sách các tin tuyển dụng, mỗi tin có nút chi tiết những người đã ứng tuyển-->
+        <% else %>
+          <li class="nav-item"><%= link_to t("menu_list.company"), root_path, class:"nav-link" %></li>
+          <li class="nav-item"><%= link_to t("menu_list.recruitment"), root_path, class:"nav-link" %></li>
+          <li class="nav-item"><%= link_to t("menu_list.create_cv"), root_path, class:"nav-link" %></li>
+        <% end %>
         <li class="nav-item dropdown">
           <%= link_to "#", class: "nav-link dropdown-toggle", "data-toggle": "dropdown" do %>
             <%= t "menu_list.languages.language" %>
@@ -34,8 +42,20 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item"><%= link_to t("menu_list.login"), root_path, class:"nav-link" %></li>
-        <li class="nav-item cta ml-4"><%= link_to t("menu_list.register"), root_path, class:"nav-link" %></li>
+        <% if logged_in? %>
+          <li class="nav-item dropdown">
+            <%= link_to "#", class:"nav-link dropdown-toggle", "data-toggle": "dropdown" do %>
+              <%= image_tag(current_user.avatar, alt: current_user.full_name, class: "rounded-circle img-avt") %>
+            <% end %>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><%= current_user.full_name %></li>
+              <li class="nav-item text-center"><%= link_to t("menu_list.logout"), logout_path, class:"btn btn-primary", method: :delete %></li>
+            <ul>
+          </li>
+        <% else %>
+          <li class="nav-item"><%= link_to t("menu_list.login"), login_path, class:"nav-link" %></li>
+          <li class="nav-item cta ml-4"><%= link_to t("menu_list.register"), root_path, class:"nav-link" %></li>
+        <% end %>
       </li>
     </div>
   </div>

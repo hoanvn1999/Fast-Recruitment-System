@@ -40,6 +40,13 @@ vi:
     logout: "Đăng xuất"
     register: "Đăng ký"
     edit_profile: Sửa thông tin
+  login:
+    username: "Email"
+    passwd: "Mật khẩu"
+    remember_me: "Ghi nhớ"
+    forgot_passwd: "Quên mật khẩu"
+    or_with: "Hoặc đăng nhập với"
+    invalid_user: "Tài khoản không tồn tại"
   term:
     terms_of_use: "Điều khoản sử dụng"
     privacy_and_policy: "Chính sách và bảo mật"

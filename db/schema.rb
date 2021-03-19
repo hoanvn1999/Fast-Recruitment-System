@@ -158,6 +158,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.string "activation_digest"
     t.boolean "activated"
     t.datetime "actived_at"
+    t.string "remember_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "institution_id"
