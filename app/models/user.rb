@@ -14,7 +14,8 @@ class User < ApplicationRecord
     length: {maximum: Settings.user.email.max_length},
     format: {with: VALID_EMAIL_REGEX}
   validates :password, presence: true,
-    length: {minimum: Settings.user.password.min_length}
+    length: {minimum: Settings.user.password.min_length},
+    allow_nil: true
   validates :phone_number, presence: true,
     length: {minimum: Settings.user.phone.min_length,
              maximum: Settings.user.phone.max_length}

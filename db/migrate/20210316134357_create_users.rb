@@ -8,14 +8,15 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.datetime :date_of_birth
       t.text :address
       t.integer :role
+      t.integer :institution_id, default: 1
       t.string :activation_digest
       t.boolean :activated
       t.datetime :actived_at
       t.string :remember_digest
 
       t.timestamps
-      t.belongs_to :institution, foreign_key: true
     end
+    add_index :users, :institution_id
     add_index :users, :actived_at
   end
 end

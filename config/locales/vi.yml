@@ -13,9 +13,13 @@ vi:
     more: "Xem thêm"
     apply: "Ứng tuyển"
   account:
-    account.nil: "Tài khoản không tồn tại"
+    account_nil: "Tài khoản không tồn tại"
+    create_fail: "Đăng ký thất bại. Có lỗi xảy ra, vui lòng kiểm tra lại thông tin "
     check_email: "Vui lòng kiểm tra email và xác nhận."
     profile_updated: "Thông tin cá nhân của bạn đã được thay đổi thành công"
+    update_fail: "Cập nhật thất bại, vui lòng kiểm tra lại thông tin "
+    passwd_updated: "Mật khẩu của bạn đã được thay đổi thành công"
+    change_pwd_fail: "Đổi mật khẩu thất bại, vui lòng kiểm tra lại thông tin "
   index:
     title: "Fast Recruitment"
     slogan: "Thuận tiện - Nhanh chóng - Hiệu quả"
@@ -50,7 +54,22 @@ vi:
     remember_me: "Ghi nhớ"
     forgot_passwd: "Quên mật khẩu"
     or_with: "Hoặc đăng nhập với"
-    invalid_user: "Tài khoản không tồn tại"
+    invalid_user: "Sai email hoặc mật khẩu"
+  register:
+    passwd_conf: "Xác nhận mật khẩu"
+    full_name: "Họ và tên"
+    phone: "Số điện thoại"
+    birthday: "Sinh nhật"
+    address: "Địa chỉ"
+    btn_next: "Tiếp theo"
+    btn_prev: "Quay lại"
+    roles:
+      candidate: "Người ứng tuyển"
+      recruiter: "Nhà tuyển dụng"
+      admin: "Quản trị viên"
+  update:
+    update_passwd: "Đổi mật khẩu"
+    old_passwd: "Mật khẩu cũ"
   term:
     terms_of_use: "Điều khoản sử dụng"
     privacy_and_policy: "Chính sách và bảo mật"
