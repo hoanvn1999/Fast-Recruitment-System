@@ -10,5 +10,7 @@ Rails.application.routes.draw do
         patch :update_change_password
       end
     end
+    resources :account_activations, only: :edit
+    resources :password_resets, except: [:index, :show, :destroy]
   end
 end
