@@ -12,7 +12,22 @@ en:
   btn:
     more: "Watch more"
     apply: "Apply"
+  email:
+    btn:
+      active: "Activate"
+      reset_passwd: "Reset password"
+    subject:
+      active_account: "FastRecruitment | Account activation"
+      password_reset: "FastRecruitment | Password reset"
+    hi: "Hi"
+    message:
+      active_account: "Welcome to the Sample App! Click on the link below to activate your account:"
+      reset_passwd: "We receive a request to change your password. If you don't take this action, please ignore this email and continue using it. To change your password, please click on the link below:"
+    signature: "Best regards,<br>The Fast Recruitment team"
   account:
+    activated: "Account activated!"
+    invalid_active_link: "Invalid activation link"
+    invalid_reset_passwd_link: "Invalid reset password link"
     account.nil: "Account is not exist"
     create_fail: "Login failed. An error occurred, please check the information again"
     check_email: "Please check your email to active your account."
@@ -52,9 +67,11 @@ en:
     username: "Email"
     passwd: "Password"
     remember_me: "Remember me"
+    btn_send_email: "Send me email"
     forgot_passwd: "Forgot password"
     or_with: "Or Sign In With"
     invalid_user: "Wrong email or password"
+    check_activation_link: Account not activated. Check your email for the activation link."
   register:
     passwd_conf: "Confirm password"
     full_name: "Fullname"
@@ -67,6 +84,11 @@ en:
       candidate: "Candidate"
       recruiter: "Recruiter"
       admin: "Admin"
+    reset_passwd:
+      email_sent: "Email sent with password reset instructions"
+      email_nil: "Email address not found"
+      input_field: "Please enter password"
+      expired: "Password reset has expired."
   update:
     update_passwd: "Change password"
     old_passwd: "Old password"

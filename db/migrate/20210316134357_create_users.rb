@@ -10,8 +10,10 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.integer :role
       t.integer :institution_id, default: 1
       t.string :activation_digest
-      t.boolean :activated
+      t.boolean :activated, default: false
       t.datetime :actived_at
+      t.string :reset_digest
+      t.datetime :reset_sent_at
       t.string :remember_digest
 
       t.timestamps

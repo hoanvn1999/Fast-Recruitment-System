@@ -157,8 +157,10 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.integer "role"
     t.integer "institution_id", default: 1
     t.string "activation_digest"
-    t.boolean "activated"
+    t.boolean "activated", default: false
     t.datetime "actived_at"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
     t.string "remember_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -1,0 +1,32 @@
+<section class="hero-wrap js-fullheight ftco-section">
+  <div class="overlay"></div>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section"><%= t "login.forgot_passwd" %></h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+            <%= form_for @user, url: password_reset_path do |f| %>
+              <div class="signin-form">
+                <%= hidden_field_tag :email, @user.email %>
+                <div class="form-group">
+                  <%= f.password_field :password, class: "form-control", placeholder: "#{t("login.passwd")}" %>
+                  <span class="toggle-password" toggle="#user_password"><i class="eye-pic fa fa-fw fa-eye field-icon"></i></span>
+                </div>
+                <div class="form-group">
+                  <%= f.password_field :password_confirmation, class: "form-control", placeholder: "#{t("register.passwd_conf")}" %>
+                  <span class="toggle-password" toggle="#user_password_confirmation"><i class="eye-pic fa fa-fw fa-eye field-icon"></i></span>
+                </div>
+                <div class="form-group">
+                  <%= f.submit t("update.update_passwd"), class: "form-control btn btn-primary submit px-3" %>
+                </div>
+              </div>
+            <% end %>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>

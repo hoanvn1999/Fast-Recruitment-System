@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
+      @user.send_activation_email
       flash[:info] = t "account.check_email"
       redirect_to root_url
     else
@@ -32,11 +33,14 @@ class UsersController < ApplicationController
   end
 
   def update_change_password
-    if valid_passwd && current_user.update(update_password_params)
+    if update_password_params[:password].blank?
+      flash.now[:danger] = t "reset_passwd.input_passwd"
+      render :change_password
+    elsif valid_passwd && current_user.update(update_password_params)
       flash[:success] = t "account.passwd_updated"
       redirect_to root_path
     else
-      flash[:danger] = t "account.change_pwd_fail"
+      flash.now[:danger] = t "account.change_pwd_fail"
       render :change_password
     end
   end

@@ -12,7 +12,22 @@ vi:
   btn:
     more: "Xem thêm"
     apply: "Ứng tuyển"
+  email:
+    btn:
+      active: "Kích hoạt"
+      reset_passwd: "Lấy lại mật khẩu"
+    subject:
+      active_account: "Fast Recruitment | Kích hoạt tài khoản"
+      password_reset: "Fast Recruitment | Đặt lại mật khẩu"
+    hi: "Chào"
+    message:
+      active_account: "Chào mừng bạn đến với Fast Recruitment! Click vào link bên dưới để kích hoạt tài khoản của bạn:"
+      reset_passwd: "Chúng tôi nhận được yêu cầu thay đổi mật khẩu. Nếu bạn không thực hiện hành động này, vui lòng bỏ qua email này và tiếp tục sử dụng. Để đổi mật khẩu, vui lòng click vào link bên dưới:"
+    signature: "Trân trọng,<br>Đội ngũ Fast Recruitment"
   account:
+    activated: "Tài khoản đã được kích hoạt!"
+    invalid_active_link: "Link kích hoạt không chính xác"
+    invalid_reset_passwd_link: "Link đổi mật khẩu không chính xác"
     account_nil: "Tài khoản không tồn tại"
     create_fail: "Đăng ký thất bại. Có lỗi xảy ra, vui lòng kiểm tra lại thông tin "
     check_email: "Vui lòng kiểm tra email và xác nhận."
@@ -52,9 +67,11 @@ vi:
     username: "Email"
     passwd: "Mật khẩu"
     remember_me: "Ghi nhớ"
+    btn_send_email: "Gửi email"
     forgot_passwd: "Quên mật khẩu"
     or_with: "Hoặc đăng nhập với"
     invalid_user: "Sai email hoặc mật khẩu"
+    check_activation_link: "Tài khoản chưa được kích hoạt. Vui lòng kiểm tra email."
   register:
     passwd_conf: "Xác nhận mật khẩu"
     full_name: "Họ và tên"
@@ -67,6 +84,11 @@ vi:
       candidate: "Người ứng tuyển"
       recruiter: "Nhà tuyển dụng"
       admin: "Quản trị viên"
+  reset_passwd:
+      email_sent: "Email đã được gửi kèm yêu cầu đổi mật khẩu mới"
+      email_nil: "Không tìm thấy địa chỉ email"
+      input_field: "Vui lòng nhập mật khẩu"
+      expired: "Yêu cầu đổi mật khẩu đã hết hạn"
   update:
     update_passwd: "Đổi mật khẩu"
     old_passwd: "Mật khẩu cũ"
