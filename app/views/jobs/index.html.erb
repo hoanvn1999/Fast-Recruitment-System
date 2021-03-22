@@ -1,0 +1,93 @@
+<div class="short-wrap"></div>
+<section class="ftco-section ftco-no-pb ftco-no-pt">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="ftco-search d-flex justify-content-center">
+          <div class="row">
+            <div class="col-md-12 tab-wrap">
+              <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+                  <%= form_tag jobs_path, class:"search-property-1", method: "get" do %>
+                    <div class="row no-gutters">
+                      <div class="col-md d-flex">
+                        <div class="form-group p-4 border-0">
+                          <label for="#"><%= t "job.field" %></label>
+                          <div class="form-field">
+                            <div class="icon"><span class="fa fa-search"></span></div>
+                            <%= select_tag :field_id, options_for_select(Field.select("field_name").map{|f| [f.field_name, f.id]}), include_blank: :All, class: "form-control" %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md d-flex">
+                        <div class="form-group p-4">
+                          <label for="#"><%= t "job.type" %></label>
+                          <div class="form-field">
+                            <div class="icon"><span class="fa fa-calendar"></span></div>
+                            <%= select_tag :type_of_work, options_for_select(Job.type_of_works.map), include_blank: :All, class: "form-control" %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md d-flex">
+                        <div class="form-group p-4">
+                          <label for="#"><%= t "job.position" %></label>
+                          <div class="form-field">
+                            <div class="select-wrap">
+                              <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                              <%= select_tag :position, options_for_select(Job.positions.map), include_blank: :All, class: "form-control" %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md d-flex">
+                        <div class="form-group p-4">
+                          <label for="#"><%= t "job.salary" %></label>
+                          <div class="form-field">
+                            <div class="icon"><span class="fa fa-calendar"></span></div>
+                            <%= select_tag :salary, options_for_select([[t("job.salary_arrange.asc"), 0],[t("job.salary_arrange.desc"), 1]]) , class: "form-control" %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md d-flex">
+                        <div class="form-group p-4">
+                          <label for="#"><%= t "job.exp" %></label>
+                          <div class="form-field">
+                            <div class="icon"><span class="fas fa-medal"></span></div>
+                            <%= number_field :candidate_experience, "", class: "form-control", placeholder: "#{t "job.exp_search"}" %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md d-flex">
+                        <div class="form-group d-flex w-100 border-0">
+                          <div class="form-field w-100 align-items-center d-flex">
+                            <%= submit_tag t("btn.search"), class: "align-self-stretch form-control btn btn-primary" %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center pb-4">
+      <div class="col-md-12 heading-section text-center">
+        <span class="subheading"><%= t "menu_list.recruitment" %></span>
+        <h2 class="mb-4"><%= t "index.recruit_info" %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <%= render @jobs %>
+    </div>
+    <div class="paginate-center">
+      <%= will_paginate @tours, renderer: WillPaginate::ActionView::BootstrapLinkRenderer%>
+    </div>
+  </div>
+</section>

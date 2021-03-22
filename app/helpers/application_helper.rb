@@ -5,4 +5,10 @@ module ApplicationHelper
 
     money
   end
+
+  def current_class? *controller
+    return "active" if controller.include?(params[:controller])
+
+    ""
+  end
 end

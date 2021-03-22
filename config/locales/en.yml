@@ -8,10 +8,16 @@ en:
       default: "%m/%d/%Y %H:%M"
       short: "%H:%M"
       notime: "%d/%m/%Y"
+    count:
+      days: "d"
+      h: "h"
+      m: "m"
+      s: "s"
   wage: "$%{wage}"
   btn:
     more: "Watch more"
     apply: "Apply"
+    search: "Search"
   email:
     btn:
       active: "Activate"
@@ -102,6 +108,19 @@ en:
   about:
     about_us: "About Us"
     description: "Fast Recruitment System is a project that aims to make recruitment more convenient, quick and efficient."
+  job:
+    nil: "Job is not available"
+    description: "Job description"
+    related: "Related jobs"
+    field: "Field"
+    type: "Time"
+    position: "Position"
+    salary: "Salary"
+    salary_arrange:
+      asc: "Ascending"
+      desc: "Descending"
+    exp: "Experience"
+    exp_search: "Enter number"
   recruitment_post:
     position:
       director: "Director"
