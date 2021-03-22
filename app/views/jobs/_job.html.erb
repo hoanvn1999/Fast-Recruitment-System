@@ -1,12 +1,12 @@
 <div class="col-md-4">
   <div class="project-wrap">
-    <%= link_to "path", class: "img" do %>
+    <%= link_to job_path(id: job.id), class: "img" do %>
       <%= image_tag url_for(job.post_image), class: "img" %>
       <span class="position"><%= t "recruitment_post.position.#{job.position}" %></span>
     <% end %>
     <div class="text p-4">
       <span class="type"><%= t "recruitment_post.type.#{job.type_of_work}" %></span>
-      <h3><a href="#"><%= job.user.institution.institution_name %></a></h3>
+      <h3><%= link_to job.user.institution.institution_name, job_path(id: job.id) %></h3>
       <div><i class="fa fa-map-marker"></i><%= job.user.institution.address %></div>
       <div class="hover_text">
         <div class=""><i class="fas fa-user-md"></i><%= job.field.field_name %></div>

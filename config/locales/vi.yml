@@ -8,10 +8,16 @@ vi:
       default: "%m/%d/%Y %H:%M"
       short: "%H:%M"
       notime: "%m/%d/%Y"
+    count:
+      days: "ngày"
+      h: "giờ"
+      m: "phút"
+      s: "giây"
   wage: "%{wage} VND"
   btn:
     more: "Xem thêm"
     apply: "Ứng tuyển"
+    search: "Tìm kiếm"
   email:
     btn:
       active: "Kích hoạt"
@@ -102,6 +108,19 @@ vi:
   about:
     about_us: "Về chúng tôi"
     description: "Fast Recruitment System là dự án được thực hiện nhằm mục đích thay đổi việc tuyển dụng trở nên thuận tiện, nhanh chóng và hiệu quả hơn."
+  job:
+    nil: "Công việc không tồn tại"
+    description: "Mô tả công việc"
+    related: "Công việc liên quan"
+    field: "Lĩnh vực"
+    type: "Thời gian"
+    position: "Vị trí"
+    salary: "Lương"
+    salary_arrange:
+      asc: "Tăng dần"
+      desc: "Giảm dần"
+    exp: "Kinh nghiệm"
+    exp_search: "Nhập số"
   recruitment_post:
     position:
       director: "Giám đốc"

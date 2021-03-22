@@ -33,4 +33,5 @@ class Job < ApplicationRecord
   enum status: {locked: 0, actived: 1}
 
   scope :first_12, ->{order(created_at: :desc).limit 12}
+  scope :related_jobs, ->(field_id){where("field_id = ?", field_id)}
 end

@@ -1,7 +1,7 @@
 <div class="hero-wrap js-fullheight d-sm-none d-lg-block">
   <div class="overlay"></div>
   <div class="container">
-    <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
+    <div class="row slider-text js-fullheight align-items-center" data-scrollax-parent="true">
       <div class="col-md-7">
         <h1><%= t "index.title" %></h1>
         <span class="subheading"><%= t "index.slogan" %></span>
@@ -72,8 +72,8 @@
       </div>
     </div>
     <div class="row">
-      <%= render partial: "homepage/job", collection: @jobs %>
+      <%= render partial: "jobs/job", collection: @jobs %>
     </div>
-    <div class="w-100 text-center"><%= link_to t("btn.more"), "#", class: "btn btn-primary" %></div><!-- change -->
+    <div class="w-100 text-center"><%= link_to t("btn.more"), jobs_path, class: "btn btn-primary" %></div>
   </div>
 </section>
