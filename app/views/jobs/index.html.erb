@@ -30,12 +30,10 @@
                       </div>
                       <div class="col-md d-flex">
                         <div class="form-group p-4">
-                          <label for="#"><%= t "job.position" %></label>
+                          <label for="#"><%= t "job.exp" %></label>
                           <div class="form-field">
-                            <div class="select-wrap">
-                              <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                              <%= select_tag :position, options_for_select(Job.positions.map), include_blank: :All, class: "form-control" %>
-                            </div>
+                            <div class="icon"><span class="fas fa-medal"></span></div>
+                            <%= number_field :candidate_experience, "", class: "form-control", placeholder: "#{t "job.exp_search"}" %>
                           </div>
                         </div>
                       </div>
@@ -44,16 +42,7 @@
                           <label for="#"><%= t "job.salary" %></label>
                           <div class="form-field">
                             <div class="icon"><span class="fa fa-calendar"></span></div>
-                            <%= select_tag :salary, options_for_select([[t("job.salary_arrange.asc"), 0],[t("job.salary_arrange.desc"), 1]]) , class: "form-control" %>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md d-flex">
-                        <div class="form-group p-4">
-                          <label for="#"><%= t "job.exp" %></label>
-                          <div class="form-field">
-                            <div class="icon"><span class="fas fa-medal"></span></div>
-                            <%= number_field :candidate_experience, "", class: "form-control", placeholder: "#{t "job.exp_search"}" %>
+                            <%= select_tag :salary, options_for_select([[t("job.salary_arrange.asc"), :asc],[t("job.salary_arrange.desc"), :desc]]) , class: "form-control" %>
                           </div>
                         </div>
                       </div>

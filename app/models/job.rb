@@ -33,5 +33,40 @@ class Job < ApplicationRecord
   enum status: {locked: 0, actived: 1}
 
   scope :first_12, ->{order(created_at: :desc).limit 12}
-  scope :related_jobs, ->(field_id){where("field_id = ?", field_id)}
+
+  field = lambda do |field_id|
+    if field_id.present?
+      where("field_id = ?", field_id)
+    else
+      all
+    end
+  end
+  scope :field, field
+
+  type = lambda do |type_of_work|
+    if type_of_work.present?
+      where("type_of_work = ?", type_of_work)
+    else
+      all
+    end
+  end
+  scope :type, type
+
+  arr = lambda do |arrange_salary|
+    if arrange_salary == "asc"
+      order(min_salary: :asc)
+    else
+      order(min_salary: :desc)
+    end
+  end
+  scope :arrange_salary, arr
+
+  experience = lambda do |exp|
+    if exp.present?
+      where("candidate_experience <= ?", exp)
+    else
+      all
+    end
+  end
+  scope :experience, experience
 end
