@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Sửa thông tin</h2>
+					<h2 class="heading-section"><%= t "update.edit_profile" %></h2>
 				</div>
 			</div>
 			<div class="justify-content-center">
@@ -46,8 +46,8 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <span id="btn-register-prev" class="form-control btn btn-white col-5 mx-auto">Thoát</span>
-                  <%= f.submit "Cập nhật", class: "form-control btn btn-primary submit px-3 col-5 mx-auto" %>
+                  <%= link_to t("update.btn_out"), root_path, id: "btn-register-prev", class: "form-control btn btn-white col-5 mx-auto" %>
+                  <%= f.submit t("update.btn_update"), class: "form-control btn btn-primary submit px-3 col-5 mx-auto" %>
                 </div>
               </div>
             <% end %>

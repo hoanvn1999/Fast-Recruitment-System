@@ -119,6 +119,39 @@ h5,
   border: 2px solid $primary;
 }
 
+.img-job {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.email-w {
+  width: 310px;
+}
+
+.nav-institution {
+  overflow: hidden;
+  background-color: #f1f1f1;
+	a {
+    display: block;
+    color: $darken;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    &:hover {
+      border-bottom: 3px solid $primary;
+      &.active {
+        border-bottom: 0px solid transparent;
+      }
+    }
+    &.active {
+      color: $primary;
+      border-bottom: 3px solid $primary;
+    }
+  }
+}
+
 .ftco-navbar-light {
   background: transparent !important;
   position: absolute;
@@ -1643,4 +1676,12 @@ textarea.form-control {
       }
     }
   }
+}
+
+.btn-create-business {
+  font-size: 25px;
+}
+
+.company-section {
+  padding-top: 0;
 }

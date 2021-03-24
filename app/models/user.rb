@@ -27,6 +27,8 @@ class User < ApplicationRecord
 
   enum role: {recruiter: 0, candidate: 1, admin: 2}
 
+  scope :institution_users, ->(id){where("institution_id = ?", id)}
+
   has_secure_password
 
   def self.digest string

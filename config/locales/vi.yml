@@ -7,7 +7,7 @@ vi:
     formats:
       default: "%m/%d/%Y %H:%M"
       short: "%H:%M"
-      notime: "%m/%d/%Y"
+      notime: "%d/%m/%Y"
     count:
       days: "ngày"
       h: "giờ"
@@ -18,6 +18,8 @@ vi:
     more: "Xem thêm"
     apply: "Ứng tuyển"
     search: "Tìm kiếm"
+    detail: "Chi tiết"
+    remove: "Sa thải"
   email:
     btn:
       active: "Kích hoạt"
@@ -96,6 +98,9 @@ vi:
       input_field: "Vui lòng nhập mật khẩu"
       expired: "Yêu cầu đổi mật khẩu đã hết hạn"
   update:
+    edit_info: "Chỉnh sửa thông tin cá nhân"
+    btn_update: "Cập nhật"
+    btn_out: "Đóng"
     update_passwd: "Đổi mật khẩu"
     old_passwd: "Mật khẩu cũ"
   term:
@@ -121,6 +126,20 @@ vi:
       desc: "Giảm dần"
     exp: "Kinh nghiệm"
     exp_search: "Nhập số"
+  institution:
+    nil: "Doanh nghiệp không tồn tại"
+    deny: "Bạn không có quyền truy cập trang này"
+    btn_create: "Tạo doanh nghiệp của bạn"
+    about_us: "Giới thiệu về công ty"
+    our_post: "Tin tuyển dụng của doanh nghiệp"
+    hr: "Nhân sự tuyển dụng"
+    intro: "Giới thiệu"
+    img: "Hình ảnh"
+    title: "Tiêu đề"
+    due_date: "Ngày kết thúc"
+    choose: "Lựa chọn"
+    btn_add_user: "Thêm nhà tuyển dụng"
+    watch_more: "Xem thêm về doanh nghiệp này"
   recruitment_post:
     position:
       director: "Giám đốc"

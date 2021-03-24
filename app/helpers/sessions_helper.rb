@@ -33,6 +33,11 @@ module SessionsHelper
     current_user.recruiter?
   end
 
+  # Authentication recruiter to perform functions of recruiter
+  def current_candidate?
+    current_user.candidate?
+  end
+
   def remember user
     user.remember
     cookies.permanent.signed[:user_id] = user.id

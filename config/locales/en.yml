@@ -18,6 +18,8 @@ en:
     more: "Watch more"
     apply: "Apply"
     search: "Search"
+    detail: "Details"
+    remove: "Remove"
   email:
     btn:
       active: "Activate"
@@ -96,6 +98,9 @@ en:
       input_field: "Please enter password"
       expired: "Password reset has expired."
   update:
+    edit_info: "Edit profile"
+    btn_update: "Update"
+    btn_out: "Close"
     update_passwd: "Change password"
     old_passwd: "Old password"
   term:
@@ -121,6 +126,20 @@ en:
       desc: "Descending"
     exp: "Experience"
     exp_search: "Enter number"
+  institution:
+    nil: "The business is not available"
+    deny: "You don't have permission"
+    btn_create: "Create your own business"
+    about_us: "About our business"
+    our_post: "Our recruitment posts"
+    hr: "Recruiment human resources"
+    intro: "Introduction"
+    img: "Picture"
+    title: "Title"
+    due_date: "Due date"
+    choose: "Control"
+    btn_add_user: "Add new recruiter"
+    watch_more: "See more about this business"
   recruitment_post:
     position:
       director: "Director"

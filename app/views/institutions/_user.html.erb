@@ -1,0 +1,9 @@
+<tr>
+  <th scope="row" class="text-center"><%= image_tag user.avatar, class: "img-job" %></th>
+  <td><%= user.full_name %></td>
+  <td class="text-center"><%= user.email %></td>
+  <td class="text-center"><%= user.phone_number %></td>
+  <td class="text-center">
+    <%= link_to t("btn.remove"), "#", class: "btn btn-danger" %>
+    </td>
+</tr>
