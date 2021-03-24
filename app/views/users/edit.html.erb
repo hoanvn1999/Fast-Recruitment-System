@@ -12,7 +12,7 @@
               <div class="signin-form">
                 <div class="row">
                   <div class="col-12 text-center">
-                    <%= f.label :avatar do%>
+                    <%= f.label :avatar do %>
                       <%= f.file_field :avatar, accept:"image/*", class:"d-none" %>
                       <% if current_user.avatar.attached? %>
                         <%= image_tag(current_user.avatar, alt: current_user.full_name, id:"output_image", class:"img-avt") %>

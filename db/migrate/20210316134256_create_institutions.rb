@@ -5,6 +5,7 @@ class CreateInstitutions < ActiveRecord::Migration[6.0]
       t.text :address
       t.string :logo
       t.text :description
+      t.integer :created_by
 
       t.timestamps
     end

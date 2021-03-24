@@ -15,8 +15,35 @@ Rails.application.routes.draw do
     resources :jobs, only: [:show, :index]
     resources :institutions, only: :show do
       member do
-        get :jobs
-        get :users
+        get :jobs, :users
+      end
+    end
+
+    namespace :recruiter do
+      resources :institutions, except: [:index, :show, :destroy]
+      resources :jobs, except: [:show, :destroy] do
+        member do
+          patch :close
+        end
+      end
+      resources :users, only: [:index, :show]
+    end
+
+    namespace :candidate do
+      resources :recruitments, only: [:create]
+      resources :curriculum_vitaes, except: [:index, :show, :destroy]
+    end
+
+    namespace :admin do
+      resources :jobs, only: :index do
+        member do
+          patch :open, :close
+        end
+      end
+      resources :users, only: :index do
+        member do
+          patch :active, :block
+        end
       end
     end
   end

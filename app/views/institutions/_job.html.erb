@@ -5,6 +5,8 @@
   <td class="text-center"><%= l(job.due_date,format: :notime) %></td>
   <td class="text-center">
     <%= link_to t("btn.detail"), job_path(id: job.id), class: "btn btn-secondary" %>
-    <%= link_to t("btn.apply"), "#", class: "btn btn-primary" %>
+    <% if current_user.institution_id != @institution.id %>
+      <%= link_to t("btn.apply"), "#", class: "btn btn-primary" %>
+    <% end %>
     </td>
 </tr>

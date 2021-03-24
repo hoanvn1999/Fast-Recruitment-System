@@ -20,6 +20,9 @@ en:
     search: "Search"
     detail: "Details"
     remove: "Remove"
+    update: "Update information"
+    create: "Create"
+    close: "Close"
   email:
     btn:
       active: "Activate"
@@ -43,6 +46,10 @@ en:
     update_fail: "Update failed, please check the information again"
     passwd_updated: "Your password has been successfully changed"
     change_pwd_fail: "Change password failed, please check the information again"
+    pls_login: "Please login first"
+    not_admin: "You are not an admin"
+    not_recruiter: "You are not a recruiter"
+    not_candidate: "You are not a candidate"
   index:
     title: "Fast Recruitment"
     slogan: "Quickly - Effortlessly - Conveniently"
@@ -140,6 +147,13 @@ en:
     choose: "Control"
     btn_add_user: "Add new recruiter"
     watch_more: "See more about this business"
+    create_success: "You have successfully created your business"
+    create_fail: "You have failed to create a business. Please try again."
+    update_success: "You have successfully updated your business"
+    update_fail: "You have failed to update a business. Please try again."
+    name: "Institution name"
+    address: "Address"
+    description: "Description about your business"
   recruitment_post:
     position:
       director: "Director"

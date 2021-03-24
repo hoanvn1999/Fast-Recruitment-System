@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.text "address"
     t.string "logo"
     t.text "description"
+    t.integer "created_by"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["institution_name"], name: "index_institutions_on_institution_name"

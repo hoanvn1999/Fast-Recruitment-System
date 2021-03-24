@@ -17,7 +17,8 @@ institution.save
 10.times do |n|
   institution = Institution.new(institution_name: Faker::Company.name,
                                 address: ["Da Nang", "Ha Noi", "HCM"].sample,
-                                description: Faker::Company.catch_phrase)
+                                description: Faker::Company.catch_phrase,
+                                created_by: rand(1..20))
   institution.logo.attach(io: File.open("app/assets/images/logos/#{n}.jpg"),
                               filename: "logo#{n}.jpg", content_type: "image/jpg")
   institution.save

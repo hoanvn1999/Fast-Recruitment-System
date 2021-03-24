@@ -22,7 +22,9 @@
             <th scope="col"><%= t "register.full_name" %></th>
             <th scope="col" class="text-center"><%= t "login.username" %></th>
             <th scope="col" class="text-center"><%= t "register.phone" %></th>
-            <th scope="col" class="text-center"><%= t "institution.choose" %></th>
+            <% if current_user.id == @institution.created_by %>
+              <th scope="col" class="text-center"><%= t "institution.choose" %></th>
+            <% end %>
           </tr>
         </thead>
         <tbody>

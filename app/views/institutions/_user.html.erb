@@ -3,7 +3,13 @@
   <td><%= user.full_name %></td>
   <td class="text-center"><%= user.email %></td>
   <td class="text-center"><%= user.phone_number %></td>
-  <td class="text-center">
-    <%= link_to t("btn.remove"), "#", class: "btn btn-danger" %>
-    </td>
+  <% if current_user.id == @institution.created_by %>
+    <% if current_user.institution_id != @institution.id %>
+      <td class="text-center">
+        <%= link_to t("btn.remove"), "#", class: "btn btn-danger" %>
+      </td>
+    <% else %>
+      <td class="text-center"><i>Root!</i></td>
+    <% end %>
+  <% end %>
 </tr>

@@ -14,7 +14,7 @@
     });
   }
 
-  $("#user_avatar").change(function (e) {
+  $("#user_avatar, #institution_logo").change(function (e) {
 
     for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
 
