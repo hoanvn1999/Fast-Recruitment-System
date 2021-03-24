@@ -2,19 +2,21 @@
   <div class="overlay"></div>
   <div class="container">
     <div class="row slider-text js-fullheight align-items-center" data-scrollax-parent="true">
-      <div class="col-md-7">
+      <div class="col<%= "-md-7" if current_candidate? %>">
         <h1><%= t "index.title" %></h1>
         <span class="subheading"><%= t "index.slogan" %></span>
         <p class="caps"><i class="fas fa-check-square mr-2"></i><%= t "index.benefit_1" %></p>
         <p class="caps"><i class="fas fa-check-square mr-2"></i><%= t "index.benefit_2" %></p>
         <p class="caps"><i class="fas fa-check-square mr-2"></i><%= t "index.benefit_3" %></p>
       </div>
-      <div class="col-md-4 create-cv ml-auto">
-        <div class="subheading"><%= t "index.create_cv_now" %></div>
-        <%= link_to "#", class: "icon-video d-flex align-items-center justify-content-center" do %><!-- change -->
-          <span class="fa fa-play"></span>
-        <% end %>
-      </div>
+      <% if current_user.blank? || current_candidate? %>
+        <div class="col-md-4 create-cv ml-auto">
+          <div class="subheading"><%= t "index.create_cv_now" %></div>
+          <%= link_to "#", class: "icon-video d-flex align-items-center justify-content-center" do %><!-- change -->
+            <span class="fa fa-play"></span>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

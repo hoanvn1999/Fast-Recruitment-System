@@ -1,0 +1,10 @@
+<tr>
+  <th scope="row" class="text-center"><%= image_tag job.post_image, class: "img-job" %></th>
+  <td><%= job.title %></td>
+  <td class="text-center"><%= t("recruitment_post.position.#{job.position}") %></td>
+  <td class="text-center"><%= l(job.due_date,format: :notime) %></td>
+  <td class="text-center">
+    <%= link_to t("btn.detail"), job_path(id: job.id), class: "btn btn-secondary" %>
+    <%= link_to t("btn.apply"), "#", class: "btn btn-primary" %>
+    </td>
+</tr>

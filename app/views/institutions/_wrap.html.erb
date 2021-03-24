@@ -1,0 +1,17 @@
+<section class="hero-wrap" style="height: 300px">
+  <div class="overlay" style="height: 300px"></div>
+  <div class="container">
+    <div class="row slider-text align-items-center" style="height: 300px">
+      <div class="col-md-2 mt-5">
+        <%= image_tag @institution.logo, alt: @institution.institution_name, class: "img-avt" %>
+      </div>
+      <div class="col-md-10 mt-5 text-center">
+        <% if current_recruiter? && @institution.id == 1 %>
+          <%= link_to t("institution.btn_create"), "#", class: "btn btn-primary btn-create-business" %>
+        <% else %>
+          <h1 class="text-center"><%= @institution.institution_name %></h1>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
