@@ -16,7 +16,7 @@
           <li class="nav-item"><%= link_to t("menu_list.company"), root_path, class:"nav-link" %></li><!--Quản lý bài đăng-->
         <% elsif logged_in? && current_user.recruiter? %>
           <li class="nav-item <%= current_class?("institutions") %>"><%= link_to t("menu_list.company"), institution_path(id: current_user.institution_id), class:"nav-link" %></li><!--Thông tin công ty, nếu chưa có thì cập nhật lại DB-->
-          <li class="nav-item"><%= link_to t("menu_list.manage_posts"), root_path, class:"nav-link" %></li><!--Quản lý bài đăng-->
+          <li class="nav-item <%= current_class?("recruiter/jobs") %>"><%= link_to t("menu_list.manage_posts"), recruiter_jobs_path, class:"nav-link" %></li><!--Quản lý bài đăng-->
           <!--Hiển thị danh sách các tin tuyển dụng, mỗi tin có nút chi tiết những người đã ứng tuyển-->
         <% else %>
           <li class="nav-item <%= current_class?("jobs") %>"><%= link_to t("menu_list.recruitment"), jobs_path, class:"nav-link" %></li>
