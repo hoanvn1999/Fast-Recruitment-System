@@ -20,6 +20,9 @@ vi:
     search: "Tìm kiếm"
     detail: "Chi tiết"
     remove: "Sa thải"
+    update: "Cập nhật thông tin"
+    create: "Tạo mới"
+    close: "Thoát"
   email:
     btn:
       active: "Kích hoạt"
@@ -43,6 +46,10 @@ vi:
     update_fail: "Cập nhật thất bại, vui lòng kiểm tra lại thông tin "
     passwd_updated: "Mật khẩu của bạn đã được thay đổi thành công"
     change_pwd_fail: "Đổi mật khẩu thất bại, vui lòng kiểm tra lại thông tin "
+    pls_login: "Vui lòng đăng nhập để sử dụng tính năng này"
+    not_admin: "Bạn không nằm trong vai trò là một quản trị viên"
+    not_recruiter: "Bạn không nằm trong vai trò là một nhà tuyển dụng."
+    not_candidate: "Bạn không nằm trong vai trò là một ứng viên."
   index:
     title: "Fast Recruitment"
     slogan: "Thuận tiện - Nhanh chóng - Hiệu quả"
@@ -140,6 +147,13 @@ vi:
     choose: "Lựa chọn"
     btn_add_user: "Thêm nhà tuyển dụng"
     watch_more: "Xem thêm về doanh nghiệp này"
+    create_success: "Bạn đã tạo thành công doanh nghiệp của mình"
+    create_fail: "Bạn đã tạo doanh nghiệp thất bại. Vui lòng thử lại."
+    update_success: "Bạn đã cập nhật thành công doanh nghiệp của mình"
+    update_fail: "Bạn đã cập nhật doanh nghiệp thất bại. Vui lòng thử lại."
+    name: "Tên doanh nghiệp"
+    address: "Địa chỉ"
+    description: "Mô tả về doanh nghiệp"
   recruitment_post:
     position:
       director: "Giám đốc"
