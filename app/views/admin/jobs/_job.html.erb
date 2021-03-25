@@ -8,9 +8,9 @@
       <%= t "btn.detail" %>
     </button>
     <% if job.closed? %>
-      <%= link_to t("job.btn_open"), open_admin_job_path(id: job.id), class: "btn btn-success", method: :patch, remote: true %>
+      <%= link_to t("job.btn_open"), open_admin_job_path(id: job.id), class: "btn btn-success", method: :patch, remote: true, "data-confirm": t("sure?") %>
     <% else %>
-      <%= link_to t("job.btn_close"), admin_job_path(id: job.id), class: "btn btn-danger", method: :patch, remote: true %>
+      <%= link_to t("job.btn_close"), admin_job_path(id: job.id), class: "btn btn-danger", method: :patch, remote: true, "data-confirm": t("sure?") %>
     <% end %>
   </td>
 </tr>

@@ -90,10 +90,10 @@ class Job < ApplicationRecord
 
   j_i = lambda do |institution_id|
     find_by_sql("
-      SELECT * FROM jobs
-      INNER JOIN users ON jobs.user_id = users.id
-      INNER JOIN institutions ON users.id = institutions.id
-      WHERE institutions.id = #{institution_id}")
+      SELECT jobs.* FROM jobs, users, institutions
+        WHERE jobs.user_id = users.id
+	        AND users.institution_id = institutions.id
+          AND institutions.id = #{institution_id}")
   end
   scope :job_institution, j_i
 end

@@ -46,7 +46,5 @@ class Admin::UsersController < AdminController
 
   def get_all_user
     @users = User.role(params[:role]).email(params[:email])
-                 .paginate(page: params[:page],
-                           per_page: Settings.per_page.default)
   end
 end

@@ -14,6 +14,7 @@ vi:
       m: "phút"
       s: "giây"
   wage: "%{wage} VND"
+  sure?: "Bạn có chắc chắn với hành động này?"
   btn:
     more: "Xem thêm"
     apply: "Ứng tuyển"
@@ -176,6 +177,9 @@ vi:
     name: "Tên doanh nghiệp"
     address: "Địa chỉ"
     description: "Mô tả về doanh nghiệp"
+    add_hr_success: "Thêm nhà tuyển dụng thành công"
+    add_hr_fail: "Email không đúng hoặc nhà tuyển dụng này đang làm việc ở một doanh nghiệp khác."
+    remove_hr_fail: "Sa thải nhà tuyển dụng thất bại"
   recruitment_post:
     position:
       director: "Giám đốc"
