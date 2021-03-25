@@ -30,9 +30,18 @@ class Job < ApplicationRecord
   enum type_of_work: {full_time: 0, part_time: 1, remote: 2}
   enum position: {director: 0, manager: 1, leader: 2,
                   staff: 3, fresher: 4, intern: 5}
-  enum status: {locked: 0, actived: 1}
+  enum status: {closed: 0, actived: 1}
 
   scope :first_12, ->{order(created_at: :desc).limit 12}
+
+  user = lambda do |user_id|
+    if user_id.present?
+      where("user_id = ?", user_id)
+    else
+      all
+    end
+  end
+  scope :user_id, user
 
   field = lambda do |field_id|
     if field_id.present?

@@ -1,0 +1,81 @@
+<div class="short-wrap"></div>
+
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center pb-4">
+      <div class="col-md-12 heading-section text-center">
+        <h2 class="subheading mb-4"><%= t "job.create" %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <%= form_for [:recruiter, @job], url: recruiter_jobs_path, class: "form-group", method: :post do |f| %>
+          <div class="row mb-2">
+            <div class="col-md-4 text-center">
+              <%= f.label :post_image do %>
+                <%= f.file_field :post_image, accept:"image/*", class:"d-none" %>
+                <%= image_tag "jobs/8.jpg", id:"output_image", class:"img-avt" %>
+              <% end %>
+            </div>
+            <div class="col-md-8">
+              <div class="text-danger d-inline">*</div>
+              <%= f.label :title, t("job.title") %>
+              <%= f.text_field :title, class: "form-control", required: true %>
+              <div class="row">
+                <div class="col-6">
+                  <div class="text-danger d-inline">*</div>
+                  <%= f.label :field_id, t("job.field") %>
+                  <%= f.select :field_id, options_for_select(Field.select("field_name, id").map{|f| [f.field_name, f.id]}), {}, class: "form-control" %>
+                </div>
+                <div class="col-6">
+                  <div class="text-danger d-inline">*</div>
+                  <%= f.label :due_date, t("job.due_date") %>
+                  <%= f.date_field :due_date, class: "form-control", required: true %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="text-danger d-inline">*</div>
+              <%= f.label :position, t("job.position") %>
+              <%= f.select :position, options_for_select(Job.positions.keys), {}, class: "form-control" %>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="text-danger d-inline">*</div>
+              <%= f.label :candidate_experience, t("job.exp") %>
+              <%= f.number_field :candidate_experience, class: "form-control", required: true %>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="text-danger d-inline">*</div>
+              <%= f.label :number_of_staff, t("job.number_of_staff") %>
+              <%= f.number_field :number_of_staffs, class: "form-control", required: true %>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="text-danger d-inline">*</div>
+              <%= f.label :type_of_work, t("job.type") %>
+              <%= f.select :type_of_work, options_for_select(Job.type_of_works.keys), {}, class: "form-control" %>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="text-danger d-inline">*</div>
+              <%= f.label :min_salary, t("job.min_salary") %>
+              <%= f.number_field :min_salary, class: "form-control", required: true %>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="text-danger d-inline">*</div>
+              <%= f.label :max_salary, t("job.max_salary") %>
+              <%= f.number_field :max_salary, class: "form-control", required: true %>
+            </div>
+          </div>
+          <div class="text-danger d-inline">*</div>
+          <%= f.label :content, t("job.description") %>
+          <%= f.text_area :content, class: "form-control pt-5 pb-5 mb-3", required: true %>
+          <div class="text-center mb-5">
+            <%= link_to t("btn.close"), root_path, class: "btn btn-secondary", "data-dismiss": "modal" %>
+            <%= f.submit t("btn.create"), class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

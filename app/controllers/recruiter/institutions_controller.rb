@@ -8,7 +8,7 @@ class Recruiter::InstitutionsController < RecruiterController
   def create
     @institution = Institution.new institution_params
     @institution.created_by = current_user.id
-    if @institution.save && check_creation_condidion
+    if check_creation_condidion && @institution.save
       flash[:success] = t "institution.create_success"
       redirect_to institution_path(id: @institution.id)
     else

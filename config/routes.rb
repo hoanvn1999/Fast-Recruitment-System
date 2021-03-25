@@ -30,8 +30,8 @@ Rails.application.routes.draw do
     end
 
     namespace :candidate do
-      resources :recruitments, only: [:create]
       resources :curriculum_vitaes, except: [:index, :show, :destroy]
+      resources :recruitments, only: [:create]
     end
 
     namespace :admin do

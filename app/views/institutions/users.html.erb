@@ -11,7 +11,7 @@
     <div class="container">
       <%= form_tag institution_path, method: :patch, class: "input-group justify-content-end mb-3" do %>
         <div class="form-outline">
-          <%= email_field_tag :email, "", class:"form-control email-w", placeholder: "#{t "login.username"}" %>
+          <%= email_field_tag :email, "", class:"form-control email-w", placeholder: "#{t "login.username"}", required: true %>
         </div>
         <%= submit_tag t("institution.btn_add_user"), class:"btn btn-success" %>
       <% end %>

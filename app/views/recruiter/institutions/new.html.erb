@@ -20,15 +20,15 @@
             <div class="col-md-8">
               <div class="text-danger d-inline">*</div>
               <%= f.label :institution_name, t("institution.name") %>
-              <%= f.text_field :institution_name, class: "form-control" %>
+              <%= f.text_field :institution_name, class: "form-control", required: true %>
               <div class="text-danger d-inline">*</div>
               <%= f.label :address, t("institution.address") %>
-              <%= f.text_field :address, class: "form-control" %>
+              <%= f.text_field :address, class: "form-control", required: true %>
             </div>
           </div>
           <div class="text-danger d-inline">*</div>
           <%= f.label :description, t("institution.description") %>
-          <%= f.text_area :description, class: "form-control pt-5 pb-5 mb-3" %>
+          <%= f.text_area :description, class: "form-control pt-5 pb-5 mb-3", required: true %>
           <div class="text-center mb-5">
             <%= link_to t("btn.close"), root_path, class: "btn btn-secondary", "data-dismiss": "modal" %>
             <%= f.submit t("btn.create"), class: "btn btn-primary" %>

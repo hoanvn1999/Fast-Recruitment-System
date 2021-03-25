@@ -12,10 +12,10 @@
             <%= form_for :session, url: login_path do |f| %>
               <div class="signin-form">
                 <div class="form-group">
-                  <%= f.email_field :email, class: "form-control", placeholder: "#{t("login.username")}" %>
+                  <%= f.email_field :email, class: "form-control", placeholder: "#{t("login.username")}", required: true %>
                 </div>
                 <div class="form-group">
-                  <%= f.password_field :password, class: "form-control", placeholder: "#{t("login.passwd")}" %>
+                  <%= f.password_field :password, class: "form-control", placeholder: "#{t("login.passwd")}", required: true %>
                   <span class="toggle-password" toggle="#session_password"><i class="eye-pic fa fa-fw fa-eye field-icon"></i></span>
                 </div>
                 <div class="form-group">
