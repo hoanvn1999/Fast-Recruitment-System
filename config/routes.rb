@@ -13,9 +13,10 @@ Rails.application.routes.draw do
     resources :account_activations, only: :edit
     resources :password_resets, except: [:index, :show, :destroy]
     resources :jobs, only: [:show, :index]
-    resources :institutions, only: :show do
+    resources :institutions, only: [:show, :update] do
       member do
-        get :jobs, :users
+        get :info, :jobs, :users
+        patch :fire
       end
     end
 

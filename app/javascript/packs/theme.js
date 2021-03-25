@@ -2,6 +2,11 @@
 
   "use strict";
 
+  $(".nav-link").on("click", function() {
+    $(".nav-link").removeClass("active");
+    $(this).addClass("active");
+  });
+
   for (let i = 0; i < $('.toggle-password').length; i++) {
     $('.toggle-password').eq(i).click(function () {
       $('.eye-pic').eq(i).toggleClass("fa-eye fa-eye-slash");

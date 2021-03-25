@@ -11,11 +11,13 @@ class Admin::JobsController < AdminController
           flash[:success] = t "job.update_success"
           redirect_to admin_jobs_path
         end
-        format.js {}
       else
-        flash.now[:warning] = t "job.update_fail"
-        render :edit
+        format.html do
+          flash[:warning] = t "job.update_fail"
+          redirect_to admin_jobs_path
+        end
       end
+      format.js {}
     end
   end
 
@@ -26,11 +28,13 @@ class Admin::JobsController < AdminController
           flash[:success] = t "job.update_success"
           redirect_to admin_jobs_path
         end
-        format.js {}
       else
-        flash.now[:warning] = t "job.update_fail"
-        render :edit
+        format.html do
+          flash[:warning] = t "job.update_fail"
+          redirect_to admin_jobs_path
+        end
       end
+      format.js {}
     end
   end
 
@@ -46,7 +50,5 @@ class Admin::JobsController < AdminController
 
   def get_all_job
     @jobs = Job.title(params[:title])
-               .paginate(page: params[:page],
-                         per_page: Settings.per_page.default)
   end
 end

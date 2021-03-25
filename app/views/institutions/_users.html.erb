@@ -1,0 +1,26 @@
+<section>
+  <div class="container">
+    <%= form_tag institution_path, method: :patch, class: "input-group justify-content-end mb-3", remote: true do %>
+      <div class="form-outline">
+        <%= email_field_tag :email, "", class:"form-control email-w", placeholder: "#{t "login.username"}", required: true %>
+      </div>
+      <%= submit_tag t("institution.btn_add_user"), class:"btn btn-success" %>
+    <% end %>
+    <table class="table table-striped">
+      <thead class="bg-primary">
+        <tr>
+          <th scope="col" class="text-center"><%= t "institution.img" %></th>
+          <th scope="col"><%= t "register.full_name" %></th>
+          <th scope="col" class="text-center"><%= t "login.username" %></th>
+          <th scope="col" class="text-center"><%= t "register.phone" %></th>
+          <% if current_user.id == @institution.created_by %>
+            <th scope="col" class="text-center"><%= t "institution.choose" %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "institutions/user", collection: @users %>
+      </tbody>
+    </table>
+  </div>
+</section>

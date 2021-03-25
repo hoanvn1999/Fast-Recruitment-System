@@ -14,6 +14,7 @@ en:
       m: "m"
       s: "s"
   wage: "$%{wage}"
+  sure?: "Are you sure?"
   btn:
     more: "Watch more"
     apply: "Apply"
@@ -175,6 +176,9 @@ en:
     name: "Institution name"
     address: "Address"
     description: "Description about your business"
+    add_hr_success: "Success. Recruiter has been added to your business"
+    add_hr_fail: "The email doesn't exist or this employer is working in another business."
+    remove_hr_fail: "Remove recruiter failed"
   recruitment_post:
     position:
       director: "Director"

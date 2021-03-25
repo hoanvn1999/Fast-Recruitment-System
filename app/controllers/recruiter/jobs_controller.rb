@@ -1,9 +1,8 @@
 class Recruiter::JobsController < RecruiterController
   before_action :get_job, only: [:edit, :update, :close]
+  before_action :get_all_jobs, only: [:index, :close]
 
-  def index
-    @jobs = Job.user_id current_user.id
-  end
+  def index; end
 
   def new
     @job = Job.new
@@ -34,12 +33,19 @@ class Recruiter::JobsController < RecruiterController
   end
 
   def close
-    if @job.closed!
-      flash[:success] = t "job.update_success"
-      redirect_to recruiter_jobs_path
-    else
-      flash.now[:warning] = t "job.update_fail"
-      render :edit
+    respond_to do |format|
+      if @job.closed!
+        format.html do
+          flash[:success] = t "job.update_success"
+          redirect_to recruiter_jobs_path
+        end
+      else
+        format.html do
+          flash[:warning] = t "job.update_fail"
+          redirect_to recruiter_jobs_path
+        end
+      end
+      format.js {}
     end
   end
 
@@ -51,6 +57,10 @@ class Recruiter::JobsController < RecruiterController
 
     flash[:danger] = t "job.nil"
     redirect_to new_recruiter_job_path
+  end
+
+  def get_all_jobs
+    @jobs = Job.user_id current_user.id
   end
 
   def job_params

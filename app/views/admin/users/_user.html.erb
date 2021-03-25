@@ -12,9 +12,9 @@
     </button>
     <% if !user.admin? %>
       <% if user.actived? %>
-        <%= link_to t("account.btn_block"), block_admin_user_path(id: user.id, role: params[:role]), class: "btn btn-danger", method: :patch, remote: true %>
+        <%= link_to t("account.btn_block"), block_admin_user_path(id: user.id, role: params[:role]), class: "btn btn-danger", method: :patch, remote: true, "data-confirm": t("sure?") %>
       <% else %>
-        <%= link_to t("account.btn_active"), active_admin_user_path(id: user.id, role: params[:role]), class: "btn btn-success", method: :patch, remote: true %>
+        <%= link_to t("account.btn_active"), active_admin_user_path(id: user.id, role: params[:role]), class: "btn btn-success", method: :patch, remote: true, "data-confirm": t("sure?") %>
       <% end %>
     <% end %>
   </td>

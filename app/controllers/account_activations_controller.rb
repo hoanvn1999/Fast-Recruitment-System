@@ -1,10 +1,10 @@
 class AccountActivationsController < ApplicationController
   def edit
     user = User.find_by email: params[:email]
-    if user && !user.activated &&
-       user.authenticated?(:activation, params[:id])
-      user.update :activated, true
-      user.update :actived_at, Time.zone.now
+    if user&.blocked? &&
+       user&.authenticated?(:activation, params[:id])
+      user.actived!
+      user.update actived_at: Time.zone.now
       log_in user
       flash[:success] = t "account.activated"
     else

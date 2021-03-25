@@ -12,3 +12,4 @@ job:
 per_page:
   index: 9
   default: 15
+  manage_table: 5
