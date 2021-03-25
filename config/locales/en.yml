@@ -36,6 +36,9 @@ en:
       reset_passwd: "We receive a request to change your password. If you don't take this action, please ignore this email and continue using it. To change your password, please click on the link below:"
     signature: "Best regards,<br>The Fast Recruitment team"
   account:
+    btn_block: "Block"
+    btn_active: "Active"
+    role: "Role"
     activated: "Account activated!"
     invalid_active_link: "Invalid activation link"
     invalid_reset_passwd_link: "Invalid reset password link"
@@ -50,6 +53,9 @@ en:
     not_admin: "You are not an admin"
     not_recruiter: "You are not a recruiter"
     not_candidate: "You are not a candidate"
+    blocked: "Account blocked"
+    block_fail: "Block account failed"
+    activated_fail: "Active account failed"
   index:
     title: "Fast Recruitment"
     slogan: "Quickly - Effortlessly - Conveniently"
@@ -96,6 +102,7 @@ en:
     btn_next: "Next step"
     btn_prev: "Previous step"
     roles:
+      all: "All"
       candidate: "Candidate"
       recruiter: "Recruiter"
       admin: "Admin"
@@ -145,6 +152,7 @@ en:
     update_fail: "You have failed to update a post. Please try again."
     btn_close: "Stop"
     btn_update: "Edit"
+    btn_open: "Open"
     closed: "Closed!"
   institution:
     nil: "The business is not available"

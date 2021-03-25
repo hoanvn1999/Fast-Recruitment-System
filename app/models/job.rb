@@ -34,6 +34,15 @@ class Job < ApplicationRecord
 
   scope :first_12, ->{order(created_at: :desc).limit 12}
 
+  title = lambda do |name|
+    if name.present?
+      where("title LIKE ?", "%#{name}%")
+    else
+      all
+    end
+  end
+  scope :title, title
+
   user = lambda do |user_id|
     if user_id.present?
       where("user_id = ?", user_id)

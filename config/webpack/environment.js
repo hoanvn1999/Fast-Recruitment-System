@@ -9,4 +9,6 @@ environment.plugins.append("Provide", new webpack.ProvidePlugin({
     'window.jQuery': 'jquery'
 }))
 
+environment.config.set('resolve.alias', {jquery: 'jquery/src/jquery'});
+
 module.exports = environment

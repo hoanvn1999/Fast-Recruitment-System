@@ -1,0 +1,10 @@
+<tr>
+  <th scope="col" class="text-center"><%= t "institution.img" %></th>
+  <th scope="col"><%= t "register.full_name" %></th>
+  <th scope="col" class="text-center"><%= t "login.username" %></th>
+  <th scope="col" class="text-center"><%= t "register.phone" %></th>
+  <% if params[:role].blank? %>
+    <th scope="col" class="text-center"><%= t "account.role" %></th>
+  <% end %>
+  <th scope="col" class="text-center" style="width: 173px"><%= t "institution.choose" %></th>
+</tr>
