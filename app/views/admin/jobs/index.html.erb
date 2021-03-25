@@ -1,0 +1,33 @@
+<div class="short-wrap"></div>
+
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center pb-4">
+      <div class="col-md-12 heading-section text-center">
+        <h2 class="subheading mb-4"><%= t "menu_list.manage_posts" %></h2>
+      </div>
+    </div>
+    <%= form_tag admin_jobs_path, method: :get, class: "input-group justify-content-end mb-3" do %>
+      <div class="form-outline">
+        <%= text_field_tag :title, "", class:"form-control email-w", placeholder: "#{t "job.title"}", required: true %>
+      </div>
+      <%= submit_tag t("btn.search"), class:"btn btn-success" %>
+    <% end %>
+    <div class="row">
+      <table class="table table-striped">
+        <thead class="bg-primary">
+          <tr>
+            <th scope="col" class="text-center"><%= t "institution.img" %></th>
+            <th scope="col"><%= t "institution.title" %></th>
+            <th scope="col" class="text-center"><%= t "job.position" %></th>
+            <th scope="col" class="text-center"><%= t "job.due_date" %></th>
+            <th scope="col" class="text-center"><%= t "institution.choose" %></th>
+          </tr>
+        </thead>
+        <tbody id="jobs">
+          <%= render partial: "admin/jobs/job", collection: @jobs %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

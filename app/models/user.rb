@@ -26,10 +26,29 @@ class User < ApplicationRecord
   validates :address, presence: true
 
   enum role: {recruiter: 0, candidate: 1, admin: 2}
+  enum activated: {blocked: false, actived: true}
 
   scope :institution_users, ->(id){where("institution_id = ?", id)}
 
   has_secure_password
+
+  ro = lambda do |role|
+    if role.present?
+      where("role = ?", role)
+    else
+      all
+    end
+  end
+  scope :role, ro
+
+  email = lambda do |name|
+    if name.present?
+      where("email LIKE ?", "%#{name}%")
+    else
+      all
+    end
+  end
+  scope :email, email
 
   def self.digest string
     cost = if ActiveModel::SecurePassword.min_cost

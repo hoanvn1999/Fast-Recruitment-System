@@ -35,9 +35,9 @@ Rails.application.routes.draw do
     end
 
     namespace :admin do
-      resources :jobs, only: :index do
+      resources :jobs, only: [:index, :update] do
         member do
-          patch :open, :close
+          patch :open
         end
       end
       resources :users, only: :index do

@@ -36,6 +36,9 @@ vi:
       reset_passwd: "Chúng tôi nhận được yêu cầu thay đổi mật khẩu. Nếu bạn không thực hiện hành động này, vui lòng bỏ qua email này và tiếp tục sử dụng. Để đổi mật khẩu, vui lòng click vào link bên dưới:"
     signature: "Trân trọng,<br>Đội ngũ Fast Recruitment"
   account:
+    btn_block: "Khóa"
+    btn_active: "Mở"
+    role: "Vai trò"
     activated: "Tài khoản đã được kích hoạt!"
     invalid_active_link: "Link kích hoạt không chính xác"
     invalid_reset_passwd_link: "Link đổi mật khẩu không chính xác"
@@ -50,6 +53,9 @@ vi:
     not_admin: "Bạn không nằm trong vai trò là một quản trị viên"
     not_recruiter: "Bạn không nằm trong vai trò là một nhà tuyển dụng."
     not_candidate: "Bạn không nằm trong vai trò là một ứng viên."
+    blocked: "Đã khóa tài khoản"
+    block_fail: "Khóa tài khoản thất bại"
+    activated_fail: "Mở tài khoản thất bại"
   index:
     title: "Fast Recruitment"
     slogan: "Thuận tiện - Nhanh chóng - Hiệu quả"
@@ -71,7 +77,8 @@ vi:
       language: "Ngôn ngữ"
       english: "English"
       vietnamese: "Tiếng Việt"
-    manage_posts: "Bài đăng"
+    manage_posts: "Quản lý bài đăng"
+    manage_users: "Quản lý người dùng"
     manage_recruiters: "Nhà tuyển dụng"
     manage_candidates: "Ứng viên"
     login: "Đăng nhập"
@@ -96,6 +103,7 @@ vi:
     btn_next: "Tiếp theo"
     btn_prev: "Quay lại"
     roles:
+      all: "Tất cả"
       candidate: "Người ứng tuyển"
       recruiter: "Nhà tuyển dụng"
       admin: "Quản trị viên"
@@ -145,6 +153,7 @@ vi:
     update_fail: "Bạn đã cập nhật bài đăng thất bại. Vui lòng thử lại."
     btn_close: "Dừng tuyển"
     btn_update: "Sửa"
+    btn_open: "Mở"
     closed: "Đã đóng đơn!"
   institution:
     nil: "Doanh nghiệp không tồn tại"
