@@ -38,6 +38,20 @@ myself.avatar.attach(io: File.open("app/assets/images/avatars/myself.png"),
                          filename: "myself.jpg", content_type: "image/png")
 myself.save
 
+myself = User.new(email: "trungtran45612@gmail.com",
+                      phone_number: "+84 77 540 0703",
+                      full_name: "Trung",
+                      address: "Da Nang",
+                      date_of_birth: "01-01-1998",
+                      role: 1,
+                      institution_id: 1,
+                      activated: true,
+                      password: "trungvietnam",
+                      password_confirmation: "trungvietnam")
+myself.avatar.attach(io: File.open("app/assets/images/avatars/myself.png"),
+                         filename: "myself.jpg", content_type: "image/png")
+myself.save
+
 20.times do |n|
   user = User.new(email: "example-#{n+1}@example.com",
                   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
@@ -75,4 +89,21 @@ end
   job.post_image.attach(io: File.open("app/assets/images/jobs/#{rand(28)}.jpg"),
                             filename: "job#{n}.jpg", content_type: "image/jpg")
   job.save
+end
+
+15.times do |n|
+  if n != 0
+    CurriculumVitae.create!(user_id: 2, field_id: n)
+  end
+end
+
+jobs = Job.all
+
+jobs.each do |job|
+  cvs = CurriculumVitae.all
+  cvs.each do |cv|
+    if cv.field_id == job.field_id
+      Recruitment.create!(curriculum_vitae_id: cv.id, job_id: job.id)
+    end
+  end
 end

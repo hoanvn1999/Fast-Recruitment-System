@@ -7,10 +7,11 @@
     <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong<%= job.id %>">
       <%= t "btn.detail" %>
     </button>
+    <%= link_to t("job.btn_list"), cvs_recruiter_job_path(id: job.id), class: "btn btn-info" %>
     <% if job.closed? %>
         <%= t "job.closed" %>
     <% else %>
-      <%= link_to t("job.btn_update"), edit_recruiter_job_path(id: job.id), class: "btn btn-warning", remote: true %>
+      <%= link_to t("job.btn_update"), edit_recruiter_job_path(id: job.id), class: "btn btn-warning" %>
       <%= link_to t("job.btn_close"), close_recruiter_job_path(id: job.id), class: "btn btn-danger", method: :patch, remote: true %>
     <% end %>
   </td>

@@ -40,6 +40,7 @@ vi:
     btn_block: "Khóa"
     btn_active: "Mở"
     role: "Vai trò"
+    cv: "Sơ yếu lý lịch"
     activated: "Tài khoản đã được kích hoạt!"
     invalid_active_link: "Link kích hoạt không chính xác"
     invalid_reset_passwd_link: "Link đổi mật khẩu không chính xác"
@@ -108,6 +109,16 @@ vi:
       candidate: "Người ứng tuyển"
       recruiter: "Nhà tuyển dụng"
       admin: "Quản trị viên"
+  cv:
+    title:
+      about_me: "Tóm tắt bản thân"
+      education: "Học vấn"
+      experience: "Kinh nghiệm làm việc"
+      extra_experience: "Hoạt động"
+      skills: "Kỹ năng"
+      languages: "Ngôn ngữ"
+      hobbies: "Sở thích"
+      references: "Người tham khảo"
   reset_passwd:
       email_sent: "Email đã được gửi kèm yêu cầu đổi mật khẩu mới"
       email_nil: "Không tìm thấy địa chỉ email"
@@ -155,7 +166,12 @@ vi:
     btn_close: "Dừng tuyển"
     btn_update: "Sửa"
     btn_open: "Mở"
+    btn_list: "DS ứng tuyển"
+    btn_send_email: "Gửi email"
+    btn_evaluate: "Đánh giá tự động"
+    evaluate: "Đánh giá"
     closed: "Đã đóng đơn!"
+    list_cvs: "Danh sách ứng viên"
   institution:
     nil: "Doanh nghiệp không tồn tại"
     deny: "Bạn không có quyền truy cập trang này"

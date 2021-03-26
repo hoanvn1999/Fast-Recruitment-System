@@ -7,7 +7,7 @@
     <td class="text-center">
       <%= link_to t("btn.remove"), fire_institution_path(email: user.email), class: "btn btn-danger", method: :patch, remote: true, "data-confirm": t("sure?") %>
     </td>
-  <% else %>
+  <% elsif current_user.id == @institution.created_by %>
     <td class="text-center"><i>Root!</i></td>
   <% end %>
 </tr>

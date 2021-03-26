@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
   end
 
   create_table "curriculum_vitaes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "about_me"
     t.float "education_time"
     t.float "experience_time"
     t.float "extra_experience_time"
-    t.string "refer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
@@ -140,6 +140,16 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["curriculum_vitae_id"], name: "index_recruitments_on_curriculum_vitae_id"
   end
 
+  create_table "references", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_number"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "curriculum_vitae_id"
+    t.index ["curriculum_vitae_id"], name: "index_references_on_curriculum_vitae_id"
+  end
+
   create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "skill_name"
     t.datetime "created_at", precision: 6, null: false
@@ -180,5 +190,6 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
   add_foreign_key "jobs", "users"
   add_foreign_key "languages", "curriculum_vitaes"
   add_foreign_key "recruitments", "curriculum_vitaes"
+  add_foreign_key "references", "curriculum_vitaes"
   add_foreign_key "skills", "curriculum_vitaes"
 end

@@ -1,5 +1,5 @@
 class Recruiter::JobsController < RecruiterController
-  before_action :get_job, only: [:edit, :update, :close]
+  before_action :get_job, only: [:edit, :update, :close, :cvs]
   before_action :get_all_jobs, only: [:index, :close]
 
   def index; end
@@ -47,6 +47,11 @@ class Recruiter::JobsController < RecruiterController
       end
       format.js {}
     end
+  end
+
+  def cvs
+    @cvs = Job.find_by(id: params[:id]).curriculum_vitaes
+              .joins(:user).find_name(params[:full_name])
   end
 
   private

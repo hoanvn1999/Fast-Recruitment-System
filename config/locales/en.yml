@@ -40,6 +40,7 @@ en:
     btn_block: "Block"
     btn_active: "Active"
     role: "Role"
+    cv: "Curriculum vitae"
     activated: "Account activated!"
     invalid_active_link: "Invalid activation link"
     invalid_reset_passwd_link: "Invalid reset password link"
@@ -112,6 +113,17 @@ en:
       email_nil: "Email address not found"
       input_field: "Please enter password"
       expired: "Password reset has expired."
+
+  cv:
+    title:
+      about_me: "About me"
+      education: "Education"
+      experience: "Experience"
+      extra_experience: "Employment History"
+      skills: "Skills"
+      languages: "Languages"
+      hobbies: "Hobbies"
+      references: "References"
   update:
     edit_info: "Edit profile"
     btn_update: "Update"
@@ -154,7 +166,12 @@ en:
     btn_close: "Stop"
     btn_update: "Edit"
     btn_open: "Open"
+    btn_list: "List applied"
+    btn_send_email: "Send email"
+    btn_evaluate: "Automation Evaluate"
+    evaluate: "Evaluate"
     closed: "Closed!"
+    list_cvs: "List of candidates"
   institution:
     nil: "The business is not available"
     deny: "You don't have permission"

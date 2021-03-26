@@ -15,7 +15,7 @@
               <%= f.label :post_image do %>
                 <%= f.file_field :post_image, accept:"image/*", class:"d-none", required: true %>
                 <% if @job.post_image.attached? %>
-                  <%= image_tag(@job.post_image, alt: job.title, id:"output_image", class:"img-avt") %>
+                  <%= image_tag(@job.post_image, alt: @job.title, id:"output_image", class:"img-avt") %>
                 <% else %>
                   <%= image_tag "jobs/8.jpg", id:"output_image", class:"img-avt" %>
                 <% end %>
