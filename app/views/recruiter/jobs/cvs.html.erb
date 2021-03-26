@@ -1,0 +1,37 @@
+<div class="short-wrap"></div>
+
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center pb-4">
+      <div class="col-md-12 heading-section text-center">
+        <h2 class="subheading mb-4"><%= t "job.list_cvs" %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <%= form_tag  cvs_recruiter_job_path(id: @job.id), method: :get, class: "input-group justify-content-end mb-3" do %>
+        <div class="form-outline">
+          <%= text_field_tag :full_name, "", class:"form-control email-w", style: "height: 38px !important", placeholder: "#{t "register.full_name"}" %>
+        </div>
+        <%= submit_tag t("btn.search"), class:"btn btn-success mr-3" %>
+        <%= link_to t("job.btn_evaluate"), "#", class: "btn btn-info", remote: true %>
+      <% end %>
+      <table class="table table-striped">
+        <thead class="bg-primary">
+          <tr>
+            <th scope="col" class="text-center"><%= t "institution.img" %></th>
+          <th scope="col"><%= t "register.full_name" %></th>
+          <th scope="col" class="text-center"><%= t "login.username" %></th>
+          <th scope="col" class="text-center"><%= t "register.phone" %></th>
+          <th scope="col" class="text-center"><%= t "job.evaluate" %></th>
+          <% if current_user.id == @job.user_id %>
+            <th scope="col" class="text-center"><%= t "institution.choose" %></th>
+          <% end %>
+          </tr>
+        </thead>
+        <tbody id="jobs">
+          <%= render partial: "recruiter/jobs/cv", collection: @cvs %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

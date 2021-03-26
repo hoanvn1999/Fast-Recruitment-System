@@ -24,10 +24,15 @@ Rails.application.routes.draw do
       resources :institutions, except: [:index, :show, :destroy]
       resources :jobs, except: [:show, :destroy] do
         member do
+          get :cvs
           patch :close
         end
       end
-      resources :users, only: [:index, :show]
+      resources :curriculum_vitaes, only: :show do
+        member do
+          patch :send_email
+        end
+      end
     end
 
     namespace :candidate do

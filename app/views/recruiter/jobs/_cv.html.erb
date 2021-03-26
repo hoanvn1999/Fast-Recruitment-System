@@ -1,0 +1,13 @@
+<tr>
+  <th scope="row" class="text-center"><%= image_tag cv.user.avatar, class: "img-job" %></th>
+  <td><%= cv.user.full_name %></td>
+  <td class="text-center"><%= cv.user.email %></td>
+  <td class="text-center"><%= cv.user.phone_number %></td>
+  <td class="text-center"></td>
+  <% if current_user.id == @job.user_id %>
+    <td class="text-center">
+      <%= link_to t("btn.detail"), recruiter_curriculum_vitae_path(id: cv.id), class: "btn btn-secondary" %>
+      <%= link_to t("job.btn_send_email"), send_email_recruiter_curriculum_vitae_path(id: cv.id), class: "btn btn-primary" %>
+    </td>
+  <% end %>
+</tr>

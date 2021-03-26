@@ -1685,3 +1685,15 @@ textarea.form-control {
 .company-section {
   padding-top: 0;
 }
+
+.cv-content {
+  h3 {
+    font-size: 22px;
+    color: $primary;
+    font-family: $font-secondary;
+  }
+  .component {
+    margin-left: 30px;
+    text-align: justify;
+  }
+}
