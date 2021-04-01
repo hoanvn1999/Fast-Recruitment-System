@@ -86,7 +86,9 @@ vi:
     login: "Đăng nhập"
     logout: "Đăng xuất"
     register: "Đăng ký"
-    edit_profile: Sửa thông tin
+    edit_profile: "Sửa thông tin"
+    applied: "Đã ứng tuyển"
+    cvs: "Hồ sơ của tôi"
   login:
     username: "Email"
     passwd: "Mật khẩu"
@@ -113,17 +115,20 @@ vi:
     title:
       about_me: "Tóm tắt bản thân"
       education: "Học vấn"
-      experience: "Kinh nghiệm làm việc"
+      experience: "Kinh nghiệm"
       extra_experience: "Hoạt động"
       skills: "Kỹ năng"
       languages: "Ngôn ngữ"
       hobbies: "Sở thích"
       references: "Người tham khảo"
+    nil:
+      cv: "Bạn chưa tạo một bản CV nào"
+      job: "Bạn chưa ứng tuyển vào một công việc nào"
   reset_passwd:
-      email_sent: "Email đã được gửi kèm yêu cầu đổi mật khẩu mới"
-      email_nil: "Không tìm thấy địa chỉ email"
-      input_field: "Vui lòng nhập mật khẩu"
-      expired: "Yêu cầu đổi mật khẩu đã hết hạn"
+    email_sent: "Email đã được gửi kèm yêu cầu đổi mật khẩu mới"
+    email_nil: "Không tìm thấy địa chỉ email"
+    input_field: "Vui lòng nhập mật khẩu"
+    expired: "Yêu cầu đổi mật khẩu đã hết hạn"
   update:
     edit_info: "Chỉnh sửa thông tin cá nhân"
     btn_update: "Cập nhật"
@@ -164,6 +169,7 @@ vi:
     update_success: "Bạn đã cập nhật thành công bài đăng của mình"
     update_fail: "Bạn đã cập nhật bài đăng thất bại. Vui lòng thử lại."
     btn_close: "Dừng tuyển"
+    btn_stop: "Hủy"
     btn_update: "Sửa"
     btn_open: "Mở"
     btn_list: "DS ứng tuyển"
@@ -172,6 +178,7 @@ vi:
     evaluate: "Đánh giá"
     closed: "Đã đóng đơn!"
     list_cvs: "Danh sách ứng viên"
+    close_applied_job: "Hủy đơn ứng tuyển thành công"
   institution:
     nil: "Doanh nghiệp không tồn tại"
     deny: "Bạn không có quyền truy cập trang này"

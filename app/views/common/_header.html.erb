@@ -22,6 +22,9 @@
           <li class="nav-item <%= current_class?("jobs") %>"><%= link_to t("menu_list.recruitment"), jobs_path, class:"nav-link" %></li>
           <li class="nav-item"><%= link_to t("menu_list.create_cv"), root_path, class:"nav-link" %></li>
         <% end %>
+        <% if current_user.candidate? %>
+          <li class="nav-item <%= current_class?("candidate/applied") %>"><%= link_to t("menu_list.applied"), applied_candidate_curriculum_vitae_path(id: current_user.id), class:"nav-link" %></li>
+        <% end %>
         <li class="nav-item dropdown">
           <%= link_to "#", class: "nav-link dropdown-toggle", "data-toggle": "dropdown" do %>
             <%= t "menu_list.languages.language" %>
@@ -65,6 +68,9 @@
                 <small><%= current_user.email %></small>
               </li>
               <hr>
+              <% if current_user.candidate? %>
+                <li class="nav-item text-center <%= current_class?("candidate/curriculum_vitaes") %>"><%= link_to t("menu_list.cvs"), candidate_curriculum_vitaes_path, class:"btn btn-primary w-100 mb-2" %></li>
+              <% end %>
               <li class="nav-item text-center"><%= link_to t("menu_list.edit_profile"), edit_users_path, class:"btn btn-primary w-100 mb-2" %></li>
               <li class="nav-item text-center"><%= link_to t("update.update_passwd"), change_password_users_path, class:"btn btn-primary w-100 mb-2" %></li>
               <li class="nav-item text-center"><%= link_to t("menu_list.logout"), logout_path, class:"btn btn-primary w-100", method: :delete %></li>

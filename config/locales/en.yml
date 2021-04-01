@@ -86,6 +86,8 @@ en:
     logout: "Logout"
     register: "Register"
     edit_profile: "Edit profile"
+    applied: "Applied"
+    cvs: "My CV"
   login:
     username: "Email"
     passwd: "Password"
@@ -108,12 +110,6 @@ en:
       candidate: "Candidate"
       recruiter: "Recruiter"
       admin: "Admin"
-    reset_passwd:
-      email_sent: "Email sent with password reset instructions"
-      email_nil: "Email address not found"
-      input_field: "Please enter password"
-      expired: "Password reset has expired."
-
   cv:
     title:
       about_me: "About me"
@@ -124,6 +120,14 @@ en:
       languages: "Languages"
       hobbies: "Hobbies"
       references: "References"
+    nil:
+      cv: "You have not created a CV yet"
+      job: "You have not applied for a job"
+  reset_passwd:
+    email_sent: "Email sent with password reset instructions"
+    email_nil: "Email address not found"
+    input_field: "Please enter password"
+    expired: "Password reset has expired."
   update:
     edit_info: "Edit profile"
     btn_update: "Update"
@@ -163,7 +167,8 @@ en:
     create_fail: "You have failed to create a post. Please try again."
     update_success: "You have successfully updated your post"
     update_fail: "You have failed to update a post. Please try again."
-    btn_close: "Stop"
+    btn_close: "Close"
+    btn_stop: "Stop"
     btn_update: "Edit"
     btn_open: "Open"
     btn_list: "List applied"
@@ -172,6 +177,7 @@ en:
     evaluate: "Evaluate"
     closed: "Closed!"
     list_cvs: "List of candidates"
+    close_applied_job: "Successfully cancel the application"
   institution:
     nil: "The business is not available"
     deny: "You don't have permission"

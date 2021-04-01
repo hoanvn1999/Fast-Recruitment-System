@@ -1,0 +1,68 @@
+<tr>
+  <th scope="row" class="text-center"><%= image_tag job.post_image, class: "img-job" %></th>
+  <td><%= job.title %></td>
+  <td class="text-center"><%= t("recruitment_post.position.#{job.position}") %></td>
+  <td class="text-center"><%= l(job.due_date,format: :notime) %></td>
+  <td>
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong<%= job.id %>">
+      <%= t "btn.detail" %>
+    </button>
+    <%= link_to t("job.btn_stop"), close_candidate_curriculum_vitae_path(job_id: job.id, cv_id: current_user.curriculum_vitaes.where(field_id: job.field_id).ids), class: "btn btn-danger", method: :delete, remote: true, "data-confirm": t("sure?") %>
+  </td>
+</tr>
+<div class="modal fade" id="exampleModalLong<%= job.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><%= t "btn.detail" %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <section class="job-section pt-0">
+          <div class="container">
+            <div class="text row">
+              <div class="col">
+                <h2><%= job.title %></h2>
+                <div class="row col">
+                  <div class="mr-3"><i class="fas fa-user-md"></i><%= job.field.field_name %></div>
+                  <span class="type"><%= t "recruitment_post.type.#{job.type_of_work}" %></span>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mr-3"><i class="fas fa-briefcase"></i><%= t "recruitment_post.position.#{job.position}" %></div>
+                    <div class=""><i class="fas fa-money-bill-alt"></i><%= t("wage", wage: exchange_money(job.min_salary)) %> - <%= t("wage", wage: exchange_money(job.max_salary)) %></div>
+                    <div class="d-flex align-items-center">
+                      <i class="fas fa-clock"></i>
+                      <div countdown="" data-date="<%= job.due_date %>">
+                        <span data-days=""></span> <%= t "time.count.days" %>
+                        <span data-hours=""></span> <%= t "time.count.h" %>
+                        <span data-minutes=""></span> <%= t "time.count.m" %>
+                        <span data-seconds=""></span> <%= t "time.count.s" %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class=""><i class="fas fa-medal"></i><%= t("recruitment_post.year", count: job.candidate_experience) %></div>
+                    <div><i class="fa fa-map-marker"></i><%= job.user.institution.address %></div>
+                    <div class=""><i class="fas fa-users"></i><%= t("recruitment_post.staff", count: job.number_of_staffs) %></div>
+                  </div>
+                </div>
+                <div>
+                  <h3><%= t "job.description" %></h3>
+                  <div><%= job.content %></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <%= javascript_pack_tag "countdown", "data-turbolinks-track": "reload" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t "btn.close" %></button>
+      </div>
+    </div>
+  </div>
+</div>

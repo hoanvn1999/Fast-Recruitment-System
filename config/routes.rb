@@ -36,12 +36,17 @@ Rails.application.routes.draw do
     end
 
     namespace :candidate do
-      resources :curriculum_vitaes, except: [:index, :show, :destroy]
-      resources :recruitments, only: [:create]
+      resources :curriculum_vitaes, except: [:show, :destroy] do
+        member do
+          get :applied
+          delete :close
+        end
+      end
+      resources :recruitments, only: [:create, :destroy]
     end
 
     namespace :admin do
-      resources :jobs, only: [:index, :update] do
+      resources :jobs, only: [:update] do
         member do
           patch :open
         end
