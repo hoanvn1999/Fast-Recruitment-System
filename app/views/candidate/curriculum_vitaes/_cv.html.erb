@@ -1,0 +1,15 @@
+<tr>
+  <th scope="row" class="text-center">
+    <% if cv.cv_image.attached? %>
+      <%= image_tag cv.cv_image, class: "img-job" %>
+    <% else %>
+      None
+    <% end %>
+  </th>
+  <td><%= cv.field.field_name %></td>
+  <td class="text-center"><%= t("recruitment_post.year", count: cv.education_time) %></td>
+  <td class="text-center"><%= t("recruitment_post.year", count: cv.experience_time) %></td>
+  <td>
+    <%= link_to t("btn.detail"), "#", class: "btn btn-secondary" %>
+  </td>
+</tr>

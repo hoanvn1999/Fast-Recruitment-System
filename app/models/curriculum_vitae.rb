@@ -13,4 +13,13 @@ class CurriculumVitae < ApplicationRecord
   has_one_attached :cv_image
 
   scope :find_name, ->(name){where("full_name LIKE ?", "%#{name}%")}
+
+  list = lambda do |field_id|
+    if field_id.blank?
+      all
+    else
+      where("field_id = ?", field_id)
+    end
+  end
+  scope :find_field, list
 end
