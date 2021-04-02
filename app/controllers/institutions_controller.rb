@@ -1,7 +1,9 @@
 class InstitutionsController < ApplicationController
+  before_action :new_recruitmenr, only: :apply
   before_action :get_institution
   before_action :get_phone, only: [:show, :info]
   before_action :get_users, only: [:users, :update, :fire]
+  before_action :get_jobs, only: [:jobs, :apply, :close]
 
   def show; end
 
@@ -53,12 +55,61 @@ class InstitutionsController < ApplicationController
 
   def jobs
     respond_to do |format|
-      @jobs = Job.job_institution(params[:id])
       format.js {}
     end
   end
 
+  def apply
+    respond_to do |format|
+      if !logged_in?
+        format.html do
+          apply_not_login
+        end
+      elsif cv_id.blank?
+        # Chuyen sang trang tao CV va thong bao chua tao CV thuoc linh vuc nay
+      elsif @recruitment.save
+        format.js {}
+        format.html do
+          apply_save
+        end
+      else
+        format.html do
+          apply_fail
+        end
+      end
+    end
+  end
+
+  def close
+    recruitment = Recruitment.find_by(curriculum_vitae_id: params[:cv_id],
+                                      job_id: params[:job_id])
+    respond_to do |format|
+      if recruitment.destroy
+        format.js {}
+      else
+        format.html do
+          flash[:warning] = t "job.update_fail"
+          redirect_to candidate_curriculum_vitae_applied_path
+        end
+      end
+    end
+  end
+
   private
+
+  def cv_id
+    job = Job.find_by id: params[:job_id]
+    current_user.curriculum_vitaes.where(field_id: job.field_id).ids.first
+  end
+
+  def new_recruitmenr
+    @recruitment = Recruitment.new job_id: params[:job_id],
+                                  curriculum_vitae_id: cv_id
+  end
+
+  def get_jobs
+    @jobs = Job.job_institution(params[:id])
+  end
 
   def get_institution
     @institution = Institution.find_by id: params[:id]
@@ -75,5 +126,20 @@ class InstitutionsController < ApplicationController
   def get_phone
     @phone_numbers = User.institution_users(@institution.id)
                          .includes(:institution).limit(5)
+  end
+
+  def apply_not_login
+    flash[:warning] = t "account.pls_login"
+    redirect_to login_path
+  end
+
+  def apply_save
+    flash.now[:success] = t "apply.success"
+    render :show
+  end
+
+  def apply_fail
+    flash[:warning] = t "apply.fail"
+    redirect_to job_path(id: params[:job_id])
   end
 end

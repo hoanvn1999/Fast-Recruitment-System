@@ -12,11 +12,18 @@ Rails.application.routes.draw do
     end
     resources :account_activations, only: :edit
     resources :password_resets, except: [:index, :show, :destroy]
-    resources :jobs, only: [:show, :index]
+    resources :jobs, only: [:show, :index] do
+      member do
+        put :apply
+        delete :close
+      end
+    end
     resources :institutions, only: [:show, :update] do
       member do
         get :info, :jobs, :users
         patch :fire
+        put :apply
+        delete :close
       end
     end
 
@@ -42,7 +49,7 @@ Rails.application.routes.draw do
           delete :close
         end
       end
-      resources :recruitments, only: [:create, :destroy]
+      resources :recruitments, only: [:create]
     end
 
     namespace :admin do

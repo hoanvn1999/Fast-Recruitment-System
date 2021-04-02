@@ -135,6 +135,9 @@ vi:
     btn_out: "Đóng"
     update_passwd: "Đổi mật khẩu"
     old_passwd: "Mật khẩu cũ"
+  apply:
+    fail: "Có lỗi xảy ra trong quá trình ứng tuyển, vui lòng kiểm tra lại CV của bạn trong lĩnh vực này hoặc liên hệ với nhà tuyển dụng để được biết thêm thông tin"
+    success: "Ứng tuyển thành công"
   term:
     terms_of_use: "Điều khoản sử dụng"
     privacy_and_policy: "Chính sách và bảo mật"
