@@ -5,8 +5,12 @@
   <td class="text-center"><%= l(job.due_date,format: :notime) %></td>
   <td class="text-center">
     <%= link_to t("btn.detail"), job_path(id: job.id), class: "btn btn-secondary" %>
-    <% if current_user.institution_id != @institution.id %>
-      <%= link_to t("btn.apply"), "#", class: "btn btn-primary" %>
+    <% if current_candidate? && current_user.institution_id != @institution.id %>
+      <% if Recruitment.where(curriculum_vitae_id: current_user.curriculum_vitaes.where("curriculum_vitaes.field_id = ?", job.field_id).ids.first).where(job_id: job.id).blank? %>
+        <%= link_to t("btn.apply"), apply_institution_path(job_id: job.id), class: "btn btn-primary", method: :put, remote: true %>
+      <% else %>
+        <%= link_to t("job.btn_stop"), close_institution_path(job_id: job.id, cv_id: current_user.curriculum_vitaes.where(field_id: job.field_id).ids), class: "btn btn-danger", method: :delete, remote: true, "data-confirm": t("sure?") %>
+      <% end %>
     <% end %>
     </td>
 </tr>

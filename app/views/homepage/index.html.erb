@@ -73,7 +73,7 @@
         <h2 class="mb-4"><%= t "index.recruit_info" %></h2>
       </div>
     </div>
-    <div class="row">
+    <div id="jobs" class="row">
       <%= render partial: "jobs/job", collection: @jobs %>
     </div>
     <div class="w-100 text-center"><%= link_to t("btn.more"), jobs_path, class: "btn btn-primary" %></div>

@@ -45,7 +45,13 @@
           </div>
         </div>
         <div class="text-center m-4">
-          <%= link_to t("btn.apply"), "#", class: "btn btn-primary" %>
+          <% if current_candidate? %>
+            <% if Recruitment.where(curriculum_vitae_id: current_user.curriculum_vitaes.where("curriculum_vitaes.field_id = ?", @job.field_id).ids.first).where(job_id: @job.id).blank? %>
+              <%= link_to t("btn.apply"), apply_job_path(job_id: @job.id), class: "btn btn-primary", method: :put, remote: false %>
+            <% else %>
+              <%= link_to t("job.btn_stop"), close_job_path(id: @job.id, cv_id: current_user.curriculum_vitaes.where(field_id: @job.field_id).ids), class: "btn btn-danger", method: :delete, "data-confirm": t("sure?") %>
+            <% end %>
+          <% end %>
         </div>
         <div>
           <h3><%= t "job.description" %></h3>

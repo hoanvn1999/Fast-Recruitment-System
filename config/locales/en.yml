@@ -134,6 +134,9 @@ en:
     btn_out: "Close"
     update_passwd: "Change password"
     old_passwd: "Old password"
+  apply:
+    fail: "There was an error in the recruitment process, please check your CV in this field or contact your employer for more information."
+    success: "Successful application"
   term:
     terms_of_use: "Terms of use"
     privacy_and_policy: "Privacy and Policy"
