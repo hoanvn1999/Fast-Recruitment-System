@@ -7,12 +7,15 @@
         <h2 class="subheading mb-4"><%= t "menu_list.cvs" %></h2>
       </div>
     </div>
-    <%= form_tag candidate_curriculum_vitaes_path, method: :get, class: "input-group justify-content-end mb-3" do %>
-      <div class="form-outline">
-        <%= select_tag :field_id, options_for_select(Field.select("id, field_name").map{|f| [f.field_name, f.id]}), include_blank: :All_Fields, class: "form-control" %>
-      </div>
-      <%= submit_tag t("btn.search"), class:"btn btn-success" %>
-    <% end %>
+    <div class="d-flex">
+      <%# link_to 'Tao moi', "#", class: "w-100 btn btn-primary h-25", style: "padding: .8rem" %>
+      <%= form_tag candidate_curriculum_vitaes_path, method: :get, class: "input-group justify-content-end mb-3" do %>
+        <div class="form-outline">
+          <%= select_tag :field_id, options_for_select(Field.select("id, field_name").map{|f| [f.field_name, f.id]}), include_blank: :All_Fields, class: "form-control" %>
+        </div>
+        <%= submit_tag t("btn.search"), class:"btn btn-success" %>
+      <% end %>
+    </div>
     <div class="row">
       <table class="table table-striped">
         <thead class="bg-primary">

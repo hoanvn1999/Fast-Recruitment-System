@@ -10,6 +10,6 @@
   <td class="text-center"><%= t("recruitment_post.year", count: cv.education_time) %></td>
   <td class="text-center"><%= t("recruitment_post.year", count: cv.experience_time) %></td>
   <td>
-    <%= link_to t("btn.detail"), "#", class: "btn btn-secondary" %>
+    <%= link_to t("btn.detail"), candidate_curriculum_vitae_path(id: cv.id), class: "btn btn-secondary" %>
   </td>
 </tr>

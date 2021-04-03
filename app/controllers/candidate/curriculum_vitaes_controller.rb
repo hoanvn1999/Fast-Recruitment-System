@@ -1,5 +1,5 @@
 class Candidate::CurriculumVitaesController < CandidateController
-  before_action :get_cv, only: [:edit, :update]
+  before_action :get_cv, only: [:edit, :update, :show]
   before_action :get_jobs, only: [:applied, :close]
 
   def index
@@ -14,6 +14,8 @@ class Candidate::CurriculumVitaesController < CandidateController
   def new
     @cv = CurriculumVitae.new
   end
+
+  def show; end
 
   def create; end
 

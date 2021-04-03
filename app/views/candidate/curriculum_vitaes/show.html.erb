@@ -1,0 +1,129 @@
+<div class="short-wrap"></div>
+
+<section class="ftco-section">
+  <div class="container col-md-9">
+    <div class="row justify-content-center pb-4">
+      <div class="col-md-12 heading-section text-center">
+        <h2 class="subheading mb-4"><%= t "account.cv" %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <!--Nút chỉnh sửa hồ sơ-->
+    </div>
+    <div class="row mx-auto">
+      <div class="col-md-3 align-items-center">
+        <%= image_tag @cv.user.avatar, alt: @cv.user.full_name, class: "img-avt" %>
+      </div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="font-weight-bold"><%= t "register.full_name" %></p>
+          </div>
+          <div class="col-sm-9">
+            <p><%= @cv.user.full_name %></p>
+          </div>
+          <div class="col-sm-3">
+            <p class="font-weight-bold"><%= t "register.phone" %></p>
+          </div>
+          <div class="col-sm-9">
+            <p><%= @cv.user.phone_number %></p>
+          </div>
+          <div class="col-sm-3">
+            <p class="font-weight-bold"><%= t "register.birthday" %></p>
+          </div>
+          <div class="col-sm-9">
+            <p><%= l(@cv.user.date_of_birth,format: :notime) %></p>
+          </div>
+          <div class="col-sm-3">
+            <p class="font-weight-bold"><%= t "register.address" %></p>
+          </div>
+          <div class="col-sm-9">
+            <p><%= @cv.user.address %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cv-content">
+      <!--About me-->
+      <div class="row">
+        <h3><%= t "cv.title.about_me" %></h3>
+        <div class="component">
+          <p><%= @cv.about_me %></p>
+        </div>
+      </div>
+      <!--Education-->
+      <div class="row">
+        <h3 class="col-12 row"><%= t "cv.title.education" %></h3>
+        <% @cv.educations.each do |education| %>
+          <div class="font-weight-bold ml-4"><%= education.university_name %></div>
+          <div class="ml-5">
+            <%= l(education.start_date, format: :notime) %>
+            -
+            <%= l(education.end_date, format: :notime) %>
+          </div>
+          <div class="ml-5 d-flex">
+            <div class="font-italic mr-2">GPA: </div>
+            <span><%= education.gpa %></span>
+          </div>
+        <% end %>
+      </div>
+      <!--Experience-->
+      <div class="row">
+        <h3><%= t "cv.title.experience" %></h3>
+        <% @cv.experiences.each do |experience| %>
+          <div class="font-weight-bold ml-4"><%= experience.company_name %></div>
+          <div class="ml-5">
+            <%= l(experience.start_date, format: :notime) %>
+            -
+            <%= l(experience.end_date, format: :notime) %>
+          </div>
+        <% end %>
+      </div>
+      <!--Extra-Experience-->
+      <div class="row">
+        <h3><%= t "cv.title.extra_experience" %></h3>
+        <% @cv.extra_experiences.each do |extra_experience| %>
+          <div class="font-weight-bold ml-4"><%= experience.company_name %></div>
+          <div class="ml-5">
+            <%= l(extra_experience.start_date, format: :notime) %>
+            -
+            <%= l(extra_experience.end_date, format: :notime) %>
+          </div>
+        <% end %>
+      </div>
+      <!--Skills-->
+      <div class="row">
+        <h3><%= t "cv.title.skills" %></h3>
+        <% @cv.skills.each do |skill| %>
+          <li class="font-weight-bold ml-4"><%= skill.skill_name %></li>
+        <% end %>
+      </div>
+      <!--Language-->
+      <div class="row">
+        <h3><%= t "cv.title.languages" %></h3>
+        <% @cv.languages.each do |language| %>
+          <li class="font-weight-bold ml-4"><%= language.language_name %></li>
+        <% end %>
+      </div>
+      <!--Hobbies-->
+      <div class="row">
+        <h3><%= t "cv.title.hobbies" %></h3>
+        <% @cv.hobbies.each do |hobbie| %>
+          <li class="font-weight-bold ml-4"><%= hobbie.hobbie_name %></li>
+        <% end %>
+      </div>
+      <div class="row">
+        <h3><%= t "cv.title.references" %></h3>
+        <% @cv.references.each do |reference| %>
+          <div class="font-weight-bold ml-4"><%= reference.name %></div>
+          <div class="ml-5">
+            <%= reference.phone_number %>
+          </div>
+          <div class="ml-5">
+            <%= reference.email %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
