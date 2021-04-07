@@ -25,17 +25,28 @@ vi:
     create: "Tạo mới"
     close: "Thoát"
   email:
+    info:
+      title: "Thư mời phỏng vấn"
+      mail_to: "Thông tin ứng viên"
+      interview_time: "Thời gian phỏng vấn"
     btn:
       active: "Kích hoạt"
       reset_passwd: "Lấy lại mật khẩu"
+      interview: "Bắt đầu phỏng vấn"
     subject:
       active_account: "Fast Recruitment | Kích hoạt tài khoản"
       password_reset: "Fast Recruitment | Đặt lại mật khẩu"
+      interview: "FastRecruitment | Thư mời phỏng vấn"
     hi: "Chào"
     message:
       active_account: "Chào mừng bạn đến với Fast Recruitment! Click vào link bên dưới để kích hoạt tài khoản của bạn:"
       reset_passwd: "Chúng tôi nhận được yêu cầu thay đổi mật khẩu. Nếu bạn không thực hiện hành động này, vui lòng bỏ qua email này và tiếp tục sử dụng. Để đổi mật khẩu, vui lòng click vào link bên dưới:"
-    signature: "Trân trọng,<br>Đội ngũ Fast Recruitment"
+      interview: "Trước hết, chúng tôi rất cám ơn sự quan tâm bạn đã dành cho công ty của chúng tôi.<br>Tên tôi là %{name} thuộc bộ phận tuyển dụng của %{company}. Qua hồ sơ của bạn, chúng tôi nhận thấy bạn có những tiềm năng để trở thành một phần của công ty chúng tôi.<br>Chúng tôi rất hy vọng có thể trao đổi thêm với bạn trong một buổi phỏng vấn ngắn qua ứng dụng được gửi link bên dưới. Đây là một bước cần thiết trong quá trình tuyển dụng để chúng tôi có thể hiểu hơn về bạn cũng như được chia sẻ với bạn nhiều hơn về câu chuyện của chúng tôi.<br>Nếu cần thêm thông tin, đừng ngần ngại liên hệ cho chúng tôi theo %{email}.<br>Chúng tôi rất mong sớm được gặp và trò chuyện với bạn."
+      time: "Vui lòng lưu ý, thời gian phỏng vấn vào lúc: %{time}"
+    signature: "Trân trọng, <br>Đội ngũ Fast Recruitment"
+    sent:
+      success: "Đã gửi email!"
+      fail: "Gửi email thất bại"
   account:
     btn_block: "Khóa"
     btn_active: "Mở"
