@@ -16,7 +16,7 @@
       </div>
       <div class="time-apply">
         <div><i class="fas fa-clock"></i><%= l(job.due_date,format: :notime) %></div>
-        <% if current_candidate? %>
+        <% if logged_in? && current_candidate? %>
           <% if Recruitment.where(curriculum_vitae_id: current_user.curriculum_vitaes.where("curriculum_vitaes.field_id = ?", job.field_id).ids.first).where(job_id: job.id).blank? %>
             <%= link_to t("btn.apply"), apply_job_path(id: job.id), class: "btn btn-primary", method: :put, remote: true %>
           <% else %>

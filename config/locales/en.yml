@@ -25,17 +25,28 @@ en:
     create: "Create"
     close: "Close"
   email:
+    info:
+      title: "Interview letter"
+      mail_to: "Candidate information"
+      interview_time: "Interview time"
     btn:
       active: "Activate"
       reset_passwd: "Reset password"
+      interview: "Start to interview"
     subject:
       active_account: "FastRecruitment | Account activation"
       password_reset: "FastRecruitment | Password reset"
+      interview: "FastRecruitment | Interview"
     hi: "Hi"
     message:
       active_account: "Welcome to the Sample App! Click on the link below to activate your account:"
       reset_passwd: "We receive a request to change your password. If you don't take this action, please ignore this email and continue using it. To change your password, please click on the link below:"
-    signature: "Best regards,<br>The Fast Recruitment team"
+      interview: "First of all, we thank you for the attention you have given to our company. <br>My name is %{name} of the recruitment department at %{company}. Through your profile, we realize that you have the potential to be a part of our company. <br>We hope to talk more with you in a short interview via the app linked below. This is an essential step in the recruitment process so that we can better understand you and share with you our stories. <br>If you need more information, don't hesitate to contact us at %{email}. <br>We look forward to meeting with you soon."
+      time: "Please note that, the time to interview is on %{time}"
+    signature: "Best regards, <br>The Fast Recruitment team"
+    sent:
+      success: "Email sent!"
+      fail: "Sending email failed"
   account:
     btn_block: "Block"
     btn_active: "Active"

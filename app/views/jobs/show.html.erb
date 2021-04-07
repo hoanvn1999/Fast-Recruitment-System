@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="text-center m-4">
-          <% if current_candidate? %>
+          <% if logged_in? && current_candidate? %>
             <% if Recruitment.where(curriculum_vitae_id: current_user.curriculum_vitaes.where("curriculum_vitaes.field_id = ?", @job.field_id).ids.first).where(job_id: @job.id).blank? %>
               <%= link_to t("btn.apply"), apply_job_path(job_id: @job.id), class: "btn btn-primary", method: :put, remote: false %>
             <% else %>
