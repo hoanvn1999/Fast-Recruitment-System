@@ -40,6 +40,7 @@ Rails.application.routes.draw do
           patch :send_email
         end
       end
+      resources :callings, only: :show
     end
 
     namespace :candidate do
@@ -49,6 +50,7 @@ Rails.application.routes.draw do
           delete :close
         end
       end
+      resources :callings, only: :show
     end
 
     namespace :admin do

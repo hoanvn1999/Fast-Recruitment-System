@@ -217,6 +217,8 @@ vi:
     add_hr_success: "Thêm nhà tuyển dụng thành công"
     add_hr_fail: "Email không đúng hoặc nhà tuyển dụng này đang làm việc ở một doanh nghiệp khác."
     remove_hr_fail: "Sa thải nhà tuyển dụng thất bại"
+  interview:
+    btn: "Phỏng vấn"
   recruitment_post:
     position:
       director: "Giám đốc"
