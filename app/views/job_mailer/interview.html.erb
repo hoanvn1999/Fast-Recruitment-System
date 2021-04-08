@@ -5,7 +5,7 @@
     </h1>
     <p><%= t "email.hi" %> <%= @candidate.full_name %>,</p>
     <p><%= raw t("email.message.interview", name: @recruiter.full_name, company: @recruiter.institution.institution_name, email: @recruiter.email) %></p>
-    <%= link_to t("email.btn.interview"), "#", class: "btn" %>
+    <%= link_to t("email.btn.interview"), candidate_calling_url(id: @recruitment.job.id), class: "btn" %>
     <br>
     <%= t("email.message.time", time: @recruitment.interview_time) %>
     <p><%= raw t("email.signature") %></p>

@@ -91,6 +91,7 @@ en:
       english: "English"
       vietnamese: "Tiếng Việt"
     manage_posts: "Manage Posts"
+    manage_users: "Manage Users"
     manage_recruiters: "Manage Recruiters"
     manage_candidates: "Manage Candidates"
     login: "Login"
@@ -216,6 +217,8 @@ en:
     add_hr_success: "Success. Recruiter has been added to your business"
     add_hr_fail: "The email doesn't exist or this employer is working in another business."
     remove_hr_fail: "Remove recruiter failed"
+  interview:
+    btn: "Interview"
   recruitment_post:
     position:
       director: "Director"
