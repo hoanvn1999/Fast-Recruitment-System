@@ -135,6 +135,43 @@ en:
     nil:
       cv: "You have not created a CV yet"
       job: "You have not applied for a job"
+  create_cv:
+    zoom: "Zoom"
+    btn_download: "Download"
+    btn_ref: "Add reference"
+    skills: "Skills"
+    example_skill: "Communication"
+    languages: "Language"
+    language: "English"
+    level: " Fluency"
+    hobbies: " Hobbies"
+    traveling: "Traveling"
+    about_me:
+      name: "About me"
+      info: "Briefly describe yourself"
+    education:
+      name: "Education"
+      dtu: "Duy Tan University"
+      major: "Major:"
+      job: " Software Engineering"
+      gpa: "GPA: 3.8"
+    employment_history:
+      name: "Experience"
+      marketing leader: "Marketing Leader"
+      company: "ABC company"
+      worked: "- I did work at XZY while working at ABC"
+    reference:
+      name: "Reference"
+      mr: "Mr Nguyen Van A"
+      position: "Deputy head of Duy Tan University"
+      email: "Email: "
+      email_add: "example@example.com"
+      phone: "Phone number:"
+      phone_number: "(+84) 77 88 9999"
+      remove: "If you click here, this section will be removed"
+    created:
+      success: "Successfully created your CV!"
+      failed: "Create CV fail, please check again!"
   reset_passwd:
     email_sent: "Email sent with password reset instructions"
     email_nil: "Email address not found"

@@ -12,7 +12,7 @@
       <% if current_user.blank? || current_candidate? %>
         <div class="col-md-4 create-cv ml-auto">
           <div class="subheading"><%= t "index.create_cv_now" %></div>
-          <%= link_to "#", class: "icon-video d-flex align-items-center justify-content-center" do %><!-- change -->
+          <%= link_to new_create_cv_path, class: "icon-video d-flex align-items-center justify-content-center" do %><!-- change -->
             <span class="fa fa-play"></span>
           <% end %>
         </div>

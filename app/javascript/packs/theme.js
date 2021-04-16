@@ -50,6 +50,16 @@
   };
   fullHeight();
 
+  var partHeight = function () {
+
+    $('.js-fullheight-no-ftco').css('height', $(window).height()-112);
+    $(window).resize(function () {
+      $('.js-fullheight-no-ftco').css('height', $(window).height()-112);
+    });
+
+  };
+  partHeight();
+
   $('nav .dropdown').hover(function () {
     var $this = $(this);
     // 	 timer;

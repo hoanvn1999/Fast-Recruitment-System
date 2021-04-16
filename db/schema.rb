@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.string "university_name"
     t.datetime "start_date"
     t.datetime "end_date"
+    t.string "major"
     t.float "gpa"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -61,6 +62,8 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.string "company_name"
     t.datetime "start_date"
     t.datetime "end_date"
+    t.string "position"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "curriculum_vitae_id"
@@ -126,6 +129,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
 
   create_table "languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "language_name"
+    t.string "level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "curriculum_vitae_id"
@@ -145,6 +149,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
 
   create_table "references", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
+    t.string "position"
     t.string "phone_number"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false

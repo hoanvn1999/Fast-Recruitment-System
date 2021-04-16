@@ -135,6 +135,43 @@ vi:
     nil:
       cv: "Bạn chưa tạo một bản CV nào"
       job: "Bạn chưa ứng tuyển vào một công việc nào"
+  create_cv:
+    zoom: "Thu phóng"
+    btn_download: "Tải xuống"
+    btn_ref: "Thêm người tham chiếu"
+    skills: "Kỹ năng"
+    example_skill: "Giao tiếp"
+    languages: "Ngôn Ngữ"
+    language: "Tiếng Việt"
+    level: "Lưu loát"
+    hobbies: " Sở thích"
+    traveling: "Du lịch"
+    about_me:
+      name: "Giới thiệu"
+      info: "Mô tả ngắn gọn về bản thân bạn"
+    education:
+      name: "Học Vấn"
+      dtu: "Đại Học Duy Tân"
+      major: "Chuyên ngành:"
+      job: " Kỹ thuật phần mềm"
+      gpa: "GPA: 3.8"
+    employment_history:
+      name: "Kinh nghiệm"
+      marketing leader: "Giám đốc công nghệ"
+      company: "Công ty ABC"
+      worked: "- Tôi đã làm công việc XZY trong quá trình công tác tại ABC"
+    reference:
+      name: "Người tham chiếu"
+      mr: "Ông Nguyễn Văn A"
+      position: "Giảng viên trường Đại học Duy Tân"
+      email: "Email: "
+      email_add: "example@example.com"
+      phone: "Phone number:"
+      phone_number: "(+84) 77 88 9999"
+      remove: "Nếu click vào đây, phần này sẽ bị loại bỏ"
+    created:
+      success: "Tạo CV thành công!"
+      failed: "Tạo CV thất bại, vui lòng kiểm tra lại!"
   reset_passwd:
     email_sent: "Email đã được gửi kèm yêu cầu đổi mật khẩu mới"
     email_nil: "Không tìm thấy địa chỉ email"

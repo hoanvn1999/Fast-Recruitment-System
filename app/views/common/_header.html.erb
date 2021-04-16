@@ -20,7 +20,7 @@
           <!--Hiển thị danh sách các tin tuyển dụng, mỗi tin có nút chi tiết những người đã ứng tuyển-->
         <% else %>
           <li class="nav-item <%= current_class?("jobs") %>"><%= link_to t("menu_list.recruitment"), jobs_path, class:"nav-link" %></li>
-          <li class="nav-item"><%= link_to t("menu_list.create_cv"), root_path, class:"nav-link" %></li>
+          <li class="nav-item"><%= link_to t("menu_list.create_cv"), new_create_cv_path, class:"nav-link" %></li>
         <% end %>
         <% if logged_in? && current_user.candidate? %>
           <li class="nav-item <%= current_class?("candidate/applied") %>"><%= link_to t("menu_list.applied"), applied_candidate_curriculum_vitae_path(id: current_user.id), class:"nav-link" %></li>

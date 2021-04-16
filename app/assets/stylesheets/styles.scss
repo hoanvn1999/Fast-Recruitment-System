@@ -8,6 +8,10 @@
   src: url(asset-path('Arrus.ttf')) format("truetype");
 }
 
+.fa, .far, .fas {
+  font-family: 'FontAwesome' !important;
+}
+
 $font-primary: 'Poppins',
 Arial,
 sans-serif;
