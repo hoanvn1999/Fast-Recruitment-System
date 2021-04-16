@@ -1,0 +1,215 @@
+<div class="short-wrap d-sm-none d-lg-block"></div>
+<section class="ftco-section container">
+  <%= form_for @cv, url: create_cvs_path do |f| %>
+    <div class="row">
+      <div class="col-12 mx-auto">
+        <div class="cv-area js-fullheight-no-ftco">
+          <div id="control-panel">
+            <div class="zoom form-inline d-lg-block d-sm-none">
+              <label for="zoom" class="text-white"><%= t"create_cv.zoom" %></span>
+              <input id="zoom" class="form-control" min="4" max="10" value="10" step="1" type="range"/>
+            </div>
+            <div class="button-area">
+              <span id="add-reference" class="btn btn-success d-none"><%= t "create_cv.btn_ref" %></span>
+              <a id="btn-download" class="btn btn-primary"><i class="fas fa-download"></i><%= t "create_cv.btn_download" %></a>
+              <%= f.submit "Download", id: "submit", class: "d-none" %>
+            </div>
+          </div>
+          <div class="mt-5"></div>
+          <div id="resume">
+            <div class="resume_left">
+              <div class="resume_profile">
+                <label for="user_avatar">
+                  <input accept="image/*" class="d-none" type="file" id="user_avatar">
+                  <%= image_tag current_user.avatar, alt: current_user.full_name, id: "output_image" %>
+                </label>
+              </div>
+              <div class="resume_content">
+                <div class="resume_info">
+                  <div class="title text-center">
+                    <h3 class="bold"><%= current_user.full_name %></h3>
+                    <div class="regular">
+                      <span id="field-text"></span>
+                      <%= f.select :field_id, options_for_select(Field.select("field_name, id").map{|f| [f.field_name, f.id]})%>
+                    </div>
+                  </div>
+                  <ul>
+                    <li>
+                      <div class="icon">
+                        &#128197;
+                      </div>
+                      <div class="data">
+                        <%= l(current_user.date_of_birth, format: :notime) %> <br />
+                      </div>
+                    </li>
+                    <li>
+                      <div class="icon">
+                        &#128243;
+                      </div>
+                      <div class="data">
+                        <%= current_user.phone_number %>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="icon">
+                        &#128236;
+                      </div>
+                      <div class="data">
+                        <%= current_user.email %>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="icon">
+                        &#128205;
+                      </div>
+                      <div class="data">
+                        <%= current_user.address %> <br />
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="resume_item resume_skills">
+                  <div class="title">
+                    <div class="bold"><%= t "create_cv.skills" %></div>
+                    <span id="add-skill"><i class="text-warning ml-3 fas fa-plus-circle"></i></span>
+                    <span id="remove-skill"><i class="text-danger ml-1 fas fa-minus-circle"></i></span>
+                  </div>
+                  <ul id="skills">
+                    <li class="skill">
+                      <%= f.fields_for :skills do |skill| %>
+                        <div class="data text-area" contenteditable="true"><%= t"create_cv.example_skill" %></div>
+                        <%= skill.text_area :skill_name, class: "d-none" %>
+                      <% end %>
+                    </li>
+                  </ul>
+                </div>
+                <div class="resume_item resume_social">
+                  <div class="title">
+                    <div class="bold"><%= t"create_cv.languages" %></div>
+                    <span id="add-language"><i class="text-warning ml-3 fas fa-plus-circle"></i></span>
+                    <span id="remove-language"><i class="text-danger ml-1 fas fa-minus-circle"></i></span>
+                  </div>
+                  <ul id="languages">
+                    <li class="language">
+                      <%= f.fields_for :languages do |lang| %>
+                        <div class="data">
+                          <span class="text-area" contenteditable="true"><%= t "create_cv.language" %></span>:
+                          <span class="ml-1 text-area" contenteditable="true"><%= t "create_cv.level" %></span>
+                        </div>
+                        <%= lang.text_area :language_name, class:"d-none" %>
+                        <%= lang.text_area :level, class:"d-none" %>
+                      <% end %>
+                    </li>
+                </div>
+                <div class="resume_item resume_hobbie">
+                  <div class="title">
+                    <div class="bold"><%= t "create_cv.hobbies" %></div>
+                    <span id="add-hobby"><i class="text-warning ml-3 fas fa-plus-circle"></i></span>
+                    <span id="remove-hobby"><i class="text-danger ml-1 fas fa-minus-circle"></i></span>
+                  </div>
+                  <ul id="hobbies">
+                    <li class="hobby">
+                      <%= f.fields_for :hobbies do |hobby| %>
+                        <div class="data text-area" contenteditable="true"><%= t "create_cv.traveling" %></div>
+                        <%= hobby.text_area :hobby_name, class:"d-none" %>
+                      <% end %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="resume_right">
+              <div class="resume_item resume_about">
+                <div class="title">
+                  <div class="bold"><%= t "create_cv.about_me.name" %></div>
+                </div>
+                <div class="text-justify text-area" contenteditable="true"><%= t "create_cv.about_me.info" %></div>
+                <%= f.text_area :about_me, class: "d-none" %>
+              </div>
+              <div class="resume_item resume_education">
+                <div class="title">
+                  <div class="bold"><%= t "create_cv.education.name" %></div>
+                  <span id="add-education"><i class="text-warning ml-3 fas fa-plus-circle"></i></span>
+                  <span id="remove-education"><i class="text-danger ml-1 fas fa-minus-circle"></i></span>
+                </div>
+                <ul id="educations">
+                  <li class="education">
+                    <%= f.fields_for :educations do |edu| %>
+                      <div class="date">
+                        <span class="text-area" contenteditable="true">7/2017</span> -
+                        <span class="text-area" contenteditable="true">10/2021</span>
+                        <%= edu.text_area :start_date, class:"d-none" %>
+                        <%= edu.text_area :end_date, class:"d-none" %>
+                      </div>
+                      <div class="info">
+                        <%= edu.text_area :university_name, class:"d-none" %>
+                        <div class="font-weight-bold text-area" contenteditable="true"><%= t "create_cv.education.dtu" %></div>
+                        <div><%= t "create_cv.education.major" %> <span contenteditable="true" class="text-area"><%= t "create_cv.education.job" %></span></div>
+                        <%= edu.text_area :major, class:"d-none" %>
+                        <div contenteditable="true" class="text-area"><%= t "create_cv.education.gpa" %></div>
+                        <%= edu.text_area :gpa, class:"d-none" %>
+                      </div>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
+              <div class="resume_item resume_work">
+                <div class="title">
+                  <div class="bold" contenteditable="true"><%= t "create_cv.employment_history.name" %></div>
+                  <span id="add-experience"><i class="text-warning ml-3 fas fa-plus-circle"></i></span>
+                  <span id="remove-experience"><i class="text-danger ml-1 fas fa-minus-circle"></i></span>
+                </div>
+                <ul id="experiences">
+                  <li class="experience">
+                    <%= f.fields_for :experiences do |exp| %>
+                      <div class="date">
+                        <span class="text-area" contenteditable="true">7/2017</span> -
+                        <span class="text-area" contenteditable="true">10/2021</span>
+                        <%= exp.text_area :start_date, class:"d-none" %>
+                        <%= exp.text_area :end_date, class:"d-none" %>
+                      </div>
+                      <div class="info">
+                        <div class="font-weight-bold text-area" contenteditable="true"><%= t "create_cv.employment_history.marketing_leader" %></div>
+                        <%= exp.text_area :position, class:"d-none" %>
+                        <div class="font-italic text-area" contenteditable="true"><%= t "create_cv.employment_history.company" %></div>
+                        <%= exp.text_area :company_name, class:"d-none" %>
+                        <div contenteditable="true" class="text-area"><%= t "create_cv.employment_history.worked" %></div>
+                        <%= exp.text_area :description, class:"d-none" %>
+                      </div>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
+              <div id="references" class="resume_item resume_reference">
+                <div class="title">
+                  <div class="bold"><%= t "create_cv.reference.name" %></div>
+                  <span id="remove-reference" title="<%= t "create_cv.reference.remove" %>">
+                    <i class="text-danger ml-1 fas fa-eraser"></i>
+                  </span>
+                </div>
+                <ul class="reference">
+                  <%= f.fields_for :references do |ref| %>
+                    <li>
+                      <div class="data">
+                        <div contenteditable="true" class="text-area"><%= t "create_cv.reference.mr" %></div>
+                        <%= ref.text_area :name, class:"d-none" %>
+                        <div contenteditable="true" class="text-area"><%= t "create_cv.reference.position" %></div>
+                        <%= ref.text_area :position, class:"d-none" %>
+                        <div><%= t "create_cv.reference.email" %><span contenteditable="true" class="text-area"><%= t "create_cv.reference.email_add" %></span></div>
+                        <%= ref.text_area :email, class:"d-none" %>
+                        <div><%= t "create_cv.reference.phone" %><span contenteditable="true" class="text-area"><%= t "create_cv.reference.phone_number" %></span></div>
+                        <%= ref.text_area :phone_number, class:"d-none" %>
+                      </div>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</section>
+<%= javascript_pack_tag "create_cv", "data-turbolinks-track": "reload" %>
+<%= render "create_cvs/html2canvas" %>

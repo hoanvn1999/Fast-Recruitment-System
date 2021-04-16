@@ -4,6 +4,8 @@ class CreateExperiences < ActiveRecord::Migration[6.0]
       t.string :company_name
       t.datetime :start_date
       t.datetime :end_date
+      t.string :position
+      t.text :description
 
       t.timestamps
       t.belongs_to :curriculum_vitae, foreign_key: true

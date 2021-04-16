@@ -2,6 +2,7 @@ class CreateReferences < ActiveRecord::Migration[6.0]
   def change
     create_table :references do |t|
       t.string :name
+      t.string :position
       t.string :phone_number
       t.string :email
 

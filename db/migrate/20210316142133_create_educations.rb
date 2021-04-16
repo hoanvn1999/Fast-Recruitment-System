@@ -4,6 +4,7 @@ class CreateEducations < ActiveRecord::Migration[6.0]
       t.string :university_name
       t.datetime :start_date
       t.datetime :end_date
+      t.string :major
       t.float :gpa
 
       t.timestamps

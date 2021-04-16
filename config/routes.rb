@@ -26,6 +26,7 @@ Rails.application.routes.draw do
         delete :close
       end
     end
+    resources :create_cvs, only: [:show, :new, :create]
 
     namespace :recruiter do
       resources :institutions, except: [:index, :show, :destroy]
@@ -54,7 +55,7 @@ Rails.application.routes.draw do
     end
 
     namespace :admin do
-      resources :jobs, only: [:update] do
+      resources :jobs, only: [:index, :update] do
         member do
           patch :open
         end

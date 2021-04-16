@@ -8,6 +8,13 @@ class CurriculumVitae < ApplicationRecord
   has_many :languages
   has_many :hobbies
   has_many :references
+  accepts_nested_attributes_for :experiences
+  accepts_nested_attributes_for :extra_experiences
+  accepts_nested_attributes_for :skills
+  accepts_nested_attributes_for :languages
+  accepts_nested_attributes_for :hobbies
+  accepts_nested_attributes_for :educations
+  accepts_nested_attributes_for :references
   has_many :recruitments
   has_many :jobs, through: :recruitments
   has_one_attached :cv_image
