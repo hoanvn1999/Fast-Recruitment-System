@@ -1,0 +1,167 @@
+<div class="short-wrap d-sm-none d-lg-block"></div>
+<section class="ftco-section container">
+  <%= form_for @cv, url: scan_cvs_path do |f| %>
+    <div class="row">
+      <div class="col-md-5">
+        <%= f.label :cv_image, class: "form-group position-fixed" do %>
+          <%= f.file_field :cv_image, accept:"image/*", class:"d-none" %>
+          <%= image_tag "upload.png", id:"output_image", style:"width: 390px" %>
+        <% end %>
+      </div>
+      <div class="col-md-7 cv-content">
+        <div class="text-center">
+          <h1><%= t "create_cv.scan_cv" %></h1>
+        </div>
+        <h3><%= t "job.field" %>:</h3>
+        <div class="d-inline-block">
+          <span id="field-text"></span>
+        </div>
+        <button id="btn-modal" type="button" class="btn text-info" data-toggle="modal" data-target="#modal-field">
+          <%= t "scan_cv.btn_change_field" %>
+        </button>
+        <h3><%= t "cv.title.about_me" %></h3>
+        <%= f.text_area :about_me, class: "form-control" %>
+        <div class="row">
+          <div id="educations" class="col-12 mt-3">
+            <h3 class="d-inline"><%= t "cv.title.education" %></h3>
+            <span id="add-education"><i class="text-success ml-3 fas fa-plus-circle"></i></span>
+            <span id="remove-education"><i class="text-danger ml-1 fas fa-minus-circle"></i></span>
+            <div class="education">
+              <%= f.fields_for :educations do |edu| %>
+                <%= edu.label :university_name %>
+                <%= edu.text_field :university_name, class:"form-control" %>
+                <div class="row">
+                  <div class="col-6">
+                    <%= edu.label :start_date %>
+                    <%= edu.month_field :start_date, class:"form-control" %>
+                  </div>
+                  <div class="col-6">
+                    <%= edu.label :end_date %>
+                    <%= edu.month_field :end_date, class:"form-control" %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-9">
+                    <%= edu.label :major, t("create_cv.education.major") %>
+                    <%= edu.text_field :major, class:"form-control" %>
+                  </div>
+                  <div class="col-3">
+                    <%= edu.label :gpa %>
+                    <%= edu.text_field :gpa, class:"form-control" %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div id="experiences" class="col-12 mt-3">
+            <h3 class="d-inline"><%= t "cv.title.experience" %></h3>
+            <span id="add-experience"><i class="text-success ml-3 fas fa-plus-circle"></i></span>
+            <span id="remove-experience"><i class="text-danger ml-1 fas fa-minus-circle"></i></span>
+            <div class="experience">
+              <%= f.fields_for :experiences do |exp| %>
+                <div class="info">
+                  <%= exp.label :company_name %>
+                  <%= exp.text_field :company_name, class:"form-control" %>
+                  <div class="row">
+                    <div class="col-6">
+                      <%= exp.label :start_date %>
+                      <%= exp.month_field :start_date, class:"form-control" %>
+                    </div>
+                    <div class="col-6">
+                      <%= exp.label :end_date %>
+                      <%= exp.month_field :end_date, class:"form-control" %>
+                    </div>
+                  </div>
+                  <%= exp.label :position %>
+                  <%= exp.text_field :position, class:"form-control" %>
+                  <%= exp.label :description %>
+                  <%= exp.text_area :description, class:"form-control" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div id="skills" class="col-12 mt-3">
+            <h3 class="d-inline"><%= t "cv.title.skills" %></h3>
+            <span id="add-skill"><i class="text-success ml-3 fas fa-plus-circle"></i></span>
+            <span id="remove-skill"><i class="text-danger ml-1 fas fa-minus-circle"></i></span>
+            <div class="skill">
+              <%= f.fields_for :skills do |skill| %>
+                <%= skill.label :skill_name, t("create_cv.skills") %>
+                <%= skill.text_field :skill_name, class: "form-control" %>
+              <% end %>
+            </div>
+          </div>
+          <div id="languages" class="col-12 mt-3">
+            <h3 class="d-inline"><%= t "cv.title.languages" %></h3>
+            <span id="add-language"><i class="text-success ml-3 fas fa-plus-circle"></i></span>
+            <span id="remove-language"><i class="text-danger ml-1 fas fa-minus-circle"></i></span>
+            <div class="language">
+              <%= f.fields_for :languages do |lang| %>
+                <div class="row">
+                  <div class="col-6">
+                    <%= lang.label :language_name, t("create_cv.languages") %>
+                    <%= lang.text_field :language_name, class:"form-control" %>
+                  </div>
+                  <div class="col-6">
+                    <%= lang.label :level %>
+                    <%= lang.text_field :level, class:"form-control" %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div id="hobbies" class="col-12 mt-3">
+            <h3 class="d-inline"><%= t "cv.title.hobbies" %></h3>
+            <span id="add-hobby"><i class="text-success ml-3 fas fa-plus-circle"></i></span>
+            <span id="remove-hobby"><i class="text-danger ml-1 fas fa-minus-circle"></i></span>
+            <div class="hobby">
+              <%= f.fields_for :hobbies do |hobby| %>
+                <%= hobby.label :hobby_name, t("create_cv.hobbies") %>
+                <%= hobby.text_field :hobby_name, class:"form-control" %>
+              <% end %>
+            </div>
+          </div>
+          <div id="references" class="col-12 mt-3 mb-4">
+            <h3><%= t "cv.title.references" %></h3>
+            <div class="reference">
+              <%= f.fields_for :references do |ref| %>
+                <%= ref.label :name %>
+                <%= ref.text_field :name, class:"form-control" %>
+                <%= ref.label :position %>
+                <%= ref.text_field :position, class:"form-control" %>
+                <%= ref.label :email %>
+                <%= ref.text_field :email, class:"form-control" %>
+                <%= ref.label :phone_number %>
+                <%= ref.text_field :phone_number, class:"form-control" %>
+              <% end %>
+            </div>
+          </div>
+          <%= f.submit t("btn.submit"), id: "submit", class: "btn btn-primary m-auto" %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal-field" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"><%= t "job.field" %></h5>
+            <button id="btn-close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= f.label :field_id, t("scan_cv.input_field") %>
+            <%= f.select :field_id, options_for_select(Field.select("field_name, id").map{|f| [f.field_name, f.id]}), {}, class: "form-control" %>
+          </div>
+          <div class="modal-footer">
+            <span id="btn-submit-field" class="btn btn-primary" data-dismiss="modal"><%= t "btn.submit" %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</section>
+
+<%= javascript_pack_tag "scan_cv", "data-turbolinks-track": "reload" %>
