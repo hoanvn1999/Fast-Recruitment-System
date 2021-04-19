@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       end
     end
     resources :create_cvs, only: [:show, :new, :create]
+    resources :scan_cvs, only: [:show, :new, :create]
 
     namespace :recruiter do
       resources :institutions, except: [:index, :show, :destroy]

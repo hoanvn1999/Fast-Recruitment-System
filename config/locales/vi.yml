@@ -23,6 +23,7 @@ vi:
     remove: "Sa thải"
     update: "Cập nhật thông tin"
     create: "Tạo mới"
+    submit: "Xác nhận"
     close: "Thoát"
   email:
     info:
@@ -137,6 +138,7 @@ vi:
       job: "Bạn chưa ứng tuyển vào một công việc nào"
   create_cv:
     zoom: "Thu phóng"
+    scan_cv: "Quét CV"
     btn_download: "Tải xuống"
     btn_ref: "Thêm người tham chiếu"
     skills: "Kỹ năng"
@@ -172,6 +174,9 @@ vi:
     created:
       success: "Tạo CV thành công!"
       failed: "Tạo CV thất bại, vui lòng kiểm tra lại!"
+  scan_cv:
+    input_field: "Chọn lĩnh vực của bạn"
+    btn_change_field: "Thay đổi"
   reset_passwd:
     email_sent: "Email đã được gửi kèm yêu cầu đổi mật khẩu mới"
     email_nil: "Không tìm thấy địa chỉ email"

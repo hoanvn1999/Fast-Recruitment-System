@@ -11,6 +11,7 @@
             </div>
             <div class="button-area">
               <span id="add-reference" class="btn btn-success d-none"><%= t "create_cv.btn_ref" %></span>
+              <%= link_to t("create_cv.scan_cv"), new_scan_cv_path, class:"btn btn-info" %>
               <a id="btn-download" class="btn btn-primary"><i class="fas fa-download"></i><%= t "create_cv.btn_download" %></a>
               <%= f.submit "Download", id: "submit", class: "d-none" %>
             </div>
@@ -77,7 +78,7 @@
                   <ul id="skills">
                     <li class="skill">
                       <%= f.fields_for :skills do |skill| %>
-                        <div class="data text-area" contenteditable="true"><%= t"create_cv.example_skill" %></div>
+                        <div class="data text-area" contenteditable="true"><%= t "create_cv.example_skill" %></div>
                         <%= skill.text_area :skill_name, class: "d-none" %>
                       <% end %>
                     </li>
@@ -85,7 +86,7 @@
                 </div>
                 <div class="resume_item resume_social">
                   <div class="title">
-                    <div class="bold"><%= t"create_cv.languages" %></div>
+                    <div class="bold"><%= t "create_cv.languages" %></div>
                     <span id="add-language"><i class="text-warning ml-3 fas fa-plus-circle"></i></span>
                     <span id="remove-language"><i class="text-danger ml-1 fas fa-minus-circle"></i></span>
                   </div>

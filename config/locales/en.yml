@@ -23,6 +23,7 @@ en:
     remove: "Remove"
     update: "Update information"
     create: "Create"
+    submit: "Submit"
     close: "Close"
   email:
     info:
@@ -137,6 +138,7 @@ en:
       job: "You have not applied for a job"
   create_cv:
     zoom: "Zoom"
+    scan_cv: "Scan CV"
     btn_download: "Download"
     btn_ref: "Add reference"
     skills: "Skills"
@@ -172,6 +174,9 @@ en:
     created:
       success: "Successfully created your CV!"
       failed: "Create CV fail, please check again!"
+  scan_cv:
+    input_field: "Choose your field"
+    btn_change_field: "Change"
   reset_passwd:
     email_sent: "Email sent with password reset instructions"
     email_nil: "Email address not found"
