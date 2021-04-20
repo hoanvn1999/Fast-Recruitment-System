@@ -5,8 +5,8 @@
     </h1>
     <p><%= t "email.hi" %> <%= @user.full_name %>,</p>
     <p><%= t "email.message.active_account" %></p>
-    <%= link_to "Activate", edit_account_activation_url(id:
-    @user.activation_token, email: @user.email), claaa: "btn" %>
-    <p><%= t "email.signature" %></p>
+    <%= link_to t("email.btn.active"), edit_account_activation_url(id:
+    @user.activation_token, email: @user.email), class: "btn" %>
+    <p><%= raw t("email.signature") %></p>
   </div>
 </div>

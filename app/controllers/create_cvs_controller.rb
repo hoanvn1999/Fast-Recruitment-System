@@ -20,7 +20,7 @@ class CreateCvsController < ApplicationController
   def create
     @cv = current_user.curriculum_vitaes.build(cv_params)
     if logged_in? && @cv.save
-      flash.now[:success] = t "create_cv.created.success"
+      flash[:success] = t "create_cv.created.success"
       redirect_to create_cv_path(id: current_user.curriculum_vitaes.last.id)
     else
       flash.now[:danger] = t "create_cv.created.failed"

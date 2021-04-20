@@ -20,51 +20,55 @@
     </div>
   </div>
 </div>
-<section class="ftco-section img ftco-select-destination" style="background-color: dark;">
-  <div class="container">
-    <div class="row justify-content-center pb-4">
-      <div class="col-md-12 heading-section text-center">
-        <span class="subheading"><%= t "menu_list.company" %></span>
-        <h2 class="mb-4"><%= t "index.special_company" %></h2>
+
+<% if Institution.all.count > 8 %>
+  <section class="ftco-section img ftco-select-destination" style="background-color: dark;">
+    <div class="container">
+      <div class="row justify-content-center pb-4">
+        <div class="col-md-12 heading-section text-center">
+          <span class="subheading"><%= t "menu_list.company" %></span>
+          <h2 class="mb-4"><%= t "index.special_company" %></h2>
+        </div>
       </div>
     </div>
-  </div>
-  <div id="outstanding-company" class="carousel slide container" data-ride="carousel">
-    <ol class="carousel-indicators container d-none">
-      <li data-target="#outstanding-company" data-slide-to="0" class="active"></li>
-      <li data-target="#outstanding-company" data-slide-to="1"></li>
-      <li data-target="#outstanding-company" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner pl-5 pr-5" role="listbox">
-			<% for i in 1..3 %>
-				<div class="carousel-item <%= "active" if i == 1 %>">
-					<div class="row">
-					<% for j in 1..3 %>
-						<div class="col-md-4">
-							<div class="project-destination">
-								<%= link_to "#" do %>
-									<%= image_tag url_for(@institutions[i*j-1].logo), class: "img"%>
-									<div class="text">
-										<h3><%= @institutions[i*j-1].institution_name %></h3>
-										<span><%= t "btn.more" %></span>
-									</div>
-								<% end %>
-							</div>
-						</div>
-					<% end %>
-					</div>
-				</div>
-		<% end %>
-    <a class="carousel-control-prev" href="#outstanding-company" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only"><%= t "index.prev" %></span>
-    </a>
-    <a class="carousel-control-next" href="#outstanding-company" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only"><%= t "index.next" %></span>
-    </a>
-  </div>
-</section>
+    <div id="outstanding-company" class="carousel slide container" data-ride="carousel">
+      <ol class="carousel-indicators container d-none">
+        <li data-target="#outstanding-company" data-slide-to="0" class="active"></li>
+        <li data-target="#outstanding-company" data-slide-to="1"></li>
+        <li data-target="#outstanding-company" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner pl-5 pr-5" role="listbox">
+        <% for i in 1..3 %>
+          <div class="carousel-item <%= "active" if i == 1 %>">
+            <div class="row">
+            <% for j in 1..3 %>
+              <div class="col-md-4">
+                <div class="project-destination">
+                  <%= link_to institution_path(id: @institutions[i*j-1].id) do %>
+                    <%= image_tag url_for(@institutions[i*j-1].logo), class: "img"%>
+                    <div class="text">
+                      <h3><%= @institutions[i*j-1].institution_name %></h3>
+                      <span><%= t "btn.more" %></span>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+            </div>
+          </div>
+      <% end %>
+      <a class="carousel-control-prev" href="#outstanding-company" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only"><%= t "index.prev" %></span>
+      </a>
+      <a class="carousel-control-next" href="#outstanding-company" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only"><%= t "index.next" %></span>
+      </a>
+    </div>
+  </section>
+<% end %>
+
 <section class="ftco-section">
   <div class="container">
     <div class="row justify-content-center pb-4">

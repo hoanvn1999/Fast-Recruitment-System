@@ -174,6 +174,7 @@ vi:
     created:
       success: "Tạo CV thành công!"
       failed: "Tạo CV thất bại, vui lòng kiểm tra lại!"
+    note: "Bạn phải tạo CV lĩnh vực này trước khi ứng tuyển"
   scan_cv:
     input_field: "Chọn lĩnh vực của bạn"
     btn_change_field: "Thay đổi"

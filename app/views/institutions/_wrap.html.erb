@@ -6,7 +6,7 @@
         <%= image_tag @institution.logo, alt: @institution.institution_name, class: "img-avt" %>
       </div>
       <div class="col-md-10 mt-5 text-center">
-        <% if current_recruiter? && @institution.id == 1 %>
+        <% if logged_in? && current_recruiter? && @institution.id == 1 %>
           <%= link_to t("institution.btn_create"), new_recruiter_institution_path, class: "btn btn-primary btn-create-business" %>
         <% else %>
           <h1 class="text-center"><%= @institution.institution_name %></h1>
