@@ -4,7 +4,7 @@
   <nav class="nav nav-institution justify-content-center mb-5">
     <%= link_to t("institution.about_us"), info_institution_path(id: @institution.id), class: "nav-link active", remote: true %>
     <%= link_to t("institution.our_post"), jobs_institution_path(id: @institution.id), class: "nav-link", remote: true %>
-    <% if current_user.institution_id == @institution.id %>
+    <% if logged_in? && current_user.institution_id == @institution.id %>
       <%= link_to t("institution.hr"), users_institution_path(id: @institution.id), class: "nav-link", remote: true %>
     <% end %>
   </nav>

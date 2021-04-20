@@ -20,7 +20,10 @@ class JobsController < ApplicationController
           apply_not_login
         end
       elsif cv_id.blank?
-        # Chuyen sang trang tao CV va thong bao chua tao CV thuoc linh vuc nay
+        format.html do
+          flash[:warning] = t "create_cv.note"
+          redirect_to new_create_cv_path
+        end
       elsif @recruitment.save
         format.js {}
         format.html do
