@@ -19,7 +19,7 @@ class Recruiter::CurriculumVitaesController < RecruiterController
   private
 
   def get_cv
-    @cv = CurriculumVitae.find_by id: params[:id]
+    @cv = CurriculumVitae.find_by id: params[:cv_id]
   end
 
   def get_email_info

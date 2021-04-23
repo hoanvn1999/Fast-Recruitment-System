@@ -8,6 +8,7 @@ class Recruiter::InstitutionsController < RecruiterController
   def create
     @institution = Institution.new institution_params
     @institution.created_by = current_user.id
+    check_image_added
     if check_creation_condidion && @institution.save
       flash[:success] = t "institution.create_success"
       redirect_to institution_path(id: @institution.id)
@@ -45,7 +46,14 @@ class Recruiter::InstitutionsController < RecruiterController
   end
 
   def check_creation_condidion
-    return if params[:institution][:logo] &&
-              current_user.update(institution_id: @institution.id)
+    return if current_user.update(institution_id: @institution.id)
+  end
+
+  def check_image_added
+    @institution.logo.attach(io: File.open("app/assets/images/
+                                            logos/#{rand(1..9)}.jpg"),
+                             filename: "logo_auto#{@institution.id}.jpg",
+                             content_type: "image/jpg")
+    return unless params[:institution][:logo].nil?
   end
 end

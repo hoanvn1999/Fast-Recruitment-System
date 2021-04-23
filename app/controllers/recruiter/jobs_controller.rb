@@ -11,7 +11,8 @@ class Recruiter::JobsController < RecruiterController
   def create
     @job = Job.new job_params
     @job.user_id = current_user.id
-    if params[:job][:post_image] && @job.save
+    check_image_added
+    if @job.save
       flash[:success] = t "job.create_success"
       redirect_to recruiter_jobs_path
     else
@@ -55,6 +56,14 @@ class Recruiter::JobsController < RecruiterController
   end
 
   private
+
+  def check_image_added
+    @job.post_image.attach(io: File.open("app/assets/images/
+                                          jobs/#{rand(28)}.jpg"),
+                           filename: "job_auto#{@job.id}.jpg",
+                           content_type: "image/jpg")
+    return unless params[:job][:post_image].nil?
+  end
 
   def get_job
     @job = Job.find_by id: params[:id]

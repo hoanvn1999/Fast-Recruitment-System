@@ -35,9 +35,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
 
   create_table "curriculum_vitaes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "about_me"
-    t.float "education_time"
-    t.float "experience_time"
-    t.float "extra_experience_time"
+    t.integer "mark"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
