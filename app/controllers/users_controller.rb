@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
+    check_image_added
     if @user.save
       @user.send_activation_email
       flash[:info] = t "account.check_email"
@@ -74,5 +75,11 @@ class UsersController < ApplicationController
 
   def valid_passwd
     current_user&.authenticate params[:user][:old_password]
+  end
+
+  def check_image_added
+    @user.avatar.attach(io: File.open("app/assets/images/avatars/user-avt.png"),
+                         filename: "myself.jpg", content_type: "image/png")
+    return unless params[:user][:avatar].nil?
   end
 end

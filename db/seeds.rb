@@ -52,12 +52,28 @@ myself.avatar.attach(io: File.open("app/assets/images/avatars/myself.png"),
                          filename: "myself.jpg", content_type: "image/png")
 myself.save
 
+20.times do |n|
+  user = User.new(email: "example-#{n+1}@example.com",
+                  phone_number: Faker::PhoneNumber.phone_number_with_country_code,
+                  full_name: Faker::Name.name,
+                  address: ["Da Nang", "Ha Noi", "HCM"].sample,
+                  date_of_birth: Faker::Date.between(from: "1980-09-23", to: "2014-09-25"),
+                  role: [0, 1, 2].sample,
+                  institution_id: rand(1..10),
+                  activated: true,
+                  password: "hoan@123",
+                  password_confirmation: "hoan@123")
+  user.avatar.attach(io: File.open("app/assets/images/avatars/#{n}.jpg"),
+                         filename: "avatar#{n}.jpg", content_type: "image/jpg")
+  user.save
+end
+
 15.times do |n|
   Field.create!(field_name: Faker::Company.industry,
                 description: Faker::Quote.most_interesting_man_in_the_world)
 end
 
-10.times do |n|
+50.times do |n|
   job = Job.new(title: Faker::Job.title,
                 content: Faker::Quote.matz,
                 number_of_staffs: rand(1..20),

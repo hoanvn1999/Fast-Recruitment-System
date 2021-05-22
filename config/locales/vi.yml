@@ -223,6 +223,7 @@ vi:
     create: "Tạo bài đăng tuyển dụng"
     create_success: "Bạn đã tạo thành công bài đăng của mình"
     create_fail: "Bạn đã tạo bài đăng thất bại. Vui lòng thử lại."
+    update: "Cập nhật thông tin bài đăng tuyển"
     update_success: "Bạn đã cập nhật thành công bài đăng của mình"
     update_fail: "Bạn đã cập nhật bài đăng thất bại. Vui lòng thử lại."
     btn_close: "Dừng tuyển"

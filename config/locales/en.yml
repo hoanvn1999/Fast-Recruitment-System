@@ -223,6 +223,7 @@ en:
     create: "Create recruitment post"
     create_success: "You have successfully created your post"
     create_fail: "You have failed to create a post. Please try again."
+    update: "Update recruitment post"
     update_success: "You have successfully updated your post"
     update_fail: "You have failed to update a post. Please try again."
     btn_close: "Close"

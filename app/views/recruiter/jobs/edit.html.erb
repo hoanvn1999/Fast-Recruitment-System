@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row justify-content-center pb-4">
       <div class="col-md-12 heading-section text-center">
-        <h2 class="subheading mb-4"><%= t "job.create" %></h2>
+        <h2 class="subheading mb-4"><%= t "job.update" %></h2>
       </div>
     </div>
     <div class="row">
@@ -13,7 +13,7 @@
           <div class="row mb-2">
             <div class="col-md-4 text-center">
               <%= f.label :post_image do %>
-                <%= f.file_field :post_image, accept:"image/*", class:"d-none", required: true %>
+                <%= f.file_field :post_image, accept:"image/*", class:"d-none" %>
                 <% if @job.post_image.attached? %>
                   <%= image_tag(@job.post_image, alt: @job.title, id:"output_image", class:"img-avt") %>
                 <% else %>

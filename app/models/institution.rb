@@ -4,6 +4,4 @@ class Institution < ApplicationRecord
 
   validates :institution_name, presence: true
   validates :address, presence: true
-
-  scope :first_9, ->{order(created_at: :desc).limit 9}
 end

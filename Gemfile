@@ -8,6 +8,7 @@ gem "bootsnap", ">= 1.5.1", require: false
 gem "bootstrap-sass", "3.4.1"
 gem "bootstrap-will_paginate", "1.0.0"
 gem "config"
+gem "dotenv-rails"
 gem "faker"
 gem "image_processing", "1.9.3"
 gem "jbuilder", "~> 2.7"
