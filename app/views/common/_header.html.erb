@@ -12,6 +12,7 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item <%= current_class?("homepage") %>"><%= link_to t("menu_list.home"), root_path, class:"nav-link" %></li>
         <% if logged_in? && current_user.admin? %>
+          <li class="nav-item <%= current_class?("admin/fields") %>"><%= link_to t("menu_list.manage_fields"), admin_fields_path, class:"nav-link" %></li><!--Quản lý lĩnh vực-->
           <li class="nav-item <%= current_class?("admin/users") %>"><%= link_to t("menu_list.manage_users"), admin_users_path, class:"nav-link" %></li><!--Quản lý người dùng-->
           <li class="nav-item <%= current_class?("admin/jobs") %>"><%= link_to t("menu_list.manage_posts"), admin_jobs_path, class:"nav-link" %></li><!--Quản lý bài đăng-->
         <% elsif logged_in? && current_user.recruiter? %>

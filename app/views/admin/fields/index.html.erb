@@ -1,0 +1,64 @@
+<div class="short-wrap d-sm-none d-lg-block"></div>
+
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center pb-4">
+      <div class="col-md-12 heading-section text-center">
+        <h2 class="subheading mb-4"><%= t "menu_list.manage_fields" %></h2>
+      </div>
+    </div>
+    <%= form_tag admin_fields_path, method: :get, class: "input-group justify-content-end mb-3" do %>
+      <div class="form-outline">
+        <%= text_field_tag :field_name, "", class:"form-control email-w", value: params[:field_name], placeholder: "#{t "field.name"}", required: true %>
+      </div>
+      <%= submit_tag t("btn.search"), class:"btn btn-success" %>
+      <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#modal-create">
+        <%= t "btn.create" %>
+      </button>
+    <% end %>
+    <div class="row">
+      <table class="table table-striped">
+        <thead class="bg-primary">
+          <tr>
+            <th scope="col" class="text-center"><%= t "field.no" %></th>
+            <th scope="col"><%= t "field.name" %></th>
+            <th scope="col" class="text-center"><%= t "institution.choose" %></th>
+          </tr>
+        </thead>
+        <tbody id="fields">
+          <%= render partial: "admin/fields/field", collection: @fields %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= form_for [:admin, @field], url: admin_fields_path, class: "form-group", remote: true do |f| %>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"><%= t "btn.create" %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <section class="job-section pt-0">
+            <div class="container">
+              <div class="text row">
+                <div class="col">
+                  <%= f.text_field :field_name, class: "form-control", placeholder: t("field.name") %>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit t("btn.create"), class: "btn btn-primary" %>
+          <button type="button" id="create-close" class="btn btn-secondary" data-dismiss="modal"><%= t "btn.close" %></button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

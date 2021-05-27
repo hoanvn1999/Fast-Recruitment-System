@@ -15,7 +15,7 @@
     </div>
     <%= form_tag admin_users_path, method: :get, class: "input-group justify-content-end mb-3" do %>
       <div class="form-outline">
-        <%= text_field_tag :email, "", class:"form-control email-w", placeholder: "#{t "login.username"}" %>
+        <%= text_field_tag :email, "", class:"form-control email-w", value: params[:email], placeholder: "#{t "login.username"}" %>
       </div>
       <%= submit_tag t("btn.search"), class:"btn btn-success" %>
     <% end %>

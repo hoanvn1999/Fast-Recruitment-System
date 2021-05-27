@@ -25,6 +25,7 @@ en:
     create: "Create"
     submit: "Submit"
     close: "Close"
+    delete: "Delete"
   email:
     info:
       title: "Interview letter"
@@ -92,6 +93,7 @@ en:
       english: "English"
       vietnamese: "Tiếng Việt"
     manage_posts: "Manage Posts"
+    manage_fields: "Manage Fields"    
     manage_users: "Manage Users"
     manage_recruiters: "Manage Recruiters"
     manage_candidates: "Manage Candidates"
@@ -237,6 +239,12 @@ en:
     closed: "Closed!"
     list_cvs: "List of candidates"
     close_applied_job: "Successfully cancel the application"
+  field:
+    no: "No."
+    name: "Field name"
+    create_success: "You have successfully created a new field"
+    create_fail: "Create field failed, please check again"
+    nil: "Can not find field"
   institution:
     nil: "The business is not available"
     deny: "You don't have permission"

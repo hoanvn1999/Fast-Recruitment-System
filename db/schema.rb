@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_03_17_092513) do
 
-  create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
-  create_table "active_storage_blobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "active_storage_blobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "curriculum_vitaes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "curriculum_vitaes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.text "about_me"
     t.integer "mark"
     t.datetime "created_at", precision: 6, null: false
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["user_id"], name: "index_curriculum_vitaes_on_user_id"
   end
 
-  create_table "educations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "educations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "university_name"
     t.datetime "start_date"
     t.datetime "end_date"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["curriculum_vitae_id"], name: "index_educations_on_curriculum_vitae_id"
   end
 
-  create_table "experiences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "experiences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "company_name"
     t.datetime "start_date"
     t.datetime "end_date"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["curriculum_vitae_id"], name: "index_experiences_on_curriculum_vitae_id"
   end
 
-  create_table "extra_experiences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "extra_experiences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "company_name"
     t.datetime "start_date"
     t.datetime "end_date"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["curriculum_vitae_id"], name: "index_extra_experiences_on_curriculum_vitae_id"
   end
 
-  create_table "fields", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "fields", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "field_name"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["field_name"], name: "index_fields_on_field_name"
   end
 
-  create_table "hobbies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "hobbies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "hobby_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["curriculum_vitae_id"], name: "index_hobbies_on_curriculum_vitae_id"
   end
 
-  create_table "institutions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "institutions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "institution_name"
     t.text "address"
     t.string "logo"
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["institution_name"], name: "index_institutions_on_institution_name"
   end
 
-  create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.text "title"
     t.text "content"
     t.integer "number_of_staffs"
@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
-  create_table "languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "language_name"
     t.string "level"
     t.datetime "created_at", precision: 6, null: false
@@ -134,7 +134,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["curriculum_vitae_id"], name: "index_languages_on_curriculum_vitae_id"
   end
 
-  create_table "recruitments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "recruitments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.datetime "interview_time"
     t.string "calling"
     t.datetime "created_at", precision: 6, null: false
@@ -145,7 +145,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["job_id"], name: "index_recruitments_on_job_id"
   end
 
-  create_table "references", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "references", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "position"
     t.string "phone_number"
@@ -156,7 +156,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["curriculum_vitae_id"], name: "index_references_on_curriculum_vitae_id"
   end
 
-  create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "skill_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -164,7 +164,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_092513) do
     t.index ["curriculum_vitae_id"], name: "index_skills_on_curriculum_vitae_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "email"
     t.string "phone_number"
     t.string "password_digest"

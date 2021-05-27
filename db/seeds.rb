@@ -11,7 +11,7 @@ institution = Institution.new(institution_name: "Tự do",
                               address: "Toàn cầu",
                               description: Faker::Company.catch_phrase)
 institution.logo.attach(io: File.open("app/assets/images/logos/freelance.jpg"),
-                            filename: "freelance.jpg", content_type: "image/jpg")
+                        filename: "freelance.jpg", content_type: "image/jpg")
 institution.save
 
 10.times do |n|
@@ -20,40 +20,40 @@ institution.save
                                 description: Faker::Company.catch_phrase,
                                 created_by: rand(1..20))
   institution.logo.attach(io: File.open("app/assets/images/logos/#{n}.jpg"),
-                              filename: "logo#{n}.jpg", content_type: "image/jpg")
+                          filename: "logo#{n}.jpg", content_type: "image/jpg")
   institution.save
 end
 
 myself = User.new(email: "hoanvn1999@gmail.com",
-                      phone_number: "+84 77 540 0703",
-                      full_name: "Pham Le Hoan",
-                      address: "Da Nang",
-                      date_of_birth: "01-01-1998",
-                      role: 1,
-                      institution_id: rand(1..10),
-                      activated: true,
-                      password: "hoan@123",
-                      password_confirmation: "hoan@123")
+                  phone_number: "+84 77 540 0703",
+                  full_name: "Pham Le Hoan",
+                  address: "Da Nang",
+                  date_of_birth: "01-01-1998",
+                  role: 1,
+                  institution_id: rand(1..10),
+                  activated: true,
+                  password: "hoan@123",
+                  password_confirmation: "hoan@123")
 myself.avatar.attach(io: File.open("app/assets/images/avatars/myself.png"),
-                         filename: "myself.jpg", content_type: "image/png")
+                     filename: "myself.jpg", content_type: "image/png")
 myself.save
 
-myself = User.new(email: "trungtran45612@gmail.com",
-                      phone_number: "+84 77 540 0703",
-                      full_name: "Trung",
-                      address: "Da Nang",
-                      date_of_birth: "01-01-1998",
-                      role: 1,
-                      institution_id: 1,
-                      activated: true,
-                      password: "trungvietnam",
-                      password_confirmation: "trungvietnam")
+myself = User.new(email: "plhoandtu@gmail.com",
+                  phone_number: "+84 77 540 0703",
+                  full_name: "Trung",
+                  address: "Da Nang",
+                  date_of_birth: "01-01-1998",
+                  role: 1,
+                  institution_id: 1,
+                  activated: true,
+                  password: "hoan@123",
+                  password_confirmation: "hoan@123")
 myself.avatar.attach(io: File.open("app/assets/images/avatars/myself.png"),
-                         filename: "myself.jpg", content_type: "image/png")
+                     filename: "myself.jpg", content_type: "image/png")
 myself.save
 
 20.times do |n|
-  user = User.new(email: "example-#{n+1}@example.com",
+  user = User.new(email: "example-#{n + 1}@example.com",
                   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
                   full_name: Faker::Name.name,
                   address: ["Da Nang", "Ha Noi", "HCM"].sample,
@@ -64,7 +64,7 @@ myself.save
                   password: "hoan@123",
                   password_confirmation: "hoan@123")
   user.avatar.attach(io: File.open("app/assets/images/avatars/#{n}.jpg"),
-                         filename: "avatar#{n}.jpg", content_type: "image/jpg")
+                     filename: "avatar#{n}.jpg", content_type: "image/jpg")
   user.save
 end
 
@@ -87,7 +87,7 @@ end
                 user_id: rand(1..21),
                 field_id: rand(1..15))
   job.post_image.attach(io: File.open("app/assets/images/jobs/#{rand(28)}.jpg"),
-                            filename: "job#{n}.jpg", content_type: "image/jpg")
+                        filename: "job#{n}.jpg", content_type: "image/jpg")
   job.save
 end
 

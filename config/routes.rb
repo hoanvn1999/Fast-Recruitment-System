@@ -66,6 +66,7 @@ Rails.application.routes.draw do
           patch :active, :block
         end
       end
+      resources :fields, except: [:new, :show, :edit]
     end
   end
 end

@@ -10,7 +10,7 @@
     <div class="row">
       <%= form_tag  cvs_recruiter_job_path(id: @job.id), method: :get, class: "input-group justify-content-end mb-3" do %>
         <div class="form-outline">
-          <%= text_field_tag :full_name, "", class:"form-control email-w", style: "height: 38px !important", placeholder: "#{t "register.full_name"}" %>
+          <%= text_field_tag :full_name, "", class:"form-control email-w", value: params[:full_name], style: "height: 38px !important", placeholder: "#{t "register.full_name"}" %>
         </div>
         <%= submit_tag t("btn.search"), class:"btn btn-success mr-3" %>
         <%= link_to t("job.btn_evaluate"), "#", class: "btn btn-info", remote: true %>
