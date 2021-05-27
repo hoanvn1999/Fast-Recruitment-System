@@ -9,7 +9,7 @@
     </div>
     <%= form_tag admin_jobs_path, method: :get, class: "input-group justify-content-end mb-3" do %>
       <div class="form-outline">
-        <%= text_field_tag :title, "", class:"form-control email-w", placeholder: "#{t "job.title"}", required: true %>
+        <%= text_field_tag :title, "", class:"form-control email-w", value: params[:title], placeholder: "#{t "job.title"}", required: true %>
       </div>
       <%= submit_tag t("btn.search"), class:"btn btn-success" %>
     <% end %>

@@ -25,6 +25,7 @@ vi:
     create: "Tạo mới"
     submit: "Xác nhận"
     close: "Thoát"
+    delete: "Xóa"
   email:
     info:
       title: "Thư mời phỏng vấn"
@@ -92,6 +93,7 @@ vi:
       english: "English"
       vietnamese: "Tiếng Việt"
     manage_posts: "Quản lý bài đăng"
+    manage_fields: "Quản lý lĩnh vực"
     manage_users: "Quản lý người dùng"
     manage_recruiters: "Nhà tuyển dụng"
     manage_candidates: "Ứng viên"
@@ -237,6 +239,12 @@ vi:
     closed: "Đã đóng đơn!"
     list_cvs: "Danh sách ứng viên"
     close_applied_job: "Hủy đơn ứng tuyển thành công"
+  field:
+    no: "STT"
+    name: "Tên lĩnh vực"
+    create_success: "Bạn đã tạo thành công lĩnh vực mới"
+    create_fail: "Tạo lĩnh vực thất bại, vui lòng kiểm tra lại"
+    nil: "Không tìm thấy lĩnh vưc tương ứng"
   institution:
     nil: "Doanh nghiệp không tồn tại"
     deny: "Bạn không có quyền truy cập trang này"

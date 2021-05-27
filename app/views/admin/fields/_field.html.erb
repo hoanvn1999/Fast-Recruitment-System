@@ -1,0 +1,39 @@
+<tr>
+  <td><%= field.id %></td>
+  <td class="text-center"><%= field.field_name %></td>
+  <td>
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLong<%= field.id %>">
+      <%= t "btn.update" %>
+    </button>
+    <%= link_to t("btn.delete"), admin_field_path(id: field.id), class: "btn btn-danger", method: :delete, remote: true, "data-confirm": t("sure?") %>
+  </td>
+</tr>
+<div class="modal fade" id="exampleModalLong<%= field.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= form_for [:admin, field], url: admin_field_path(id: field.id), class: "form-group", method: :patch, remote: true do |f| %>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"><%= t "btn.update" %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <section class="job-section pt-0">
+            <div class="container">
+              <div class="text row">
+                <div class="col">
+                  <%= f.text_field :field_name, class: "form-control", value: field.field_name, placeholder: t("field.name") %>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit t("btn.update"), class: "btn btn-primary" %>
+          <button type="button" id="edit-close" class="btn btn-secondary" data-dismiss="modal"><%= t "btn.close" %></button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
