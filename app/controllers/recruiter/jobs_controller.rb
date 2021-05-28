@@ -51,8 +51,13 @@ class Recruiter::JobsController < RecruiterController
   end
 
   def cvs
-    @cvs = Job.find_by(id: params[:id]).curriculum_vitaes
-              .joins(:user).find_name(params[:full_name])
+    cvs = Job.find_by(id: params[:id]).curriculum_vitaes
+             .joins(:user).find_name(params[:full_name])
+    @cvs = if params[:arr] == "evaluate"
+             cvs.sort_by(&:mark)
+           else
+             cvs.sort_by(&:created_at)
+           end
   end
 
   private

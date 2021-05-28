@@ -27,6 +27,7 @@ vi:
     close: "Thoát"
     delete: "Xóa"
   email:
+    status: "Đã duyệt"
     info:
       title: "Thư mời phỏng vấn"
       mail_to: "Thông tin ứng viên"
@@ -235,6 +236,7 @@ vi:
     btn_list: "DS ứng tuyển"
     btn_send_email: "Gửi email"
     btn_evaluate: "Đánh giá tự động"
+    btn_arrange: "Xếp theo thời gian nộp"
     evaluate: "Đánh giá"
     closed: "Đã đóng đơn!"
     list_cvs: "Danh sách ứng viên"

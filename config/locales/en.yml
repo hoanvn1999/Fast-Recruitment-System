@@ -27,6 +27,7 @@ en:
     close: "Close"
     delete: "Delete"
   email:
+    status: "Approved"
     info:
       title: "Interview letter"
       mail_to: "Candidate information"
@@ -235,6 +236,7 @@ en:
     btn_list: "List applied"
     btn_send_email: "Send email"
     btn_evaluate: "Automation Evaluate"
+    btn_arrange: "Sort by submission time"
     evaluate: "Evaluate"
     closed: "Closed!"
     list_cvs: "List of candidates"

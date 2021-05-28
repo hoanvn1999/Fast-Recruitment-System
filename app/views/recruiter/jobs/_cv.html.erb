@@ -3,7 +3,11 @@
   <td><%= cv.user.full_name %></td>
   <td class="text-center"><%= cv.user.email %></td>
   <td class="text-center"><%= cv.user.phone_number %></td>
-  <td class="text-center"></td>
+  <td class="text-center">
+    <% if Recruitment.find_by(curriculum_vitae_id: cv.id, job_id: @job.id).interview_time.present? %>
+      ●
+    <% end %>
+  </td>
   <% if current_user.id == @job.user_id %>
     <td class="text-center">
       <%= link_to t("btn.detail"), recruiter_curriculum_vitae_path(cv_id: cv.id), class: "btn btn-secondary" %>

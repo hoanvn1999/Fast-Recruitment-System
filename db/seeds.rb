@@ -14,6 +14,14 @@ institution.logo.attach(io: File.open("app/assets/images/logos/freelance.jpg"),
                         filename: "freelance.jpg", content_type: "image/jpg")
 institution.save
 
+institution = Institution.new(institution_name: "Công ty cổ phần Tuyển dụng nhanh",
+                              address: "Đà Nẵng",
+                              created_by: 2,
+                              description: Faker::Company.catch_phrase)
+institution.logo.attach(io: File.open("app/assets/images/logos/freelance.jpg"),
+                        filename: "freelance.jpg", content_type: "image/jpg")
+institution.save
+
 10.times do |n|
   institution = Institution.new(institution_name: Faker::Company.name,
                                 address: ["Da Nang", "Ha Noi", "HCM"].sample,
@@ -24,13 +32,26 @@ institution.save
   institution.save
 end
 
+myself = User.new(email: "contact.fast.recruitment@gmail.com",
+                  phone_number: "+84 77 540 0703",
+                  full_name: "FRS Admin",
+                  address: "Đà Nẵng",
+                  date_of_birth: "01-01-1998",
+                  role: 2,
+                  activated: true,
+                  password: "hoan@123",
+                  password_confirmation: "hoan@123")
+myself.avatar.attach(io: File.open("app/assets/images/avatars/myself.png"),
+                     filename: "myself.jpg", content_type: "image/png")
+myself.save
+
 myself = User.new(email: "hoanvn1999@gmail.com",
                   phone_number: "+84 77 540 0703",
-                  full_name: "Pham Le Hoan",
-                  address: "Da Nang",
+                  full_name: "Hoàn (Tuyển dụng)",
+                  address: "Đà Nẵng",
                   date_of_birth: "01-01-1998",
-                  role: 1,
-                  institution_id: rand(1..10),
+                  role: 0,
+                  institution_id: 2,
                   activated: true,
                   password: "hoan@123",
                   password_confirmation: "hoan@123")
@@ -40,8 +61,8 @@ myself.save
 
 myself = User.new(email: "plhoandtu@gmail.com",
                   phone_number: "+84 77 540 0703",
-                  full_name: "Trung",
-                  address: "Da Nang",
+                  full_name: "Hoàn (Ứng tuyển)",
+                  address: "Đà Nẵng",
                   date_of_birth: "01-01-1998",
                   role: 1,
                   institution_id: 1,
@@ -56,7 +77,7 @@ myself.save
   user = User.new(email: "example-#{n + 1}@example.com",
                   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
                   full_name: Faker::Name.name,
-                  address: ["Da Nang", "Ha Noi", "HCM"].sample,
+                  address: ["Đà Nẵng", "Hà Nội", "HCM"].sample,
                   date_of_birth: Faker::Date.between(from: "1980-09-23", to: "2014-09-25"),
                   role: [0, 1, 2].sample,
                   institution_id: rand(1..10),
@@ -68,9 +89,11 @@ myself.save
   user.save
 end
 
-15.times do |n|
-  Field.create!(field_name: Faker::Company.industry,
-                description: Faker::Quote.most_interesting_man_in_the_world)
+File.open("app/assets/files/field_example", 'rb') do |f|
+  data = f.read.split("\n")
+  data.each do |field_name|
+    Field.create!(field_name: field_name)
+  end
 end
 
 50.times do |n|
@@ -84,16 +107,20 @@ end
                 candidate_experience: rand(10),
                 due_date: Faker::Date.between(from: "2021-06-06", to: "2022-09-25"),
                 status: 1,
-                user_id: rand(1..21),
+                user_id: 2,
                 field_id: rand(1..15))
   job.post_image.attach(io: File.open("app/assets/images/jobs/#{rand(28)}.jpg"),
                         filename: "job#{n}.jpg", content_type: "image/jpg")
   job.save
 end
 
-15.times do |n|
-  if n != 0
-    CurriculumVitae.create!(user_id: 2, field_id: n)
+Field.all.each do |field|
+  CurriculumVitae.create!(user_id: 3, field_id: field.id, mark: rand(1..20))
+  users = User.all
+  20.times do |n|
+    if users[n+3].candidate? && [true, false].sample
+      CurriculumVitae.create!(user_id: users[n+3].id, field_id: field.id, mark: rand(1..20))
+    end
   end
 end
 

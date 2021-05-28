@@ -19,6 +19,7 @@ class CreateCvsController < ApplicationController
 
   def create
     @cv = current_user.curriculum_vitaes.build(cv_params)
+    @cv.mark = calculate_mark
     if logged_in? && @cv.save
       flash[:success] = t "create_cv.created.success"
       redirect_to create_cv_path(id: current_user.curriculum_vitaes.last.id)
@@ -43,5 +44,9 @@ class CreateCvsController < ApplicationController
                                            :description],
                   references_attributes: [:name, :position, :email,
                                           :phone_number]
+  end
+
+  def calculate_mark
+    rand(1..100)
   end
 end
