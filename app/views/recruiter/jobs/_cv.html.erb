@@ -14,7 +14,7 @@
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong<%= cv.id %>">
         <%= t "job.btn_send_email" %>
       </button>
-      <%= link_to t("interview.btn"), recruiter_calling_path(id: cv.id), class: "btn btn-success" %>
+      <%= link_to t("interview.btn"), recruiter_calling_path(id: cv.id, job_id: @job.id, candidate:cv.user.full_name), class: "btn btn-success" %>
     </td>
   <% end %>
 </tr>

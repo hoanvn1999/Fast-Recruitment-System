@@ -32,7 +32,7 @@ institution.save
   institution.save
 end
 
-myself = User.new(email: "contact.fast.recruitment@gmail.com",
+myself = User.new(email: ENV['USER_EMAIL'],
                   phone_number: "+84 77 540 0703",
                   full_name: "FRS Admin",
                   address: "Đà Nẵng",
@@ -45,7 +45,7 @@ myself.avatar.attach(io: File.open("app/assets/images/avatars/myself.png"),
                      filename: "myself.jpg", content_type: "image/png")
 myself.save
 
-myself = User.new(email: "hoanvn1999@gmail.com",
+myself = User.new(email: ENV['EMAIL_RECRUITER'],
                   phone_number: "+84 77 540 0703",
                   full_name: "Hoàn (Tuyển dụng)",
                   address: "Đà Nẵng",
@@ -59,7 +59,7 @@ myself.avatar.attach(io: File.open("app/assets/images/avatars/myself.png"),
                      filename: "myself.jpg", content_type: "image/png")
 myself.save
 
-myself = User.new(email: "plhoandtu@gmail.com",
+myself = User.new(email: ENV['EMAIL_CANDIDATE'],
                   phone_number: "+84 77 540 0703",
                   full_name: "Hoàn (Ứng tuyển)",
                   address: "Đà Nẵng",
