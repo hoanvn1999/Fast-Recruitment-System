@@ -107,6 +107,24 @@ end
                 candidate_experience: rand(10),
                 due_date: Faker::Date.between(from: "2021-06-06", to: "2022-09-25"),
                 status: 1,
+                user_id: rand(4..23),
+                field_id: rand(1..15))
+  job.post_image.attach(io: File.open("app/assets/images/jobs/#{rand(28)}.jpg"),
+                        filename: "job#{n}.jpg", content_type: "image/jpg")
+  job.save
+end
+
+10.times do |n|
+  job = Job.new(title: Faker::Job.title,
+                content: Faker::Quote.matz,
+                number_of_staffs: rand(1..20),
+                type_of_work: rand(2),
+                position: rand(5),
+                min_salary: rand(1000000..4000000),
+                max_salary: rand(4500000..50000000),
+                candidate_experience: rand(10),
+                due_date: Faker::Date.between(from: "2021-06-06", to: "2022-09-25"),
+                status: 1,
                 user_id: 2,
                 field_id: rand(1..15))
   job.post_image.attach(io: File.open("app/assets/images/jobs/#{rand(28)}.jpg"),
@@ -124,9 +142,7 @@ Field.all.each do |field|
   end
 end
 
-jobs = Job.all
-
-jobs.each do |job|
+Job.last(10).each do |job|
   cvs = CurriculumVitae.all
   cvs.each do |cv|
     if cv.field_id == job.field_id

@@ -112,6 +112,7 @@ $("#curriculum_vitae_cv_image").change(function (e) {
 					$('.language:last').remove();
 					for(j = 0; j < languages.length; j++){
 						language = languages[j].split(':');
+						console.log(language[1]);
 						$('#languages').append(
 							`<div class="language">
 								<div class="row">
@@ -121,7 +122,7 @@ $("#curriculum_vitae_cv_image").change(function (e) {
 									</div>
 									<div class="col-6">
 										<label for="curriculum_vitae_languages_attributes_0_level">Level</label>
-										<input class="form-control" type="text" name="curriculum_vitae[languages_attributes][${$('.language').length}][level]" id="curriculum_vitae_languages_attributes_${$('.language').length}_level value="${language[1]}">
+										<input class="form-control" type="text" name="curriculum_vitae[languages_attributes][${$('.language').length}][level]" id="curriculum_vitae_languages_attributes_${$('.language').length}_level" value="${language[1].substring(1)}">
 									</div>
 								</div>
 							</div>`
@@ -132,7 +133,7 @@ $("#curriculum_vitae_cv_image").change(function (e) {
 		}
 	});
 
-	xhr.open("POST", "https://app.nanonets.com/api/v2/OCR/Model/074c0a48-5987-4e33-a0a5-65d7a3943cde/LabelFile/");
+	xhr.open("POST", $('#data-link').data('env'));
 	xhr.setRequestHeader("authorization", "Basic " + btoa("4m7EuDBahqVO5s7rBpYp4I94qbkyLZ46:"));
 
 	xhr.send(data);
