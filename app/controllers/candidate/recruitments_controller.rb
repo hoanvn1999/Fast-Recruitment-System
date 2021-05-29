@@ -1,5 +1,5 @@
 class Candidate::RecruitmentsController < CandidateController
-  before_action :new_recruitmenr, only: :create
+  before_action :new_recruitment, only: :create
 
   def create
     respond_to do |format|
@@ -43,7 +43,7 @@ class Candidate::RecruitmentsController < CandidateController
     current_user.curriculum_vitaes.where(field_id: job.field_id).ids
   end
 
-  def new_recruitmenr
+  def new_recruitment
     @recruitment = Recruitment.new job_id: params[:job_id],
                                   curriculum_vitae_id: cv_id
   end

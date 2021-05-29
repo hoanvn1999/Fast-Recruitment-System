@@ -32,7 +32,15 @@ class Job < ApplicationRecord
                   staff: 3, fresher: 4, intern: 5}
   enum status: {closed: 0, actived: 1}
 
-  scope :first_12, ->{order(created_at: :desc).limit 12}
+  same_field = lambda do |list_field|
+    if list_field.present?
+      find_by_sql("SELECT jobs.* FROM jobs
+                    WHERE field_id IN (#{list_field}) LIMIT 12")
+    else
+      order(created_at: :desc).limit 12
+    end
+  end
+  scope :first_12, same_field
 
   title = lambda do |name|
     if name.present?
