@@ -150,7 +150,7 @@
 <%= render "common/calling_lib" %>
 
 <script>
-  var token = 'eyJjdHkiOiJzdHJpbmdlZS1hcGk7dj0xIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJqdGkiOiJTS29JWDZNQlhkcUJVSXJKdG9FU0hCOExlQVlscGphNktKLTE2MjIxNjU3MTEiLCJpc3MiOiJTS29JWDZNQlhkcUJVSXJKdG9FU0hCOExlQVlscGphNktKIiwiZXhwIjoxNjIyMjA4OTExLCJ1c2VySWQiOiJyZWNydWl0ZXIifQ.blXLy02lA_-iKt7wyD-Xy4sPwmG4Z46sZJM0LkIAOOo';
+  var token = '<%= ENV['RECRUITER_TOKEN'] %>';
   var callerId = 'recruiter';
   var calleeId = 'candidate';
 </script>
