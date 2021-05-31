@@ -1,4 +1,5 @@
 class JobMailer < ApplicationMailer
+  helper :application
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -10,5 +11,12 @@ class JobMailer < ApplicationMailer
     @recruitment = recruitment
 
     mail to: candidate.email, subject: t("email.subject.interview")
+  end
+
+  def intro_job candidate, jobs
+    @candidate = candidate
+    @jobs = jobs
+
+    mail to: candidate.email, subject: t("email.subject.intro_jobs")
   end
 end

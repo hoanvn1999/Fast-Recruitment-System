@@ -19,8 +19,10 @@ gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.4"
 gem "rails-i18n"
 gem "sass-rails", ">= 6"
+gem "sidekiq"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
+gem 'whenever', :require => false
 gem "will_paginate"
 gem "will_paginate-bootstrap4"
 

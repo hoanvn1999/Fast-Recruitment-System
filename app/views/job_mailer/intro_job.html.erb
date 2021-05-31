@@ -1,0 +1,24 @@
+<div class="layer1">
+  <div class="layer2">
+    <h1 class="title">
+      <%= t "email.subject.intro_jobs" %>
+    </h1>
+    <p><%= t "email.hi" %> <%= @candidate.full_name %>,</p>
+    <p><%= raw t("email.message.intro_jobs") %></p>
+    <% @jobs.each do |job| %>
+      <hr>
+      <div>
+        <img class="img-job d-inline-block" src="<%= Rails.application.routes.url_helpers.rails_blob_url(job.post_image, only_path: true) %>">
+        <div class="d-inline-block">
+          <%= link_to job.user.institution.institution_name, job_url(id: job.id), class: "font-weight-bold" %>
+          <div class=""><i class="fas fa-medal"></i><%= t("recruitment_post.year", count: job.candidate_experience) %></div>
+          <div class=""><i class="fas fa-money-bill-alt"></i><%= t("wage", wage: exchange_money(job.min_salary)) %> - <%= t("wage", wage: exchange_money(job.max_salary)) %></div>
+          <div><i class="fa fa-map-marker"></i><%= job.user.institution.address %></div>
+        </div>
+        <%= link_to t("btn.apply"), job_url(id: job.id), class: "btn btn-float-right d-inline-block" %>
+      </div>
+    <% end %>
+    <br>
+    <p><%= raw t("email.signature") %></p>
+  </div>
+</div>

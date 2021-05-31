@@ -146,6 +146,7 @@ jQuery(function () {
 		else {
 			var urlParams = new URLSearchParams(window.location.search);
 			var notification = new Notification('FRS - Interview', {
+				icon: 'https://r7.pngwing.com/path/582/358/403/recruitment-flat-design-business-computer-icons-business-fa0a53729827255c1809724fc4dbeb1d.png',
 				body: 'Hey there! You\'ve an interview calling.\nCandidate: ' + urlParams.get('candidate'),
 			});
 			notification.onclick = function () {

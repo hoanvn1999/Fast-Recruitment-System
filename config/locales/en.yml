@@ -40,12 +40,14 @@ en:
       active_account: "FastRecruitment | Account activation"
       password_reset: "FastRecruitment | Password reset"
       interview: "FastRecruitment | Interview"
+      intro_jobs: "Fast Recruitment | Job introduction"
     hi: "Hi"
     message:
       active_account: "Welcome to the Sample App! Click on the link below to activate your account:"
       reset_passwd: "We receive a request to change your password. If you don't take this action, please ignore this email and continue using it. To change your password, please click on the link below:"
       interview: "First of all, we thank you for the attention you have given to our company. <br>My name is %{name} of the recruitment department at %{company}. Through your profile, we realize that you have the potential to be a part of our company. <br>We hope to talk more with you in a short interview via the app linked below. This is an essential step in the recruitment process so that we can better understand you and share with you our stories. <br>If you need more information, don't hesitate to contact us at %{email}. <br>We look forward to meeting with you soon."
       time: "Please note that, the time to interview is on %{time}"
+      intro_jobs: "We bring to you job opportunities at top companies, see now:<br>"
     signature: "Best regards, <br>The Fast Recruitment team"
     sent:
       success: "Email sent!"

@@ -1,4 +1,5 @@
 class HomepageController < ApplicationController
+  include JobsHelper
   def index
     @institutions = Institution.last(9)
     jobs = Job.first_12 list_field
@@ -7,15 +8,5 @@ class HomepageController < ApplicationController
             else
               jobs
             end
-  end
-
-  def list_field
-    list = []
-    if logged_in?
-      current_user.curriculum_vitaes.each do |cv|
-        list << cv.field_id
-      end
-    end
-    list.map(&:inspect).join(", ")
   end
 end
