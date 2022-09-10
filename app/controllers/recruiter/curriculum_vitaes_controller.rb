@@ -8,7 +8,7 @@ class Recruiter::CurriculumVitaesController < RecruiterController
     if @recruitment
       @recruitment.update interview_time: params[:interview_time]
       JobMailer.interview(@candidate, @recruiter, @recruitment)
-               .deliver_now
+               .deliver_later
       flash[:success] = t "email.sent.success"
     else
       flash[:danger] = t "email.sent.fail"
