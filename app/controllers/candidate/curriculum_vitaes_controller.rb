@@ -5,6 +5,8 @@ class Candidate::CurriculumVitaesController < CandidateController
   def index
     @cvs = CurriculumVitae.where(user_id: current_user.id)
                           .find_field(params[:field_id])
+                          .includes(:educations, :experiences)
+                          .order(created_at: :desc)
     return if @cvs
 
     flash[:danger] = t "cv.nil.cv"

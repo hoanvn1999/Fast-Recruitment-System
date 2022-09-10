@@ -34,6 +34,7 @@ gem "will_paginate-bootstrap4"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "pry-rails"
   gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
