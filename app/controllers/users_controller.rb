@@ -9,9 +9,16 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     check_image_added
+    generate_password_for_google_registration
+
     if @user.save
-      @user.send_activation_email
-      flash[:info] = t "account.check_email"
+      if is_register_with_google?
+        log_in @user
+        session[:new_user] = nil
+      else
+        @user.send_activation_email
+        flash[:info] = t "account.check_email"
+      end
       redirect_to root_url
     else
       flash[:danger] = t "account.create_fail"
@@ -44,6 +51,11 @@ class UsersController < ApplicationController
       flash.now[:danger] = t "account.change_pwd_fail"
       render :change_password
     end
+  end
+
+  def google_registration
+    @user = User.new session[:new_user]
+    binding.pry
   end
 
   private
@@ -81,5 +93,18 @@ class UsersController < ApplicationController
     @user.avatar.attach(io: File.open("app/assets/images/avatars/user-avt.png"),
                          filename: "myself.jpg", content_type: "image/png")
     return unless params[:user][:avatar].nil?
+  end
+
+  def is_register_with_google?
+    request.referer.include?("google_registration")
+  end
+
+  def generate_password_for_google_registration
+    return unless is_register_with_google?
+
+    new_password = SecureRandom.base64(12)
+    @user.password = new_password
+    @user.password_confirmation = new_password
+    @user.activated = true
   end
 end

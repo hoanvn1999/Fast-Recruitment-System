@@ -4,10 +4,12 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
+    get 'auth/google_oauth2/callback', to: 'sessions#google_login'
     resource :users, except: :destroy do
       member do
         get :change_password
         patch :update_change_password
+        get :google_registration
       end
     end
     resources :account_activations, only: :edit

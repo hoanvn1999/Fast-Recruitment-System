@@ -7,15 +7,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-institution = Institution.new(institution_name: "Tự do",
-                              address: "Toàn cầu",
+institution = Institution.new(institution_name: "Freelance",
+                              address: "Global",
                               description: Faker::Company.catch_phrase)
 institution.logo.attach(io: File.open("app/assets/images/logos/freelance.jpg"),
                         filename: "freelance.jpg", content_type: "image/jpg")
 institution.save
 
-institution = Institution.new(institution_name: "Công ty cổ phần Tuyển dụng nhanh",
-                              address: "Đà Nẵng",
+institution = Institution.new(institution_name: "Fast Recruitment Joint Stock Company",
+                              address: "Da Nang",
                               created_by: 2,
                               description: Faker::Company.catch_phrase)
 institution.logo.attach(io: File.open("app/assets/images/logos/freelance.jpg"),
@@ -47,7 +47,7 @@ myself.save
 
 myself = User.new(email: ENV['EMAIL_RECRUITER'],
                   phone_number: "+84 77 540 0703",
-                  full_name: "Hoàn (Tuyển dụng)",
+                  full_name: "Hoàn (Recruiter)",
                   address: "Đà Nẵng",
                   date_of_birth: "01-01-1998",
                   role: 0,
@@ -61,7 +61,7 @@ myself.save
 
 myself = User.new(email: ENV['EMAIL_CANDIDATE'],
                   phone_number: "+84 77 540 0703",
-                  full_name: "Hoàn (Ứng tuyển)",
+                  full_name: "Hoàn (Candidate)",
                   address: "Đà Nẵng",
                   date_of_birth: "01-01-1998",
                   role: 1,
@@ -75,7 +75,7 @@ myself.save
 
 20.times do |n|
   user = User.new(email: "example-#{n + 1}@example.com",
-                  phone_number: Faker::PhoneNumber.phone_number_with_country_code,
+                  phone_number: Faker::Base.numerify('+84 ## ### ####'),
                   full_name: Faker::Name.name,
                   address: ["Đà Nẵng", "Hà Nội", "HCM"].sample,
                   date_of_birth: Faker::Date.between(from: "1980-09-23", to: "2014-09-25"),
@@ -86,7 +86,7 @@ myself.save
                   password_confirmation: "hoan@123")
   user.avatar.attach(io: File.open("app/assets/images/avatars/#{n}.jpg"),
                      filename: "avatar#{n}.jpg", content_type: "image/jpg")
-  user.save
+  user.save!
 end
 
 File.open("app/assets/files/field_example", 'rb') do |f|
@@ -105,13 +105,13 @@ end
                 min_salary: rand(1000000..4000000),
                 max_salary: rand(4500000..50000000),
                 candidate_experience: rand(10),
-                due_date: Faker::Date.between(from: "2021-06-06", to: "2022-09-25"),
+                due_date: Faker::Date.between(from: "2022-09-15", to: "2022-12-25"),
                 status: 1,
                 user_id: rand(4..23),
                 field_id: rand(1..15))
   job.post_image.attach(io: File.open("app/assets/images/jobs/#{rand(28)}.jpg"),
                         filename: "job#{n}.jpg", content_type: "image/jpg")
-  job.save
+  job.save!
 end
 
 10.times do |n|
@@ -123,13 +123,13 @@ end
                 min_salary: rand(1000000..4000000),
                 max_salary: rand(4500000..50000000),
                 candidate_experience: rand(10),
-                due_date: Faker::Date.between(from: "2021-06-06", to: "2022-09-25"),
+                due_date: Faker::Date.between(from: "2022-09-15", to: "2022-12-25"),
                 status: 1,
                 user_id: 2,
                 field_id: rand(1..15))
   job.post_image.attach(io: File.open("app/assets/images/jobs/#{rand(28)}.jpg"),
                         filename: "job#{n}.jpg", content_type: "image/jpg")
-  job.save
+  job.save!
 end
 
 Field.all.each do |field|

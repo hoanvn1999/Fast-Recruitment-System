@@ -31,10 +31,12 @@ class CurriculumVitae < ApplicationRecord
   scope :find_field, list
 
   def education_time
-    self.educations.map {|e| ((e.end_date - e.start_date)/31536000).round(2)}.sum || 0
+    educations.map{|e| ((e.end_date - e.start_date) / 31_536_000).round(2)}
+              .sum || 0
   end
 
   def experience_time
-    self.experiences.map {|e| ((e.end_date - e.start_date)/31536000).round(2)}.sum || 0
+    experiences.map{|e| ((e.end_date - e.start_date) / 31_536_000).round(2)}
+               .sum || 0
   end
 end
