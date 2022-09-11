@@ -1,4 +1,9 @@
+require 'elasticsearch/model'
+
 class Job < ApplicationRecord
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
   belongs_to :user
   belongs_to :field
   has_many :recruitments
@@ -31,16 +36,6 @@ class Job < ApplicationRecord
   enum position: {director: 0, manager: 1, leader: 2,
                   staff: 3, fresher: 4, intern: 5}
   enum status: {closed: 0, actived: 1}
-
-  same_field = lambda do |list_field|
-    if list_field.present?
-      find_by_sql("SELECT jobs.* FROM jobs
-                    WHERE field_id IN (#{list_field}) LIMIT 12")
-    else
-      order(created_at: :desc).limit 12
-    end
-  end
-  scope :first_12, same_field
 
   title = lambda do |name|
     if name.present?
@@ -104,4 +99,9 @@ class Job < ApplicationRecord
           AND institutions.id = #{institution_id}")
   end
   scope :job_institution, j_i
+end
+
+if ENV["LOCAL_DEBUG_MODE"].blank?
+  Job.__elasticsearch__.create_index!
+  Job.import
 end

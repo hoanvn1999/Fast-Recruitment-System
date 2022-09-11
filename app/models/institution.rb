@@ -1,5 +1,6 @@
 class Institution < ApplicationRecord
   has_many :users
+  has_many :jobs, through: :users
   has_one_attached :logo
 
   validates :institution_name, presence: true
