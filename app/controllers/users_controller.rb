@@ -55,7 +55,6 @@ class UsersController < ApplicationController
 
   def google_registration
     @user = User.new session[:new_user]
-    binding.pry
   end
 
   private

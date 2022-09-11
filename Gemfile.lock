@@ -127,6 +127,19 @@ GEM
       dry-equalizer (~> 0.2)
       dry-initializer (~> 3.0)
       dry-schema (~> 1.5, >= 1.5.2)
+    elasticsearch (7.4.0)
+      elasticsearch-api (= 7.4.0)
+      elasticsearch-transport (= 7.4.0)
+    elasticsearch-api (7.4.0)
+      multi_json
+    elasticsearch-model (7.2.1)
+      activesupport (> 3)
+      elasticsearch (~> 7)
+      hashie
+    elasticsearch-rails (7.2.1)
+    elasticsearch-transport (7.4.0)
+      faraday
+      multi_json
     erubi (1.10.0)
     execjs (2.7.0)
     faker (2.17.0)
@@ -171,6 +184,7 @@ GEM
     mini_portile2 (2.5.0)
     minitest (5.14.4)
     msgpack (1.4.2)
+    multi_json (1.15.0)
     multi_xml (0.6.0)
     mysql2 (0.5.3)
     nio4r (2.5.7)
@@ -356,6 +370,8 @@ DEPENDENCIES
   capybara (>= 2.15)
   config
   dotenv-rails
+  elasticsearch-model
+  elasticsearch-rails
   faker
   image_processing (= 1.9.3)
   jbuilder (~> 2.7)

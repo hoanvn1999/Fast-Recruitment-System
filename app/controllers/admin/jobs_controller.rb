@@ -49,6 +49,10 @@ class Admin::JobsController < AdminController
   end
 
   def get_all_job
-    @jobs = Job.title(params[:title])
+    @jobs = if ENV["LOCAL_DEBUG_MODE"].present?
+              Job.title(params[:title])
+            else
+              Job.search(params[:title]).records
+            end
   end
 end

@@ -38,20 +38,24 @@
         <li data-target="#outstanding-company" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner pl-5 pr-5" role="listbox">
+        <% index = 0 %>
         <% for i in 1..3 %>
           <div class="carousel-item <%= "active" if i == 1 %>">
             <div class="row">
             <% for j in 1..3 %>
               <div class="col-md-4">
-                <div class="project-destination">
-                  <%= link_to institution_path(id: @institutions[i*j-1].id) do %>
-                    <%= image_tag url_for(@institutions[i*j-1].logo), class: "img"%>
-                    <div class="text">
-                      <h3><%= @institutions[i*j-1].institution_name %></h3>
-                      <span><%= t "btn.more" %></span>
-                    </div>
-                  <% end %>
-                </div>
+                <% if index < @institutions.length %>
+                  <div class="project-destination">
+                    <%= link_to institution_path(id: @institutions[index].id) do %>
+                      <%= image_tag url_for(@institutions[index].logo), class: "img"%>
+                      <div class="text">
+                        <h3><%= @institutions[index].institution_name %></h3>
+                        <span><%= t "btn.more" %></span>
+                      </div>
+                    <% end %>
+                  </div>
+                  <% index += 1 %>
+                <% end %>
               </div>
             <% end %>
             </div>
